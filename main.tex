@@ -4,7 +4,9 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{units} % soll ich das verwenden? oder siunitxs oder garnix?
 
+\newcommand{\degree}{$^\circ$}
 
 \author{Michael F. Schönitzer}
 \title{HGÜ}
@@ -14,14 +16,87 @@
 \section{Geschichtliches}
 
 \section{Physikalische Grundlagen}
+\subsection{Wechselstrom}
+Die Energieübertragung geschieht im Normalfall in Form von Wechselstrom, beziehungsweise Drehstrom. % Gründe;am besten schon in die Einleitung
+Bei ersterem hat man einen Nullleiter und einen Leiter auf der eine sinusförmige Wechselspannung mit der Amplitude $U_0$:
+\begin{equation}
+U(t)=U_0 \cdot \sin(\omega t + \phi)
+\end{equation}
+Dieser wird in der Elektrotechnik oft umgangssprachlich als "Phase" bezeichnet, wir wollen davon hier jedoch nicht Gebrauch machen, da wir physikalisch korrekter den Faktor $\phi$ als Phasenverschiebung oder kurz Phase bezeichnen werden.
+Bei letzterer hat man drei Leiter an denen je eine um $\frac23\pi$ phasenverschobene Wechselspannung anliegt. Dazu später mehr % oder hier?
+
+Legt man obige Spannung an einem ohmschen Widerstand R an, so fließt durch ihn der Strom $I(t)= \frac{U(t)}{R} = I_0 \cdot \sin(\omega t + \phi)$ mit $I_0 = U_0/R$.
+Die elektrische Leistung $P$ die an dem Widerstand geleistet wird, wird analog zur Gleichspannungstechnik als Produkt Produkt aus Spannung und Strom definiert, dabei beziehen sich jedoch alle drei Größen auf die momentanen Werte:
+\begin{equation}
+P(t) = U(t) \cdot I(t) \stackrel{\mathrm{\phi=0}}= U_0 I_0 \cdot \cos^2(\omega t)
+\end{equation}
+Berechnen wir nun den Zeitlichen Mittelwert der Leistung
+\begin{equation}
+\bar{P}=\frac1T \int\limits_0^T dt\: U_0 I_0 \cos^2 \omega t = \frac12 U_0 I_0 \qquad\mathrm{mit}\; T=2\pi/\omega
+\end{equation}
+Vergleicht man dies mit der Leistung eines Gleichstroms $P=U\cdot I$, so sieht man, dass eine Gleichspannung mit $U=U_0 / \sqrt2$ und der daraus folgend Strom $I=I_0 / \sqrt2$ dieselbe Leistung erbringt.
+Deshalb definiert man die Effektivspannung und den Effektivstrom eines Wechselstroms als:
+\begin{equation*}
+U_{eff} = \frac{U_0}{\sqrt2} \qquad I_{eff} = \frac{I_0}{\sqrt2} \qquad \bar{P}=U_{eff}I_{eff}
+\end{equation*}
+Im folgenden werden wir mit $U$ beziehungsweise $I$ die Effektivwerte, mit $U(t)$ beziehungsweise $I(t)$ die Momentanwerte und mit $U_0$ beziehungsweise $I_0$ die Amplituden bezeichnen.
+
+\section{Spulen in Wechselstromkreisen}
+Wir betrachten nun einen Wechselstromkreis mit vernachlässigbaren Widerständen, in welcher sich eine Spule befindet. Ein Stromfluss in der Spule führt zu einem Magnetfeld. Da der Stromfluss in der Spule jedoch ständig sein Vorzeichen ändert, wird abwechselnd ein Magnetfeld in die eine Richtung aufgebaut und nach dem Zusammenbrechen dieses dann ein Magnetfeld mit umgekehrter Ausrichtung Richtung aufgebaut.
+Die Summe aller Spannungen muss in einem Stromkreis immer Null sein:
+$ U_Q + U_{ind} = 0 $.
+Wobei $U_Q$ die von der Quelle angelegte Spannung ist und $U_ind$ die durch das Magnetfeld induzierte Spannung in der Spule ist. Letztere berechnet sich durch
+\begin{equation}
+U_{ind} = - L \cdot \frac{\mathrm dI(t)}{\mathrm dt}
+\end{equation}
+Daraus folgt durch einsetzen und integrieren
+\begin{align}
+%U_Q + U_{ind} =& 0 \nonumber \\
+%\Rightarrow\;
+U_0 \cos \omega t =& L \cdot \frac{\mathrm dI(t)}{\mathrm dt} \nonumber \\ 
+\Rightarrow\; I(t) =& \frac{U_0}{L} \int \cos \omega t \mathrm dt = \nonumber \\ 
+=& \frac{U_0}{\omega L} \sin \omega t = \nonumber\\
+=& I_0 \sin \omega t \qquad mit\qquad I_0 = \frac{U_0}{\omega L}  \nonumber\\
+=& I_0 \cos(\omega t - 90^\circ)
+\end{align}
+Der Strom eilt der Spannung also um \unit{90}{\degree} voraus und wir definieren analog zum ohmschen Widerstand den Betrag des induktiven Widerstand als den Quotient zwischen $U_0$ und $I_0$:
+\begin{equation}
+\left|X_L\right| = \frac{U_0}{I_0} = \omega \ cdot L
+\end{equation}
+
+\section{Spulen und Kondensatoren im Wechselstromkreis}
+Betrachten wir nun einen Wechselstromkreis mit einer Induktivität, einer Kapazität und einem ohmschen Widerstand. Wieder gilt die 2. Kirchhoffsche Regel $\sum U = 0$:
+\begin{equation}
+U_Q = L \cdot \frac{\mathrm{d}I(t)}{\mathrm{d}t} + \frac{Q}{C} + I(t) \cdot R
+\end{equation}
+Wir differenzieren nach der Zeit um die Ladung los zu werden:
+\begin{equation}
+\frac{\mathrm dU_Q}{\mathrm dt} = L \cdot \frac{\mathrm{d^2}I(t)}{\mathrm{d}t^2} + \frac{I(t)}{C} + \frac{\mathrm dI(t)}{\mathrm dt} \cdot R
+\end{equation}
+Diese Differenzialgleichung können wir mit eines komplexem e-Ansatzes lösen:
+Wir lösen diese Differenzialgleichung im Komplexen und betrachten dann den Real- und Imaginärteil der komplexen Lösung gemäß Superpositionsprinzip als die physikalisch sinnvollen Lösungen. Zur Lösung  wählen wir den Ansatz:
+\begin{equation}
+U_Q = U_0 e^{(i\omega t)},	\qquad	I(t) = I_0 e^{i(\omega t-\phi)}
+\end{equation}
+Daraus erhalten wir durch einsetzen:
+\begin{equation}
+i\omega U = (- L \omega^2 + i \omega R  + \frac{1}{C}) \cdot I(t)
+\end{equation}
+Wir definieren analog zum klassischen ohmschen Widerstand den Komplexen Widerstand als Quotient von Spannung und Strom:
+\begin{equation}
+Z = \frac{U}{I} = R + i ( \omega L - \frac{1}{\omega C})
+\end{equation}
+
+
 \subsection{Ohmscher Verlust}
 Fließt ein Strom $I$ mit der Spannung $U$ durch einen ohmschen Widerstand, so wird dabei die elektrische Leistung
 $P_V = U' \cdot I = R \cdot I^2$
-in Wärme umgesetzt – wobei $U'$ die an dem Widerstand abfallende Spannung ist.
+in Wärme umgesetzt -- wobei $U'$ die an dem Widerstand abfallende Spannung ist.
 Da die übertragene Leistung $P=U \cdot I \cdot \cos(\phi)$ ist, folgt für die Verlustleistung
 \[P_V = \left(\frac{P}{U \cdot \cos\phi}\right)^2\cdot R\]
 Bei der Übertragung von Energie stellt das Kabel einen Widerstand dar und die Verlustleistung soll möglichst minimiert werden. Da der Widerstand nur bedingt verringert werden kann, erhöht man die Spannung und verringert somit den Stromfluss. Eine Leitung mit einer Spannung von 110\,kV hat einen Verlust von etwa 6\% je 100\,km, eine Leitung mit 800\,kV verliert auf der selben Distanz nur etwa 0.5\%.
 
 \section{Vor- und Nachteile der HGÜ gegenüber DHÜ}
+
 
 \end{document}
