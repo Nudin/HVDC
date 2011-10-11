@@ -1,4 +1,5 @@
-\documentclass[10pt,a4paper,twoside]{article}
+%\documentclass[10pt,a4paper,twoside]{article}
+\documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[german]{babel}
 \usepackage{amsmath}
@@ -15,20 +16,19 @@
 
 \section{Geschichtliches}
 
-\section{Physikalische Grundlagen}
-\subsection{Wechselstrom}
+\section{Wechselstrom}
 Die Energieübertragung geschieht im Normalfall in Form von Wechselstrom, beziehungsweise Drehstrom. % Gründe;am besten schon in die Einleitung
 Bei ersterem hat man einen Nullleiter und einen Leiter auf der eine sinusförmige Wechselspannung mit der Amplitude $U_0$:
 \begin{equation}
-U(t)=U_0 \cdot \sin(\omega t + \phi)
+U(t)=U_0 \cdot \cos(\omega t + \varphi)
 \end{equation}
-Dieser wird in der Elektrotechnik oft umgangssprachlich als "Phase" bezeichnet, wir wollen davon hier jedoch nicht Gebrauch machen, da wir physikalisch korrekter den Faktor $\phi$ als Phasenverschiebung oder kurz Phase bezeichnen werden.
+Dieser wird in der Elektrotechnik oft umgangssprachlich als "Phase" bezeichnet, wir wollen davon hier jedoch nicht Gebrauch machen, da wir physikalisch korrekter den Faktor $\varphi$ als Phasenverschiebung oder kurz Phase bezeichnen werden.
 Bei letzterer hat man drei Leiter an denen je eine um $\frac23\pi$ phasenverschobene Wechselspannung anliegt. Dazu später mehr % oder hier?
 
-Legt man obige Spannung an einem ohmschen Widerstand R an, so fließt durch ihn der Strom $I(t)= \frac{U(t)}{R} = I_0 \cdot \sin(\omega t + \phi)$ mit $I_0 = U_0/R$.
+Legt man obige Spannung an einem ohmschen Widerstand R an, so fließt durch ihn der Strom $I(t)= \frac{U(t)}{R} = I_0 \cdot \cos(\omega t + \varphi)$ mit $I_0 = U_0/R$.
 Die elektrische Leistung $P$ die an dem Widerstand geleistet wird, wird analog zur Gleichspannungstechnik als Produkt Produkt aus Spannung und Strom definiert, dabei beziehen sich jedoch alle drei Größen auf die momentanen Werte:
 \begin{equation}
-P(t) = U(t) \cdot I(t) \stackrel{\mathrm{\phi=0}}= U_0 I_0 \cdot \cos^2(\omega t)
+P(t) = U(t) \cdot I(t) \stackrel{\mathrm{\varphi=0}}= U_0 I_0 \cdot \cos^2(\omega t)
 \end{equation}
 Berechnen wir nun den Zeitlichen Mittelwert der Leistung
 \begin{equation}
@@ -41,7 +41,9 @@ U_{eff} = \frac{U_0}{\sqrt2} \qquad I_{eff} = \frac{I_0}{\sqrt2} \qquad \bar{P}=
 \end{equation*}
 Im folgenden werden wir mit $U$ beziehungsweise $I$ die Effektivwerte, mit $U(t)$ beziehungsweise $I(t)$ die Momentanwerte und mit $U_0$ beziehungsweise $I_0$ die Amplituden bezeichnen.
 
-\section{Spulen in Wechselstromkreisen}
+\subsection{Spulen und Kondensatoren im Wechselstromkreis}
+
+\subsubsection{Spulen in Wechselstromkreisen}
 Wir betrachten nun einen Wechselstromkreis mit vernachlässigbaren Widerständen, in welcher sich eine Spule befindet. Ein Stromfluss in der Spule führt zu einem Magnetfeld. Da der Stromfluss in der Spule jedoch ständig sein Vorzeichen ändert, wird abwechselnd ein Magnetfeld in die eine Richtung aufgebaut und nach dem Zusammenbrechen dieses dann ein Magnetfeld mit umgekehrter Ausrichtung Richtung aufgebaut.
 Die Summe aller Spannungen muss in einem Stromkreis immer Null sein:
 $ U_Q + U_{ind} = 0 $.
@@ -59,12 +61,38 @@ U_0 \cos \omega t =& L \cdot \frac{\mathrm dI(t)}{\mathrm dt} \nonumber \\
 =& I_0 \sin \omega t \qquad mit\qquad I_0 = \frac{U_0}{\omega L}  \nonumber\\
 =& I_0 \cos(\omega t - 90^\circ)
 \end{align}
-Der Strom eilt der Spannung also um \unit{90}{\degree} voraus und wir definieren analog zum ohmschen Widerstand den Betrag des induktiven Widerstand als den Quotient zwischen $U_0$ und $I_0$:
+Der Strom hinkt der Spannung also um \unit{90}{\degree} hinterher und wir definieren analog zum ohmschen Widerstand den Betrag des induktiven Widerstand als den Quotient zwischen $U_0$ und $I_0$:
 \begin{equation}
-\left|X_L\right| = \frac{U_0}{I_0} = \omega \ cdot L
+\left|Z_L\right| = \frac{U_0}{I_0} = \omega \cdot L
 \end{equation}
+Dies wird auch Induktanz $X_L = \left|Z_L\right| = \omega \cdot L$ genannt.
 
-\section{Spulen und Kondensatoren im Wechselstromkreis}
+\subsubsection{Kondensatoren im Wechselstromkreis}
+Analog zur Spule, können wir auch die Auswirkung eines Kondensators im stromkreis berechnen. %XXX "Analog"?
+Wir beginnen dabei mit der Gleichung
+\begin{equation}
+U = \frac{Q}{C}
+\end{equation}
+für den Kondensator und differenzieren diese nach der Zeit:
+\begin{equation}
+\frac{dU}{dt} = \frac{1}{C}\frac{dQ}{dt} = \frac{1}{C} \cdot I
+\end{equation}
+Da die angelegte Spannung $U_Q$ der Spannung am Kondensator entspricht, gilt:
+\begin{equation}
+U_0\cdot \omega \sin \omega t = \frac{1}{C} \cdot I
+\end{equation}
+und somit
+\begin{equation}
+I = U_0\cdot \omega C \cos\left( \omega t + 90^\circ\right)
+\end{equation}
+Während bei einer Spule also der Strom der Spannung um \unit{90}{\degree} hinterher hinkt, eilt er bei einem Stromkreis mit Kondensator um \unit{90}{\degree} voraus. Wir ahnen bereits, dass diese beiden Effekte sich gegenseitig aufheben können.
+Auch hier können wir analog zum ohmschen Widerstand den Betrag des kapazitiven Wiederstand definieren:
+\begin{equation}
+\left|Z_C\right| = \frac{U_0}{I_0} = \frac{1}{\omega C}
+\end{equation}
+Der Begriff Kapazitanz ist als $X_C = \left|Z_C\right| = -\frac{1}{\omega C}$ definiert.
+
+\subsubsection{Allgemeiner Fall}
 Betrachten wir nun einen Wechselstromkreis mit einer Induktivität, einer Kapazität und einem ohmschen Widerstand. Wieder gilt die 2. Kirchhoffsche Regel $\sum U = 0$:
 \begin{equation}
 U_Q = L \cdot \frac{\mathrm{d}I(t)}{\mathrm{d}t} + \frac{Q}{C} + I(t) \cdot R
@@ -74,11 +102,15 @@ Wir differenzieren nach der Zeit um die Ladung los zu werden:
 \frac{\mathrm dU_Q}{\mathrm dt} = L \cdot \frac{\mathrm{d^2}I(t)}{\mathrm{d}t^2} + \frac{I(t)}{C} + \frac{\mathrm dI(t)}{\mathrm dt} \cdot R
 \end{equation}
 Diese Differenzialgleichung können wir mit eines komplexem e-Ansatzes lösen:
-Wir lösen diese Differenzialgleichung im Komplexen und betrachten dann den Real- und Imaginärteil der komplexen Lösung gemäß Superpositionsprinzip als die physikalisch sinnvollen Lösungen. Zur Lösung  wählen wir den Ansatz:
+Wir lösen diese Differenzialgleichung im Komplexen und betrachten dann den Realteil der komplexen Lösung gemäß Superpositionsprinzip als die physikalisch sinnvollen Lösungen. Zur Lösung  wählen wir den Ansatz:
 \begin{equation}
-U_Q = U_0 e^{(i\omega t)},	\qquad	I(t) = I_0 e^{i(\omega t-\phi)}
+U_Q = U_0 e^{(i\omega t)},	\qquad	I(t) = I_0 e^{i(\omega t-\varphi)}
 \end{equation}
-Daraus erhalten wir durch einsetzen:
+Die Wahl von U als komplexe Exponentialfunktion ist deshalb möglich, da der Realteil der komplexen Exponentialfunktion die Kosinus-Funktion ist.
+\begin{equation}
+Re\left[ U_0 e^{(i\omega t)}\right]  = U_0 \cos{(\omega t)}
+\end{equation}
+Durch einsetzen in den Ansatz erhalten wir:
 \begin{equation}
 i\omega U = (- L \omega^2 + i \omega R  + \frac{1}{C}) \cdot I(t)
 \end{equation}
@@ -86,15 +118,56 @@ Wir definieren analog zum klassischen ohmschen Widerstand den Komplexen Widersta
 \begin{equation}
 Z = \frac{U}{I} = R + i ( \omega L - \frac{1}{\omega C})
 \end{equation}
+Wir stellen diese komplexe Größe nun in Polardarstellung:
+\begin{equation}
+Z = |Z| \cdot e^{i\varphi}
+\end{equation}
+mit
+\begin{equation}\label{Zpolar}
+|Z| = \sqrt{ R^2 + \left( \omega L - \frac{1}{\omega C} \right) }\quad {\mathrm{und}} \quad \tan\varphi = \frac{Im[Z]}{Re[Z]} = \frac{\omega L - \frac{1}{\omega C}}{R}
+\end{equation}
+Kehren wir nun zur Betrachtung im Reellen zurück um $I_0$ zu bestimmen:
+\begin{align}
+\nonumber
+Re\left[ I \right]
+&= Re\left[ \frac{I}{Z} \right] =\\\nonumber
+&= Re\left[ \frac{U_0 e^{i\omega t}}{|Z|\cdot e^{i\varphi}} \right] =\\\nonumber
+&= \frac{U_0}{|Z|} Re\left[ e^{i(\omega t - \varphi)} \right] =\\
+&= \frac{U_0}{|Z|} \cos(\omega t - \varphi) = I_0 \cos(\omega t - \varphi)
+\end{align}
 
+Der Tangens der Phasenverschiebung also der Quotient aus Imaginärteil und Realteil des kompexen Widerstands, während die Amplitude der Stromkurve die Amplitude der Spannung durch den Betrag des kompexen Widerstands ist.
+Man erkennt in \ref{Zpolar} leicht das die Phasenverschiebung null ist, wenn der Imaginärteil null ist, was für 
+\begin{equation}
+\omega L = \frac{1}{\omega C}
+\end{equation}
+der Fall ist. Bei richtiger Wahl von Induktivitäten bzw. Kapazitäten kann man also die Blindleistung einer Kapazität bzw. Induktivität auslöschen.
 
 \subsection{Ohmscher Verlust}
 Fließt ein Strom $I$ mit der Spannung $U$ durch einen ohmschen Widerstand, so wird dabei die elektrische Leistung
 $P_V = U' \cdot I = R \cdot I^2$
 in Wärme umgesetzt -- wobei $U'$ die an dem Widerstand abfallende Spannung ist.
-Da die übertragene Leistung $P=U \cdot I \cdot \cos(\phi)$ ist, folgt für die Verlustleistung
-\[P_V = \left(\frac{P}{U \cdot \cos\phi}\right)^2\cdot R\]
+Da die übertragene Leistung $P=U \cdot I \cdot \cos(\varphi)$ ist, folgt für die Verlustleistung
+\[P_V = \left(\frac{P}{U \cdot \cos\varphi}\right)^2\cdot R\]
 Bei der Übertragung von Energie stellt das Kabel einen Widerstand dar und die Verlustleistung soll möglichst minimiert werden. Da der Widerstand nur bedingt verringert werden kann, erhöht man die Spannung und verringert somit den Stromfluss. Eine Leitung mit einer Spannung von 110\,kV hat einen Verlust von etwa 6\% je 100\,km, eine Leitung mit 800\,kV verliert auf der selben Distanz nur etwa 0.5\%.
+
+Andererseits sehen wir, dass der Ohmsche Verlust mit steigender Phasenverschiebung ins Unendliche steigt. Daher ist man bemüht diese möglichst gering zu halten. Wie wir gesehen haben ist dies durch Kompensation mit Spulen beziehungsweise Kondensatoren möglich.
+
+\subsection{Skin-Effekt}
+Der Widerstand einer Stromdurchflossen Leitung hängt neben der Länge und dem Material auch vom Querschnitt des Leiters ab. Dabei rechnet man in der Gleichstromtechnik mit
+\begin{equation}
+R = \rho \cdot l \cdot A
+\end{equation}
+Bei Wechselstrom kommt es jedoch zum sogenannten Skin-Effekt: der Stromfluss im Leiter wird nach außen verdrängt, es fließt also in den Äußeren Schichten wesentlich mehr Strom als in den inneren Schichten. Dieser Effekt ist um so stärker, je höher die Frequenz der Spannung ist. Bei den 50 Hz beziehungsweise 60 Hz die bei den Energienetzen üblich sind, ist der Effekt vergleichsweise schwach. Erst bei deutlich höheren Frequenzen wird der Effekt so stark, dass er der Stromfluss sich praktisch vollständig auf eine dünne Schicht (Haut) beschränkt -- woher der Effekt seinen Namen hat. 
+
+Die Stromdichte im Leiter nimmt nach außen hin gemäß
+\begin{equation}
+J = J_S e^{-\frac{d}{\rho}}
+\end{equation}
+ab, wobei $J_S$ die Stromdichte am Rand ist und die sogenannte äquivalenten Leitschichtdicke $\rho$ die Tiefe ist, in welcher die Stromdichte auf $1/e$ abgesunken ist. Für Kupfer beträgt der Wert von $\rho$ 9,38 mm (50 Hz), beziehungsweise 8,57 mm (60 Hz).
+
+\section{Koronaentladung}
+blabla…
 
 \section{Vor- und Nachteile der HGÜ gegenüber DHÜ}
 
