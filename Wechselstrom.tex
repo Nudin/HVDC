@@ -136,18 +136,7 @@ Bei der Übertragung von Energie stellt das Kabel einen Widerstand dar und die V
 
 Andererseits sehen wir, dass der Ohmsche Verlust mit steigender Phasenverschiebung ins Unendliche steigt. Daher ist man bemüht diese möglichst gering zu halten. Wie wir gesehen haben ist dies durch Kompensation mit Spulen beziehungsweise Kondensatoren möglich.
 
-\subsection{Skin-Effekt}
-Der Widerstand einer Stromdurchflossen Leitung hängt neben der Länge und dem Material auch vom Querschnitt des Leiters ab. Dabei rechnet man in der Gleichstromtechnik mit
-\begin{equation}
-R = \rho \cdot l \cdot A
-\end{equation}
-Bei Wechselstrom kommt es jedoch zum sogenannten Skin-Effekt: der Stromfluss im Leiter wird nach außen verdrängt, es fließt also in den Äußeren Schichten wesentlich mehr Strom als in den inneren Schichten. Dieser Effekt ist um so stärker, je höher die Frequenz der Spannung ist. Bei den 50 Hz beziehungsweise 60 Hz die bei den Energienetzen üblich sind, ist der Effekt vergleichsweise schwach. Erst bei deutlich höheren Frequenzen wird der Effekt so stark, dass er der Stromfluss sich praktisch vollständig auf eine dünne Schicht (Haut) beschränkt -- woher der Effekt seinen Namen hat. 
-
-Die Stromdichte im Leiter nimmt nach außen hin gemäß
-\begin{equation}
-J = J_S e^{-\frac{d}{\rho}}
-\end{equation}
-ab, wobei $J_S$ die Stromdichte am Rand ist und die sogenannte äquivalenten Leitschichtdicke $\rho$ die Tiefe ist, in welcher die Stromdichte auf $1/e$ abgesunken ist. Für Kupfer beträgt der Wert von $\rho$ 9,38 mm (50 Hz), beziehungsweise 8,57 mm (60 Hz).
+\input{Skineffekt}
 
 \subsection{Koronaentladung}
 blabla…
