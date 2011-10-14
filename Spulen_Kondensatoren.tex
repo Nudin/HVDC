@@ -1,0 +1,102 @@
+
+\subsection{Spulen und Kondensatoren im Wechselstromkreis}
+
+\subsubsection{Spulen in Wechselstromkreisen}
+Wir betrachten nun einen Wechselstromkreis mit vernachlässigbaren Widerständen, in welcher sich eine Spule befindet. Ein Stromfluss in der Spule führt zu einem Magnetfeld. Da der Stromfluss in der Spule jedoch ständig sein Vorzeichen ändert, wird abwechselnd ein Magnetfeld in die eine Richtung aufgebaut und nach dem Zusammenbrechen dieses dann ein Magnetfeld mit umgekehrter Ausrichtung Richtung aufgebaut.
+Die Summe aller Spannungen muss in einem Stromkreis immer Null sein:
+$ U_Q + U_{ind} = 0 $.
+Wobei $U_Q$ die von der Quelle angelegte Spannung ist und $U_ind$ die durch das Magnetfeld induzierte Spannung in der Spule ist. Letztere berechnet sich durch
+\begin{equation}
+U_{ind} = - L \cdot \frac{\mathrm dI(t)}{\mathrm dt}
+\end{equation}
+Daraus folgt durch einsetzen und integrieren
+\begin{align}
+%U_Q + U_{ind} =& 0 \nonumber \\
+%\Rightarrow\;
+U_0 \cos \omega t =& L \cdot \frac{\mathrm dI(t)}{\mathrm dt} \nonumber \\ 
+\Rightarrow\; I(t) =& \frac{U_0}{L} \int \cos \omega t \mathrm dt = \nonumber \\ 
+=& \frac{U_0}{\omega L} \sin \omega t = \nonumber\\
+=& I_0 \sin \omega t \qquad mit\qquad I_0 = \frac{U_0}{\omega L}  \nonumber\\
+=& I_0 \cos(\omega t - 90^\circ)
+\end{align}
+Der Strom hinkt der Spannung also um \unit{90}{\degree} hinterher und wir definieren analog zum ohmschen Widerstand den Betrag des induktiven Widerstand als den Quotient zwischen $U_0$ und $I_0$:
+\begin{equation}
+\left|Z_L\right| = \frac{U_0}{I_0} = \omega \cdot L
+\end{equation}
+Dies wird auch Induktanz $X_L = \left|Z_L\right| = \omega \cdot L$ genannt.
+
+\subsubsection{Kondensatoren im Wechselstromkreis}
+Analog zur Spule, können wir auch die Auswirkung eines Kondensators im stromkreis berechnen. %XXX "Analog"?
+Wir beginnen dabei mit der Gleichung
+\begin{equation}
+U = \frac{Q}{C}
+\end{equation}
+für den Kondensator und differenzieren diese nach der Zeit:
+\begin{equation}
+\frac{dU}{dt} = \frac{1}{C}\frac{dQ}{dt} = \frac{1}{C} \cdot I
+\end{equation}
+Da die angelegte Spannung $U_Q$ der Spannung am Kondensator entspricht, gilt:
+\begin{equation}
+U_0\cdot \omega \sin \omega t = \frac{1}{C} \cdot I
+\end{equation}
+und somit
+\begin{equation}
+I = U_0\cdot \omega C \cos\left( \omega t + 90^\circ\right)
+\end{equation}
+Während bei einer Spule also der Strom der Spannung um \unit{90}{\degree} hinterher hinkt, eilt er bei einem Stromkreis mit Kondensator um \unit{90}{\degree} voraus. Wir ahnen bereits, dass diese beiden Effekte sich gegenseitig aufheben können.
+Auch hier können wir analog zum ohmschen Widerstand den Betrag des kapazitiven Wiederstand definieren:
+\begin{equation}
+\left|Z_C\right| = \frac{U_0}{I_0} = \frac{1}{\omega C}
+\end{equation}
+Der Begriff Kapazitanz ist als $X_C = \left|Z_C\right| = -\frac{1}{\omega C}$ definiert.
+
+\subsubsection{Allgemeiner Fall}
+Betrachten wir nun einen Wechselstromkreis mit einer Induktivität, einer Kapazität und einem ohmschen Widerstand. Wieder gilt die 2. Kirchhoffsche Regel $\sum U = 0$:
+\begin{equation}
+U_Q = L \cdot \frac{\mathrm{d}I(t)}{\mathrm{d}t} + \frac{Q}{C} + I(t) \cdot R
+\end{equation}
+Wir differenzieren nach der Zeit um die Ladung los zu werden:
+\begin{equation}
+\frac{\mathrm dU_Q}{\mathrm dt} = L \cdot \frac{\mathrm{d^2}I(t)}{\mathrm{d}t^2} + \frac{I(t)}{C} + \frac{\mathrm dI(t)}{\mathrm dt} \cdot R
+\end{equation}
+Diese Differenzialgleichung können wir mit eines komplexem e-Ansatzes lösen:
+Wir lösen diese Differenzialgleichung im Komplexen und betrachten dann den Realteil der komplexen Lösung gemäß Superpositionsprinzip als die physikalisch sinnvollen Lösungen. Zur Lösung  wählen wir den Ansatz:
+\begin{equation}
+U_Q = U_0 e^{(i\omega t)},	\qquad	I(t) = I_0 e^{i(\omega t-\varphi)}
+\end{equation}
+Die Wahl von U als komplexe Exponentialfunktion ist deshalb möglich, da der Realteil der komplexen Exponentialfunktion die Kosinus-Funktion ist.
+\begin{equation}
+Re\left[ U_0 e^{(i\omega t)}\right]  = U_0 \cos{(\omega t)}
+\end{equation}
+Durch einsetzen in den Ansatz erhalten wir:
+\begin{equation}
+i\omega U = (- L \omega^2 + i \omega R  + \frac{1}{C}) \cdot I(t)
+\end{equation}
+Wir definieren analog zum klassischen ohmschen Widerstand den Komplexen Widerstand als Quotient von Spannung und Strom:
+\begin{equation}
+Z = \frac{U}{I} = R + i ( \omega L - \frac{1}{\omega C})
+\end{equation}
+Wir stellen diese komplexe Größe nun in Polardarstellung:
+\begin{equation}
+Z = |Z| \cdot e^{i\varphi}
+\end{equation}
+mit
+\begin{equation}\label{Zpolar}
+|Z| = \sqrt{ R^2 + \left( \omega L - \frac{1}{\omega C} \right) }\quad {\mathrm{und}} \quad \tan\varphi = \frac{Im[Z]}{Re[Z]} = \frac{\omega L - \frac{1}{\omega C}}{R}
+\end{equation}
+Kehren wir nun zur Betrachtung im Reellen zurück um $I_0$ zu bestimmen:
+\begin{align}
+\nonumber
+Re\left[ I \right]
+&= Re\left[ \frac{I}{Z} \right] =\\\nonumber
+&= Re\left[ \frac{U_0 e^{i\omega t}}{|Z|\cdot e^{i\varphi}} \right] =\\\nonumber
+&= \frac{U_0}{|Z|} Re\left[ e^{i(\omega t - \varphi)} \right] =\\
+&= \frac{U_0}{|Z|} \cos(\omega t - \varphi) = I_0 \cos(\omega t - \varphi)
+\end{align}
+
+Der Tangens der Phasenverschiebung also der Quotient aus Imaginärteil und Realteil des kompexen Widerstands, während die Amplitude der Stromkurve die Amplitude der Spannung durch den Betrag des kompexen Widerstands ist.
+Man erkennt in \ref{Zpolar} leicht das die Phasenverschiebung null ist, wenn der Imaginärteil null ist, was für 
+\begin{equation}
+\omega L = \frac{1}{\omega C}
+\end{equation}
+der Fall ist. Bei richtiger Wahl von Induktivitäten bzw. Kapazitäten kann man also die Blindleistung einer Kapazität bzw. Induktivität auslöschen.

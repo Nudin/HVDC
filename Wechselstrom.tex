@@ -14,7 +14,7 @@ Die elektrische Leistung $P$ die an dem Widerstand geleistet wird, wird analog z
 P(t) = U(t) \cdot I(t) \stackrel{\mathrm{\varphi=0}}= U_0 I_0 \cdot \cos^2(\omega t)
 \end{equation}
 Berechnen wir nun den Zeitlichen Mittelwert der Leistung
-\begin{equation}
+\begin{equation}\label{Wirkleistung_ohne_phi}
 \bar{P}=\frac1T \int\limits_0^T dt\: U_0 I_0 \cos^2 \omega t = \frac12 U_0 I_0 \qquad\mathrm{mit}\; T=2\pi/\omega
 \end{equation}
 Vergleicht man dies mit der Leistung eines Gleichstroms $P=U\cdot I$, so sieht man, dass eine Gleichspannung mit $U=U_0 / \sqrt2$ und der daraus folgend Strom $I=I_0 / \sqrt2$ dieselbe Leistung erbringt.
@@ -24,107 +24,67 @@ U_{eff} = \frac{U_0}{\sqrt2} \qquad I_{eff} = \frac{I_0}{\sqrt2} \qquad \bar{P}=
 \end{equation*}
 Im folgenden werden wir mit $U$ beziehungsweise $I$ die Effektivwerte, mit $U(t)$ beziehungsweise $I(t)$ die Momentanwerte und mit $U_0$ beziehungsweise $I_0$ die Amplituden bezeichnen.
 
-\subsection{Spulen und Kondensatoren im Wechselstromkreis}
 
-\subsubsection{Spulen in Wechselstromkreisen}
-Wir betrachten nun einen Wechselstromkreis mit vernachlässigbaren Widerständen, in welcher sich eine Spule befindet. Ein Stromfluss in der Spule führt zu einem Magnetfeld. Da der Stromfluss in der Spule jedoch ständig sein Vorzeichen ändert, wird abwechselnd ein Magnetfeld in die eine Richtung aufgebaut und nach dem Zusammenbrechen dieses dann ein Magnetfeld mit umgekehrter Ausrichtung Richtung aufgebaut.
-Die Summe aller Spannungen muss in einem Stromkreis immer Null sein:
-$ U_Q + U_{ind} = 0 $.
-Wobei $U_Q$ die von der Quelle angelegte Spannung ist und $U_ind$ die durch das Magnetfeld induzierte Spannung in der Spule ist. Letztere berechnet sich durch
-\begin{equation}
-U_{ind} = - L \cdot \frac{\mathrm dI(t)}{\mathrm dt}
-\end{equation}
-Daraus folgt durch einsetzen und integrieren
-\begin{align}
-%U_Q + U_{ind} =& 0 \nonumber \\
-%\Rightarrow\;
-U_0 \cos \omega t =& L \cdot \frac{\mathrm dI(t)}{\mathrm dt} \nonumber \\ 
-\Rightarrow\; I(t) =& \frac{U_0}{L} \int \cos \omega t \mathrm dt = \nonumber \\ 
-=& \frac{U_0}{\omega L} \sin \omega t = \nonumber\\
-=& I_0 \sin \omega t \qquad mit\qquad I_0 = \frac{U_0}{\omega L}  \nonumber\\
-=& I_0 \cos(\omega t - 90^\circ)
-\end{align}
-Der Strom hinkt der Spannung also um \unit{90}{\degree} hinterher und wir definieren analog zum ohmschen Widerstand den Betrag des induktiven Widerstand als den Quotient zwischen $U_0$ und $I_0$:
-\begin{equation}
-\left|Z_L\right| = \frac{U_0}{I_0} = \omega \cdot L
-\end{equation}
-Dies wird auch Induktanz $X_L = \left|Z_L\right| = \omega \cdot L$ genannt.
+%%% INCLUDE-FILE: Spulen_Kondensatoren.tex %%%
+\input{Spulen_Kondensatoren}
 
-\subsubsection{Kondensatoren im Wechselstromkreis}
-Analog zur Spule, können wir auch die Auswirkung eines Kondensators im stromkreis berechnen. %XXX "Analog"?
-Wir beginnen dabei mit der Gleichung
-\begin{equation}
-U = \frac{Q}{C}
-\end{equation}
-für den Kondensator und differenzieren diese nach der Zeit:
-\begin{equation}
-\frac{dU}{dt} = \frac{1}{C}\frac{dQ}{dt} = \frac{1}{C} \cdot I
-\end{equation}
-Da die angelegte Spannung $U_Q$ der Spannung am Kondensator entspricht, gilt:
-\begin{equation}
-U_0\cdot \omega \sin \omega t = \frac{1}{C} \cdot I
-\end{equation}
-und somit
-\begin{equation}
-I = U_0\cdot \omega C \cos\left( \omega t + 90^\circ\right)
-\end{equation}
-Während bei einer Spule also der Strom der Spannung um \unit{90}{\degree} hinterher hinkt, eilt er bei einem Stromkreis mit Kondensator um \unit{90}{\degree} voraus. Wir ahnen bereits, dass diese beiden Effekte sich gegenseitig aufheben können.
-Auch hier können wir analog zum ohmschen Widerstand den Betrag des kapazitiven Wiederstand definieren:
-\begin{equation}
-\left|Z_C\right| = \frac{U_0}{I_0} = \frac{1}{\omega C}
-\end{equation}
-Der Begriff Kapazitanz ist als $X_C = \left|Z_C\right| = -\frac{1}{\omega C}$ definiert.
 
-\subsubsection{Allgemeiner Fall}
-Betrachten wir nun einen Wechselstromkreis mit einer Induktivität, einer Kapazität und einem ohmschen Widerstand. Wieder gilt die 2. Kirchhoffsche Regel $\sum U = 0$:
-\begin{equation}
-U_Q = L \cdot \frac{\mathrm{d}I(t)}{\mathrm{d}t} + \frac{Q}{C} + I(t) \cdot R
-\end{equation}
-Wir differenzieren nach der Zeit um die Ladung los zu werden:
-\begin{equation}
-\frac{\mathrm dU_Q}{\mathrm dt} = L \cdot \frac{\mathrm{d^2}I(t)}{\mathrm{d}t^2} + \frac{I(t)}{C} + \frac{\mathrm dI(t)}{\mathrm dt} \cdot R
-\end{equation}
-Diese Differenzialgleichung können wir mit eines komplexem e-Ansatzes lösen:
-Wir lösen diese Differenzialgleichung im Komplexen und betrachten dann den Realteil der komplexen Lösung gemäß Superpositionsprinzip als die physikalisch sinnvollen Lösungen. Zur Lösung  wählen wir den Ansatz:
-\begin{equation}
-U_Q = U_0 e^{(i\omega t)},	\qquad	I(t) = I_0 e^{i(\omega t-\varphi)}
-\end{equation}
-Die Wahl von U als komplexe Exponentialfunktion ist deshalb möglich, da der Realteil der komplexen Exponentialfunktion die Kosinus-Funktion ist.
-\begin{equation}
-Re\left[ U_0 e^{(i\omega t)}\right]  = U_0 \cos{(\omega t)}
-\end{equation}
-Durch einsetzen in den Ansatz erhalten wir:
-\begin{equation}
-i\omega U = (- L \omega^2 + i \omega R  + \frac{1}{C}) \cdot I(t)
-\end{equation}
-Wir definieren analog zum klassischen ohmschen Widerstand den Komplexen Widerstand als Quotient von Spannung und Strom:
-\begin{equation}
-Z = \frac{U}{I} = R + i ( \omega L - \frac{1}{\omega C})
-\end{equation}
-Wir stellen diese komplexe Größe nun in Polardarstellung:
-\begin{equation}
-Z = |Z| \cdot e^{i\varphi}
-\end{equation}
-mit
-\begin{equation}\label{Zpolar}
-|Z| = \sqrt{ R^2 + \left( \omega L - \frac{1}{\omega C} \right) }\quad {\mathrm{und}} \quad \tan\varphi = \frac{Im[Z]}{Re[Z]} = \frac{\omega L - \frac{1}{\omega C}}{R}
-\end{equation}
-Kehren wir nun zur Betrachtung im Reellen zurück um $I_0$ zu bestimmen:
-\begin{align}
-\nonumber
-Re\left[ I \right]
-&= Re\left[ \frac{I}{Z} \right] =\\\nonumber
-&= Re\left[ \frac{U_0 e^{i\omega t}}{|Z|\cdot e^{i\varphi}} \right] =\\\nonumber
-&= \frac{U_0}{|Z|} Re\left[ e^{i(\omega t - \varphi)} \right] =\\
-&= \frac{U_0}{|Z|} \cos(\omega t - \varphi) = I_0 \cos(\omega t - \varphi)
-\end{align}
+\subsection{Wirk-, Schein- und Blindleistung und der Leistungsfaktor}
+Die Größen Spannung, Leistung und die Phasenverschiebung beschreiben das System vollständig, die Arbeit mit diesen Größen ist jedoch oft kompliziert und aufwändig. Daher zieht man häufig die Beschreibung mit den Größen Wirk-, Schein- und Blindleistung vor, weshalb wir diese hier definieren und näher betrachten wollen.
 
-Der Tangens der Phasenverschiebung also der Quotient aus Imaginärteil und Realteil des kompexen Widerstands, während die Amplitude der Stromkurve die Amplitude der Spannung durch den Betrag des kompexen Widerstands ist.
-Man erkennt in \ref{Zpolar} leicht das die Phasenverschiebung null ist, wenn der Imaginärteil null ist, was für 
+Die Wirkleistung ist diejenige Leitung welche real genutzt werden kann, sie wird manchmal auch als aktive Leistung oder Nutzleistung bezeichnet. Sie ist das arithmetische Mittel über die Augenblicksleistung:
 \begin{equation}
-\omega L = \frac{1}{\omega C}
+P = \overline{p} = \overline{(t) \cdot I(t)}
 \end{equation}
-der Fall ist. Bei richtiger Wahl von Induktivitäten bzw. Kapazitäten kann man also die Blindleistung einer Kapazität bzw. Induktivität auslöschen.
+Für kosinusförmige Spannungs- und Stromverläufe wird daraus:
+\begin{equation}
+P = U_0 I_0 \cdot \frac{1}{2\pi} \int\limits_0^{2\pi} \cos\left( \omega t\right) \cos \left(\omega t - \varphi\right)
+= \frac{1}{2} U_0 I_0 \cos \varphi
+\end{equation}
+Dies entspricht natürlich dem unter \ref{Wirkleistung_ohne_phi} berechneten, jedoch nun mit Phasenverschiebung. Mit den Effektivwerten wird daraus also:
+\begin{equation}
+P =  U_{eff} I_{eff} \cdot \cos \varphi
+\end{equation}
+Die Wirkleistung wird in Watt (1 W = 1 V$\cdot$A) gemessen.
+
+Die Scheinleistung, ist hingegen das Produkt aus Spannung und Strom ohne Phasenfaktor. Die Verluste und die Beanspruchung der Komponenten verhält sich als würde eine scheinbare Wirkleistung dieser Größe übertragen werden. Sie stellt die bei einer gewissen Beanspruchung der Leitungskomponenten, die maximal übertragbare Wirkleistung dar. Sie ist deshalb immer größer oder gleich der Wirkleistung, wobei die Gleichheit für die Fall eintritt das die Phasenverschiebung null ist.
+\begin{equation}
+S = U_{eff} I_{eff} \geq P
+\end{equation}
+Die Scheinleistung ist zwar das Produkt aus Spannung (gemessen in Volt) und Strom (gemessen in Ampere), sie ist jedoch keine Leistung im physikalischen Sinn, deshalb wird sie nicht in Watt, sondern in Voltampere (VA) gemessen wird.
+
+Als nächstes wollen wir den Leistungsfaktor einführen, er ist das Verhältnis von Wirk- und Scheinleistung:
+\begin{equation}
+\lambda = \frac{P}{S} \in [0,1]
+\end{equation}
+In unserem Fall betrachten wir kosinusförmige Spannungen und erhalten somit:
+\begin{equation}
+\lambda = \cos \varphi
+\end{equation}
+Wie im folgenden leicht zu erkennen, beeinflusst der Leistungsfaktor den Wirkungsgrad der Komponenten:
+\begin{equation}
+\eta = \frac{P}{P+P_V} = \frac{\frac{P}{S}}{\frac{P}{S}+\frac{P_V}{S}} = \frac{\lambda}{\lambda + p_V}
+\end{equation}
+Sinkt also der Leistungsfaktor, so reduziert sich dadurch auch der Wirkungsgrad einer Komponente. Sofern nicht anders angegeben, bezieht sich der angegebene Wirkungsgrad einer Komponente immer auf einen Leistungsfaktor von 1, also der Situation, dass Strom und Spannung phasengleich verlaufen. Hat man einen Phasenfaktor ungleich null (oder vielfache von $2\pi$), so ist der Wirkungsgrad teils bedeutend geringer. Für einen Phasenfaktor von Null wird das System zwar von der Scheinleistung S beansprucht und es entstehen Verluste, es findet aber keinerlei Energieübertragung statt und der Wirkungsgrad ist null.
+Der Leistungsfaktor kann auch als die Wurzel des Verhältnissen von minimal notwendigen zu tatsächlichen Verlusten ausgedrückt werden:
+\begin{equation}
+\lambda = \sqrt{\frac{P_{V\:min}}{P_V}}	% Herleitung?
+\end{equation}
+ein Leistungsfaktor von 0.8 wurde also beispielsweise bedeuten, dass die Verluste 56\% größer sind als nötig.
+
+Als dritte Leistungs-Größe wollen wir noch die Blindleistung einführen. Diese Größe steht auf der Wirkleistung im Zeigediagramm orthogonal. %Zeugerdiagramme hab ich noch nicht
+Sie lässt sich mit Pythagoras berechnen:
+\begin{equation}
+Q = \sqrt{S^2-P^2} = S \sqrt{1-\lambda^2} = P \frac{\sqrt{1-\lambda^2}}{\lambda}
+\end{equation}
+Für kosinusförmige Ströme wird sie zu:
+\begin{equation}
+Q = S \sqrt{1-\cos^2 \varphi} = S sin \varphi = U_{eff} I_{eff} sin \varphi
+\end{equation}
+Die Blindleistung trägt nicht zu Energieübertragung bei, sonder belastet nur die Komponenten. Sie ist ebenfalls keine Physikalische Leistung, man misst Sie in Voltampere reaktiv (Var oder älter VAr\footnote{Var wird als Wort ausgesprochen.}).
+Die Blindleistung kann positiv oder negativ sein, per Konvention nimmt man sie als positiv an der Last an, wenn die Last induktiv ist. Dies ist vorteilhaft, das die meisten Lasten induktiv sind und man sie somit als Verbraucher von Wirk- und Blindleistung ansehen kann. Kondensatoren kann man als Quellen von Blindleistung ansehen.\cite{Harrison}
+
+Zum Abschluss wollen wir noch die komplexe Leistung, auch Leistungsvektor genannt einzuführen: $P+i Q$.
 
 \subsection{Ohmscher Verlust}
 Fließt ein Strom $I$ mit der Spannung $U$ durch einen ohmschen Widerstand, so wird dabei die elektrische Leistung
@@ -136,7 +96,10 @@ Bei der Übertragung von Energie stellt das Kabel einen Widerstand dar und die V
 
 Andererseits sehen wir, dass der Ohmsche Verlust mit steigender Phasenverschiebung ins Unendliche steigt. Daher ist man bemüht diese möglichst gering zu halten. Wie wir gesehen haben ist dies durch Kompensation mit Spulen beziehungsweise Kondensatoren möglich.
 
+
+%%% INCLUDE-FILE: Skineffekt.tex %%%
 \input{Skineffekt}
 
+% wo anders hin verschieben, da auch bei Gleichspannung!?
 \subsection{Koronaentladung}
-blabla…
+Liegt an einem vergleichsweise dünnem Kabel eine hohe Spannung an, so herrschen in seiner unmittelbaren Nähe sehr hohe elektrische Felder. Sind diese Feldstärken größenordnungsmäßig vergleichbar groß wie die Durchschlagfestigkeit von Luft, so wird die Luft ionisiert, was zu Verlusten führt. Bei Wechselspannung ist dieses Problem besonders groß, da die Scheitelspannung $U_0$ um den Faktor $sqrt{2}$ größer als die Effektivpannung ist, es kommt also im Moment wenn der Scheitelwert erreicht wird auch bei geringeren Effektivspannungen bereits zur Koronaentladung. Dies betrifft insbesondere die 400-kV-Schiene (Scheitelspannung von 566 kV) und macht Übertragungen von mehr als 500 kV per Freileitung fast unmöglich.
