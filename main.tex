@@ -29,6 +29,8 @@
 \newcommand{\qe}{\grqq }
 \newcommand{\rot}{\mathrm{rot\:}}
 
+\usepackage{rotating}
+
 
 \author{Michael F. Schönitzer}
 \title{HGÜ}
@@ -38,23 +40,58 @@
 \section{Geschichtliches}
 
 \section{Gleichstrom}
-Die Energieübertragung mittels Gleichstrom ist im Gunde relativ einfach und bereits aus der Schule bekannt, wir wollen sie daher hier nur kurz zusammenfassen.
-
-…
+Die Energieübertragung mittels Gleichstrom ist im Grunde relativ einfach und bereits aus der Schule bekannt, wir wollen sie daher hier nur kurz zusammenfassen.
+Eine Gleichspannungsquelle liefert einen zeitlich konstanten Potentialunterschied, elektrische Spannung $U$ genannt. Legt man an diese einen ohmschen Widerstand $R$ an, so fließt durch ihn eine zeitlich konstanter Strom
 \begin{equation}
-R = \frac{U}{I}
+I = \frac{U}{R}
 \end{equation}
-…
+Und leistet an ihm die Leistung
 \begin{equation}
 P = U \cdot I
 \end{equation}
-…
+
 
 \input{Wechselstrom}
 
+\section{Drehstrom}
+Beim Dreiphasen-Wechselstrom, auch Drehstrom genannt, hat man drei stromführende Leitungen, an welchen je eine Kosinusförmige Spannung mit gleiche Frequenz, aber jeweils 120\degree Phasenverschiebung anliegt.
+Die notwendigkeit eines zusätzlichen Nullleiters entfällt, das die drei Spannungen addiert sich aufheben.
+Die Spannung zwischen einer beliebigen Leitung und einen Nullleiter wird als Sternspannung bezeichnet,
+die Spannung zwischen zwei beliebigen Spannungen als verkettete Spannung. Es gilt:
+\begin{equation}
+U_{\mathrm{eff},\:\mathrm{verkettet}} = \sqrt{3} \cdot U_{\mathrm{eff},\:\mathrm{Stern}}
+\end{equation}
+Die Effekte und Aussagen aus Kapitel \ref{wechsel} gelten ansonsten analog auch für Drehstrom, weshalb wir sie nicht wiederholen wollten.
+
+Während Privathaushalte nahezu ausnahmslos einphasigen Strom verwenden, verwendet man in der Industrie und vor allem in der Stromerzeugung und beim Stromtransport nahezu ausschließlich Dreiphasen-Wechselstrom. Dies bringt mehrere Vorteile\cite{Harrison}:
+\begin{itemize}
+\item Die durch Drehstrom übertragene Leistung ist zeitlich konstant, wodurch insbesondere Motoren ein zeitlich konstantes Drehmoment haben und somit ruhiger laufen.
+\item Bei gegebener Größe hat eine dreiphasige Maschine eine höhere Leistung.
+\item Bei gleichem Aufwand kann eine dreiphasiges Stromnetz mehr Leistung übertragen.
+\end{itemize}
+
+\section{Leitungen}
+Bisher haben wir die Grundlagen der Gleich- beziehungsweise Wechselstromtechnik im allgemeinen kennen gelernt.
+Insbesondere bei der Betrachtung von Blindleistungen geht man dabei meist davon aus,
+dass ein Verbraucher durch den Einsatz von Spulen oder Kondensatoren Blindleistung erzeugt.
+Wir interessieren uns jedoch für die Energienetze und hier kommt ein wichtiger Punkt hinzu:
+Auch die Leitungen selbst haben einen Widerstand, eine Kapazität, eine Induktivität, sowie die noch einzuführende Ableitung.
+Diese bezeichnet man auf die Länge bezogen als Widerstand-, Kapazitäts-, Induktivitäts- und Ableitungsbeläge und fasst sie unter dem Begriff der Leitungsbeläge zusammen.
+
+Zunächst sei noch die Ableitung eingeführt: Die Ableitungsbeläge beschreiben die Verluste durch unvollständige Isolation des Kabels. Die Ableitung wird in Siemens\footnote{Eine alternative, ältere Bezeichnung für das Siemens ist das Mho (Ohm Rückwerts gelesen) $\mho$ } gemessen, was den Kehrwert der Einheit Ohm darstellt:
+\begin{equation}
+\mathrm{[S]} = \frac{1}{\Omega} = \frac{A}{V}
+\end{equation}
+Die Ableitungsbeläge folglich in Siemens pro Meter.
+Die Ableitung ist dank moderner Isolationstechnik deutlich geringer als die Ohmschen Verluste.
+
+Bei der Betrachtung der Leitungsbeläge muss man zwischen drei unterschiedlichen Leitungstypen unterscheiden: Freileitungen, Erdkabel und Unterseekabel %  Begriff richtig?
+
+
 \section{Vor- und Nachteile der HGÜ gegenüber DHÜ}
+
+
 \bibliography{lit}{}
 \bibliographystyle{plain}
-
 
 \end{document}

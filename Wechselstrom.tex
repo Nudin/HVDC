@@ -1,12 +1,10 @@
 
-\section{Wechselstrom}
-Die Energieübertragung geschieht im Normalfall in Form von Wechselstrom, beziehungsweise Drehstrom. % Gründe;am besten schon in die Einleitung
-Bei ersterem hat man einen Nullleiter und einen Leiter auf der eine sinusförmige Wechselspannung mit der Amplitude $U_0$ anliegt:
+\section{Einphasen-Wechselstrom}\label{wechsel}
+Beim Einphasen-Wechselstrom hat man einen Nullleiter und einen Leiter auf der eine sinusförmige Wechselspannung mit der Amplitude $U_0$ anliegt:
 \begin{equation}
 U(t)=U_0 \cdot \cos(\omega t + \varphi)
 \end{equation}
 Dieser Leiter wird in der Elektrotechnik oft umgangssprachlich als Phase bezeichnet, wir wollen davon hier jedoch nicht Gebrauch machen, da wir physikalisch korrekter den Faktor $\varphi$ als Phasenverschiebung oder kurz Phase bezeichnen werden.
-Bei letzterer hat man drei Leiter an denen je eine um $\frac23\pi$ phasenverschobene Wechselspannung anliegt. Dazu später mehr. % oder hier?
 
 Legt man obige Spannung an einem ohmschen Widerstand R an, so fließt durch ihn der Strom $I(t)= \frac{U(t)}{R} = I_0 \cdot \cos(\omega t + \varphi)$ mit $I_0 = U_0/R$.
 Die elektrische Leistung $P$ die an dem Widerstand geleistet wird, wird analog zur Gleichspannungstechnik als Produkt Produkt aus Spannung und Strom definiert, dabei beziehen sich jedoch alle drei Größen auf die momentanen Werte:
@@ -20,7 +18,7 @@ Berechnen wir nun den Zeitlichen Mittelwert der Leistung
 Vergleicht man dies mit der Leistung eines Gleichstroms $P=U\cdot I$, so sieht man, dass eine Gleichspannung mit $U=U_0 / \sqrt2$ und der daraus folgend Strom $I=I_0 / \sqrt2$ dieselbe Leistung erbringt.
 Deshalb definiert man die Effektivspannung und den Effektivstrom eines Wechselstroms als:
 \begin{equation*}
-U_{eff} = \frac{U_0}{\sqrt2} \qquad I_{eff} = \frac{I_0}{\sqrt2} \qquad \bar{P}=U_{eff}I_{eff}
+U_{\mathrm{eff}} = \frac{U_0}{\sqrt2} \qquad I_{\mathrm{eff}} = \frac{I_0}{\sqrt2} \qquad \bar{P}=U_{\mathrm{eff}}I_{\mathrm{eff}}
 \end{equation*}
 Im folgenden werden wir mit $U$ beziehungsweise $I$ die Effektivwerte, mit $U(t)$ beziehungsweise $I(t)$ die Momentanwerte und mit $U_0$ beziehungsweise $I_0$ die Amplituden bezeichnen.
 
@@ -43,13 +41,13 @@ P = U_0 I_0 \cdot \frac{1}{2\pi} \int\limits_0^{2\pi} \cos\left( \omega t\right)
 \end{equation}
 Dies entspricht natürlich dem unter \ref{Wirkleistung_ohne_phi} berechneten, jedoch nun mit Phasenverschiebung. Mit den Effektivwerten wird daraus also:
 \begin{equation}
-P =  U_{eff} I_{eff} \cdot \cos \varphi
+P =  U_{\mathrm{eff}} I_{\mathrm{eff}} \cdot \cos \varphi
 \end{equation}
 Die Wirkleistung wird in Watt (1 W = 1 V$\cdot$A) gemessen.
 
 Die Scheinleistung, ist hingegen das Produkt aus Spannung und Strom ohne Phasenfaktor. Die Verluste und die Beanspruchung der Komponenten verhält sich als würde eine scheinbare Wirkleistung dieser Größe übertragen werden. Sie stellt die bei einer gewissen Beanspruchung der Leitungskomponenten, die maximal übertragbare Wirkleistung dar. Sie ist deshalb immer größer oder gleich der Wirkleistung, wobei die Gleichheit für die Fall eintritt das die Phasenverschiebung null ist.
 \begin{equation}
-S = U_{eff} I_{eff} \geq P
+S = U_{\mathrm{eff}} I_{\mathrm{eff}} \geq P
 \end{equation}
 Die Scheinleistung ist zwar das Produkt aus Spannung (gemessen in Volt) und Strom (gemessen in Ampere), sie ist jedoch keine Leistung im physikalischen Sinn, deshalb wird sie nicht in Watt, sondern in Voltampere (VA) gemessen wird.
 
@@ -79,7 +77,7 @@ Q = \sqrt{S^2-P^2} = S \sqrt{1-\lambda^2} = P \frac{\sqrt{1-\lambda^2}}{\lambda}
 \end{equation}
 Für kosinusförmige Ströme wird sie zu:
 \begin{equation}
-Q = S \sqrt{1-\cos^2 \varphi} = S sin \varphi = U_{eff} I_{eff} sin \varphi
+Q = S \sqrt{1-\cos^2 \varphi} = S sin \varphi = U_{\mathrm{eff}} I_{\mathrm{eff}} sin \varphi
 \end{equation}
 Die Blindleistung trägt nicht zu Energieübertragung bei, sonder belastet nur die Komponenten. Sie ist ebenfalls keine Physikalische Leistung, man misst Sie in Voltampere reaktiv (Var oder älter VAr\footnote{Var wird als Wort ausgesprochen.}).
 Die Blindleistung kann positiv oder negativ sein, per Konvention nimmt man sie als positiv an der Last an, wenn die Last induktiv ist. Dies ist vorteilhaft, das die meisten Lasten induktiv sind und man sie somit als Verbraucher von Wirk- und Blindleistung ansehen kann. Kondensatoren kann man als Quellen von Blindleistung ansehen.\cite{Harrison}
