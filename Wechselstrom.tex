@@ -84,6 +84,7 @@ Die Blindleistung kann positiv oder negativ sein, per Konvention nimmt man sie a
 
 Zum Abschluss wollen wir noch die komplexe Leistung, auch Leistungsvektor genannt einzuführen: $P+i Q$.
 
+% wo anders hin verschieben, da auch bei Gleichspannung!?
 \subsection{Ohmscher Verlust}
 Fließt ein Strom $I$ mit der Spannung $U$ durch einen ohmschen Widerstand, so wird dabei die elektrische Leistung
 $P_V = U' \cdot I = R \cdot I^2$
@@ -94,6 +95,10 @@ Bei der Übertragung von Energie stellt das Kabel einen Widerstand dar und die V
 
 Andererseits sehen wir, dass der Ohmsche Verlust mit steigender Phasenverschiebung ins Unendliche steigt. Daher ist man bemüht diese möglichst gering zu halten. Wie wir gesehen haben ist dies durch Kompensation mit Spulen beziehungsweise Kondensatoren möglich.
 
+Der Gleichstromwiederstand eines Materials hängt auch von der Temperatur $\vartheta$ des Leiters ab, Mann rechnet deshalb meist mit dem Widerstand $R_{20}$ bei einer Temperatur von $20^\circ C$ und einem Temperaturbeiwert $\alpha_{20}$:
+\begin{equation}
+R_\vartheta = R_{20} \cdot \left[ 1 + \alpha_{20} \cdot \left( \vartheta - 20^\circ C \right) \right]
+\end{equation}
 
 %%% INCLUDE-FILE: Skineffekt.tex %%%
 \input{Skineffekt}
