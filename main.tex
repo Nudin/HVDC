@@ -27,6 +27,8 @@
     filecolor=black,
     urlcolor=blue
 }
+\setcounter{secnumdepth}{4}
+
 \newcommand{\degree}{$^\circ$}
 \newcommand{\q}{\glqq }
 \newcommand{\qe}{\grqq }
@@ -113,10 +115,7 @@ In Abbildung \ref{fehlt} ist ein Ersatzschaltbild für eine Einphasige Leitung m
 Typische Werte für den Widerstand, die Induktivität und Kapazität findet man in Tabelle \ref{fehlt}. Der Wert für die Ableitungsbelag hängt stark von äußeren Faktoren, wie den Umgebungsbedingungen und dem Verschmutzungsgrad der Isolatoren ab. Ein typische Wert ist $200\,M\Omega m^{-1}$.\cite{Harrison} Die Ableitungsverluste sind also meist deutlich geringer als die seriellen ohmschen Verluste, weshalb man sie in den meisten Betrachtungen ignorieren kann. Wie wir sehen ist eine Freileitung weitgehend induktiv.
 
 %%% Induktivität %%%
-% Herleitung für folgendes? (Flosdorff, 32-34)
-\bigskip
-
-\noindent\textbf{Induktivitätsbelag}\: 
+\paragraph{Induktivitätsbelag}
 Fließen Wechselströme durch mehrere nebeneinander liegende Leiter so wird durch Selbstinduktion und Gegeninduktion eine Wechselspannung induziert.
 %bla, von wegen kan als selbstinduktion gesehen werden
 Die Induktivität eines Leiters $v$ hängt wie folgt mit dm magnetischem Fluss an dessen Position zusammen:
@@ -130,13 +129,13 @@ ist $N_v = 1$, somit müssen wir um die Induktivität zu berechnen den magnetisc
 \end{equation}
 %Da Feldlinien stets von einer Quelle ausgehen und in einer Senke enden, benötigen wir noch eine äußere Feldbegrenzung. %realy?
 Zur Berechnung der Flüsse führen wir einen Zylinder mit sehr großem, aber endlichem Radius $r_a$ und den Leiter $v$ als Mittelpunkt als Feldbegrenzung ein. Die Rechtfertigung dafür werden wir später sehen.
-Der Fluss den Der Leiter selbst erzeugt ist nach \ref{42}
+Der Fluss den der Leiter selbst erzeugt ist nach \ref{42}
 \begin{equation}
 \Phi_{vv} = \frac{\mu_0l}{2\pi} \left( \ln\frac{r_a}{r_v} + 0,25 \right) i_v
 \end{equation}
 Der Fluss im Leiter $v$ der von einem Leiter $k$ erzeugt wird ist das Integral des Magnetfelds über die Fläche zwischen Leiter und Begrenzungszylinder:
 \begin{equation}
-\Phi_{vk} = \int_A B_k dA = \int_{x=d_{vk}}^{x=r_a} \frac{\mu_0i_k l}{2\pi x}dx =
+\Phi_{vk} = \int_A B_k dA = \int\limits_{x=d_{vk}}^{x=r_a} \frac{\mu_0i_k l}{2\pi x}dx =
 \frac{\mu_0l}{2\pi}\ln\left(\frac{r_a}{d_{vk}}\right) i_k
 \end{equation}
 Setzt man dies in Gleichung \ref{SummePhi} ein, so erhält man:
@@ -161,30 +160,47 @@ mit den Koeffizienten:
 \begin{equation}
 a_vv = \frac{\mu_0}{2\pi} \left( \ln\frac{1}{r_v} + 0,25 \right) \qquad und \qquad a_{vk} = a_{kv} = \frac{\mu_0}{2\pi} \ln\frac{1}{d_{ik}}
 \end{equation}
-
-\bigskip
-
-\noindent\textbf{Induktivitätsbelag – alt}\: Die Induktivität lässt sich für eine einphasige Leitung wie folgt berechnen:
+Betrachten wir zunächst ein \textbf{Zweileitersystem}. Das obige Gleichungssystem reduziert sich auf:
+\begin{align}
+\Phi'_1 &= a_{11}i_1 + a_{12}i_2 \\
+\Phi'_2 &= a_{21}i_i + a_{22}i_2
+\end{align}
+Dabei ist $i_2 = -i_1$ und $d_{12} = d_{21} = d$. Die Induktivität errechnet sich nun einfach zu:
 \begin{equation}
-L = \frac{\mu}{\pi} \cdot \left[ \frac{1}{4} + \ln\left(\frac{d}{rs}\right) \right]
+L'_1 = a_{11} - a{12} = \frac{\mu_0}{2\pi}\left(\ln\frac{1}{r_1}+025\right)-\frac{\mu_0}{2\pi}\ln\frac{1}{d} = 
+\frac{\mu_0}{2\pi}\left(\ln\frac{d}{r_1}+025\right)
 \end{equation}
-Dabei ist $r$ der Radius des Leiters und $d$ der Abstand der Leiters zur nächsten Erdpotential - also gewöhnlich das Leiterseil des Nullleiters. Für Luft wird daraus:
+und gleichfalls für Leiter 2. In der Regel sind die beiden Leiterradien gleich, wodurch beide Leiter die selbe Induktivität haben – was aus Symmetriegründen selbst verständlich war. Will man die Induktivität nicht auf die Leiterlänge sonder auf die Leitungslänge beziehen, so muss man die Induktivität verdoppeln, da man zwei Leiter hat – man erhält also schließlich:
 \begin{equation}
-L = 4 \cdot 10^{-7} \cdot \left[ \frac{1}{4} + \ln\left(\frac{d}{rs}\right) \right]
+L' = \frac{\mu_0}{\pi}\left(\ln\frac{d}{r_1}+025\right)
 \end{equation}
-Hat man eine dreiphasen-Übertragung, so hängt die Induktivität von der Anordnung der Leiter ab. Für eine symmetrische Anordnung der Leiter gilt:
-\begin{equation}
-L = \frac{\mu}{2\pi} \cdot \left[ \frac{1}{4} + \ln\left(\frac{d}{rs}\right) \right]
-\end{equation}
-vorausgesetzt wird dabei das die Höhe über der Erde $h\gg d$ ist, ansonsten muss diese mit berücksichtigt werden.
-Sind die Leiter nicht symmetrisch angeordnet, haben sie eine unterschiedliche Induktivität und es kommt dadurch zu einem unterschiedlichem Stromfluss.
-Um dies zu vermeiden, kann man die Leiterpositionen an Zwischenstationen zyklisch vertauschen. Dann gilt auch obige Formel mit $d_eq = \sqrt[3]{d_{12}+d_{23}+d_{31}}$ statt $d$.
 
+Ein weiterer wichtiger Sonderfall ist die symmetrische Dreileiteranordnung, bei welcher alle drei Leiterabstände sowie Leiterradien jeweils gleichgroß sind: $d_1=d_2=d_3:=d$ und $r_1=r_2=r_3:=r$ und somit $a_{12}=a–{23}=a_{13}$. Auch hier sind die Induktivitäten der Leiter gleich groß. Wir errechnen für den ersten Leiter:
+\begin{equation}
+\Phi'_1 = a_{11}i_1+a_{12}i_2+a_{13}i_3 = a_{11}i_1+a_{12}\left(i_2+i_3\right) = \left(a_{11}-a_{12}\right)i_1
+\end{equation}
+und daraus:
+\begin{equation}
+L'_1 = \frac{\Phi'_1}{i_1} = a_{11}-a_{12} = \frac{\mu_0}{2\pi}\left(\ln\frac{1}{r}+0,25-\ln\frac{1}{d} \right) =
+\frac{\mu_0}{2\pi}\left(\ln\frac{d}{r}+0,25 \right)
+\end{equation}
+Ist das Drehstromnetz gleichphasig belastet, so addieren sich die Spannungen und Ströme zu null und es genügt einphasig zu rechnen, da keine Rückführung mehr nötig ist. Die auf die Leitungslänge gerechnete Induktivität ist also:
+\begin{equation}\label{Induktivitaet3}
+L' = L'_1 = \frac{\mu_0}{2\pi}\left(\ln\frac{d}{r}+0,25 \right)
+\end{equation}
+Laut \cite{Harrison} gilt diese Gleichung nur für $h\gg d$ – ist dies nicht gegeben, muss man Einflüsse des Bodens berücksichtigen.
+
+Sind die Leiter nicht symmetrisch mit gleichen Leiterabständen angeordnet, so ergeben sich für die unterschiedlichen Leiter unterschiedliche Induktivitäten. Da dies im Allgemeinen unerwünscht ist, verdrillt man die Leiter: man wechselt die Positionen periodisch, so das jedes Kabel einmal jede der drei Positionen eingenommen hat. Dadurch gleichen sich die unterschiedlichen Induktivitäten in der Leiter aus und es gilt Gleichung (\ref{Induktivitaet3}) mit dem geometrischem Mittelwert der Leiterabstände
+\begin{equation}
+\bar{d} = \sqrt[3]{d_{12}d_{23}d_{31}}
+\end{equation}
+anstatt $d$.
 %% Vereinfachung
 %% Formel für Last
 
 %%% Berechnung Kapazität %%%
-\noindent\textbf{Kapazitätsbelag}\: Die Kapazität einer Freileitung entsteht durch die die unterschiedlichen Potentiale der Leiterseil gegeneinander und gegenüber dem Erdpotential. Die Potentialunterschiede führen zu einem Elektrischem Feld, bestehend aus den elektrischen Flüssen $\Psi_{ij}$ zwischen zwei Leiterseilen, sowie den Flüssen $\Psi_{i0}$ zwischen je einem Leiter und dem Erdpotential. Zu jedem dieser Elektrischen Flüsse gehört eine Kapazität (Teilkapazität), welche zusammen die Kapazität der Freileitung ergeben.
+\paragraph{Kapazitätsbelag}
+ Die Kapazität einer Freileitung entsteht durch die die unterschiedlichen Potentiale der Leiterseil gegeneinander und gegenüber dem Erdpotential. Die Potentialunterschiede führen zu einem Elektrischem Feld, bestehend aus den elektrischen Flüssen $\Psi_{ij}$ zwischen zwei Leiterseilen, sowie den Flüssen $\Psi_{i0}$ zwischen je einem Leiter und dem Erdpotential. Zu jedem dieser Elektrischen Flüsse gehört eine Kapazität (Teilkapazität), welche zusammen die Kapazität der Freileitung ergeben.
 Wir betrachten zunächst nur einen Leiter. Zur Berechnung der Kapazität verwenden wir Spiegelladungen: Wir ersetzen den Grund durch eine an der Erdoberfläche gespiegelte Ladung mit entgegengesetzter Ladung $Q'_1 = - Q_1$, ohne das sich das Feld ändert. Nun können wir das Potential in einem beliebigen Punkt P Als Summe der Potentiale schreiben:
 \begin{equation}
 \varphi = \frac{Q_1}{2\pi\varepsilon_0} \int^{x_1}_{r_1} \frac{dx_1}{x_1} + \varphi_1 + \frac{Q'_1}{2\pi\varepsilon_0} \int^{x_1}_{r_1} \frac{dx'_1}{x'_1} + \varphi'_1
