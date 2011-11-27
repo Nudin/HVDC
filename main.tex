@@ -1,5 +1,7 @@
 %\documentclass[10pt,a4paper,twoside]{article}
 \documentclass[10pt,a4paper]{article}
+\usepackage{a4wide}
+\linespread{1.359140914229522617680} 
 \usepackage[utf8]{inputenc}
 \usepackage[german]{babel}
 \usepackage{amsmath}
@@ -112,7 +114,57 @@ Typische Werte für den Widerstand, die Induktivität und Kapazität findet man 
 
 %%% Induktivität %%%
 % Herleitung für folgendes? (Flosdorff, 32-34)
-\noindent\textbf{Induktivitätsbelag}\: Die Induktivität lässt sich für eine einphasige Leitung wie folgt berechnen:
+\bigskip
+
+\noindent\textbf{Induktivitätsbelag}\: 
+Fließen Wechselströme durch mehrere nebeneinander liegende Leiter so wird durch Selbstinduktion und Gegeninduktion eine Wechselspannung induziert.
+%bla, von wegen kan als selbstinduktion gesehen werden
+Die Induktivität eines Leiters $v$ hängt wie folgt mit dm magnetischem Fluss an dessen Position zusammen:
+\begin{equation}
+L_v = N_v \frac{\Phi_v}{i_v}
+\end{equation}
+Laut \cite{Flosdorff} % besser [42] dort
+ist $N_v = 1$, somit müssen wir um die Induktivität zu berechnen den magnetischen Fluss berechnen, welchen sich aus den Flüssen aller Leiter zusammensetzt. Es gilt also das Gleichungssystem:
+\begin{equation}\label{SummePhi}
+\Phi_v = \sum_k \Phi_{vk}
+\end{equation}
+%Da Feldlinien stets von einer Quelle ausgehen und in einer Senke enden, benötigen wir noch eine äußere Feldbegrenzung. %realy?
+Zur Berechnung der Flüsse führen wir einen Zylinder mit sehr großem, aber endlichem Radius $r_a$ und den Leiter $v$ als Mittelpunkt als Feldbegrenzung ein. Die Rechtfertigung dafür werden wir später sehen.
+Der Fluss den Der Leiter selbst erzeugt ist nach \ref{42}
+\begin{equation}
+\Phi_{vv} = \frac{\mu_0l}{2\pi} \left( \ln\frac{r_a}{r_v} + 0,25 \right) i_v
+\end{equation}
+Der Fluss im Leiter $v$ der von einem Leiter $k$ erzeugt wird ist das Integral des Magnetfelds über die Fläche zwischen Leiter und Begrenzungszylinder:
+\begin{equation}
+\Phi_{vk} = \int_A B_k dA = \int_{x=d_{vk}}^{x=r_a} \frac{\mu_0i_k l}{2\pi x}dx =
+\frac{\mu_0l}{2\pi}\ln\left(\frac{r_a}{d_{vk}}\right) i_k
+\end{equation}
+Setzt man dies in Gleichung \ref{SummePhi} ein, so erhält man:
+\begin{equation}
+\Phi_v = \frac{\mu_0l}{2\pi} \left[ \left( \ln\frac{r_a}{r_v} +0,25\right) i_v + \sum_{k\neq1}\ln\frac{r_a}{d_{vk}} i_k \right]
+\end{equation}
+Wir beziehen den Fluss auf die Länge der Leitung und zeihen $r_a$ raus:
+\begin{equation}
+\Phi'_v = \frac{\mu_0}{2\pi}
+ \left[
+   \ln r_a \sum i_k +
+   \sum_k \left( \ln\frac{1}{d_{vk}} i_k +
+   0,25 \: \delta_{ik} \right)
+ \right]
+\quad mit \: d_{v1}:=r_v
+\end{equation}
+Die Summe aller Leiterströme muss immer null sein $\sum i_k=0$ und somit verschwindet der erste Term und die Gleichung ist unabhängig von $r_a$. Das Gleichungssystem für die Flüsse wird somit zu:
+\begin{equation}
+\Phi'_v = \sum_k a_{vk}i_k
+\end{equation}
+mit den Koeffizienten:
+\begin{equation}
+a_vv = \frac{\mu_0}{2\pi} \left( \ln\frac{1}{r_v} + 0,25 \right) \qquad und \qquad a_{vk} = a_{kv} = \frac{\mu_0}{2\pi} \ln\frac{1}{d_{ik}}
+\end{equation}
+
+\bigskip
+
+\noindent\textbf{Induktivitätsbelag – alt}\: Die Induktivität lässt sich für eine einphasige Leitung wie folgt berechnen:
 \begin{equation}
 L = \frac{\mu}{\pi} \cdot \left[ \frac{1}{4} + \ln\left(\frac{d}{rs}\right) \right]
 \end{equation}
@@ -203,6 +255,8 @@ PVC-Kabel werden in Niederspannungs- und Mittelspannungsnetzen bis 10 kV eingese
 % höhere Kosten, nidrigere Zuverlässigkeit
 Das Ersatzschaltbild sieht wie das der Freileitung aus, nur das man zwei Parallel geschaltete Ableitungswiederstände betrachtet.
 $R_0$ ist der Isolationswiederstand, während $R_d$ die dielektrischen Verluste beschreibt. Das sind Verluste die durch Polarisationseffekte im Dielektrikum der Kapazität entstehen.
+%Die Induktivitäten von Kabeln lassen sich ansch den selben vGleichungen berechnen, wei die von Freileitungen, da hier Herleitung dieser ohne die Bedingung $d\gg r$ auskommt.
+Die Berechnung der Kapazität von Kabeln, insbesondere Gürtelkabeln, ist ungleich schwieriger als bei Freileitern, da wir vorausgesetzt haben, dass $d\gg r$ ist auserdem sind die Dielektriken und der kreisförmige Metallmantel rechnerisch nur näherungsweise bestimmbar. Daher werden die Kapazitäten experimentell vom Hersteller bestimmt.\cite{Flosdorff}
 Typische Werte für ein einphasiges Kupferkabel findet man in Tabelle \ref{fehlt}.
 Wie wir mit den Werten feststellen können, ist bei Kabeln die Kapazität überwiegend,
 besonders stark ist dies bei Unterseekabeln ausgeprägt. % überprüfen, warum?, Werte
