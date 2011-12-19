@@ -39,7 +39,7 @@
 
 
 \author{Michael F. Schönitzer}
-\title{HGÜ}
+\title{Physikalische Grundlagen der Energieübertragung mit Gleich- und Wechselstrom hoher Spannung }
 \begin{document}
 \maketitle
 
@@ -111,7 +111,7 @@ Bei höheren Spannungen verwendet man statt einer dicken mehrere dünnere Leiter
 Seit einigen Jahren stattet man vor allem die Erdseile, aber auch die Leiterseile mit Lichtwellenleitern zur Datenübertragung aus. Diese dienten zunächst der innerbetrieblichen Fernüberwachung- und -steuerung, wird heute jedoch vor allem auch für privat genutzte Telefonnetze verwendet.\cite{Flosdorff}
 % Durchhang, entfernung, Last, Wetter, etc. ?
 
-In Abbildung \ref{fehlt} ist ein Ersatzschaltbild für eine Einphasige Leitung mit den Leitungsbelägen gezeichnet. Dabei ist R der serielle Widerstand, L die serielle Induktivität, C die Parallele Kapazität und $R_0$ der Ableitungswiederstand. Für die genaue Betrachtung muss man sich dieses infinitesimal Klein, unendlich oft hintereinander geschaltet vorstellen, für kurze Leitungen (unter 100 km Länge), kann man es jedoch näherungsweise auf eine derartige Schaltung reduzieren.
+In Abbildung \ref{fehlt} ist ein Ersatzschaltbild für eine Einphasige Leitung mit den Leitungsbelägen gezeichnet. Dabei ist R der serielle Widerstand, L die serielle Induktivität, C die Parallele Kapazität und $R_0$ der Ableitungswiederstand. Für die genaue Betrachtung muss man sich dieses infinitesimal Klein, unendlich oft hintereinander geschaltet vorstellen, für kurze Leitungen (unter 100 km Länge), kann man es jedoch näherungsweise auf eine derartige Schaltung reduzieren. Außerdem sind im allgemeinen die Induktivitäten nicht notwendigerweise zeitlich konstant.\cite{Flosdorff}
 Typische Werte für den Widerstand, die Induktivität und Kapazität findet man in Tabelle \ref{fehlt}. Der Wert für die Ableitungsbelag hängt stark von äußeren Faktoren, wie den Umgebungsbedingungen und dem Verschmutzungsgrad der Isolatoren ab. Ein typische Wert ist $200\,M\Omega m^{-1}$.\cite{Harrison} Die Ableitungsverluste sind also meist deutlich geringer als die seriellen ohmschen Verluste, weshalb man sie in den meisten Betrachtungen ignorieren kann. Wie wir sehen ist eine Freileitung weitgehend induktiv.
 
 %%% Induktivität %%%
@@ -271,7 +271,8 @@ PVC-Kabel werden in Niederspannungs- und Mittelspannungsnetzen bis 10 kV eingese
 % höhere Kosten, nidrigere Zuverlässigkeit
 Das Ersatzschaltbild sieht wie das der Freileitung aus, nur das man zwei Parallel geschaltete Ableitungswiederstände betrachtet.
 $R_0$ ist der Isolationswiederstand, während $R_d$ die dielektrischen Verluste beschreibt. Das sind Verluste die durch Polarisationseffekte im Dielektrikum der Kapazität entstehen.
-%Die Induktivitäten von Kabeln lassen sich ansch den selben vGleichungen berechnen, wei die von Freileitungen, da hier Herleitung dieser ohne die Bedingung $d\gg r$ auskommt.
+Die Induktivitäten von Kabeln lassen sich nach den selben Gleichungen berechnen, wie die von Freileitungen, da hier Herleitung dieser ohne die Bedingung $d\gg r$ auskommt.\footnote{Dabei ist $\mu_0$ natürlich durch $\mu_r\mu_0$ – mit $\mu_r$ als der relativen Permeabilität des Materials – zu ersetzen} %was ist mit h>>d ?
+Da bei Kabel die Leiterabstände deutlich kleiner sind sind auch die Induktivitäten kleiner: sie betragen nur etwas 25\% bis 30\% derWerte von Freileitungen\cite{Flosdorff}.
 Die Berechnung der Kapazität von Kabeln, insbesondere Gürtelkabeln, ist ungleich schwieriger als bei Freileitern, da wir vorausgesetzt haben, dass $d\gg r$ ist auserdem sind die Dielektriken und der kreisförmige Metallmantel rechnerisch nur näherungsweise bestimmbar. Daher werden die Kapazitäten experimentell vom Hersteller bestimmt.\cite{Flosdorff}
 Typische Werte für ein einphasiges Kupferkabel findet man in Tabelle \ref{fehlt}.
 Wie wir mit den Werten feststellen können, ist bei Kabeln die Kapazität überwiegend,
@@ -282,8 +283,26 @@ Für ein 400-kV-Kabel wie in Tabelle \ref{fehlt} liegt diese Länge bei 43,6 km.
 Daher werden bei längeren Kabeln alle paar Kilometer % wieviel genau, besser formulieren…
 Induktivitäten angeschlossen um die Blindleistung zu kompensieren.
 
+\section{Netzregelung}
+Elektrische Netze leiten elektrische Energie, können aber weder Energie erzeugen noch speichern.
+Aufgrund der Energieerhaltung muss zu jedem Zeitpunkt exakt die gleiche Menge an Wirk- und Blindleistung in das Netz eingespeist werden, wie – einschließlich aller Verluste – verbraucht wird.
+Es stellt sich daher die Frage, wie dies gewährleistet werden kann und was geschieht wenn dies für kurze Zeit nicht der Fall ist – den schließlich kann man aus unerwartete Veränderungen des Verbrauchs nicht beliebig schnell reagieren.
+
+\subsection{Leistungs-Frequenz-Regelung}
+Zunächst betrachten wir die Wirkleistung in einem Drehstromnetz, dass von Kraftwerken mit dampfgetriebenen Turbinen gespeist wird. Das Kraftwerk kann dabei ein Kohle-, Öl- oder Kernkraftwerk sein. \footnote{Statt diesen dampfgetriebenen Turbinen lassen sich auch Wasser- oder Windkraftwerke annehmen, lediglich Turbinenlose Kraftwerke wie Photovoltaikanlagen sind hierfür ungeeignet} % Gaskraftwerke?
+Neben den Kraftwerken gibt es auch zahlreiche Drehstrommotoren auf der \q Verbraucherseite\q. % Anführungszeichen
+In den Turbinen, Generatoren und Motoren rotieren Massen – darin ist Rotationsenergie gespeichert.
+Steigt nur der Wirkleistungsverbrauch über die Menge an produzierter Wirkleistung, so wird die Energiedifferenz aus der Rotationsenergie der Maschinen entnommen.
+Dadurch wird deren Rotation jedoch langsamer – was zu einer Verringerung der Netzfrequenz führt.
+Ist der Wirkleistungsverbrauch geringer als die Produktion, so geht die überschüssige Energie in Rotationsenergie der Maschinen über und die Netzfrequenz steigt.
+In den Kraftwerken erkennt nun ein Sensor die Änderung der Frequenz und regulieren die Dampfventile entsprechend:
+ist die Frequenz zu niedrig, wird mehr Dampf in die Turbinen gelassen, ist die Frequenz zu hoch, wird die Dampfzufuhr reduziert.
+Man hält dadurch die Frequenz immer ungefähr konstant: in Großbritannien beträgt die Frequenz im Allgemeinen $50 \mathrm{Hz} \pm 0,05 \mathrm{Hz}$.\cite{Harrison} %Wert für Deutschland
+%Details; auch in DE; alternativen?
 
 \section{Vor- und Nachteile der HGÜ gegenüber DHÜ}
+
+
 
 \section*{bla}
 \begin{circuit}{2}
