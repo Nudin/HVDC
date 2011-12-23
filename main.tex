@@ -292,7 +292,7 @@ Es stellt sich daher die Frage, wie dies gewährleistet werden kann und was gesc
 Zunächst betrachten wir die Wirkleistung in einem Drehstromnetz, dass von Kraftwerken mit dampfgetriebenen Turbinen gespeist wird. Das Kraftwerk kann dabei ein Kohle-, Öl- oder Kernkraftwerk sein. \footnote{Statt diesen dampfgetriebenen Turbinen lassen sich auch Wasser- oder Windkraftwerke annehmen, lediglich Turbinenlose Kraftwerke wie Photovoltaikanlagen sind hierfür ungeeignet} % Gaskraftwerke?
 Neben den Kraftwerken gibt es auch zahlreiche Drehstrommotoren auf der \q Verbraucherseite\q. % Anführungszeichen
 In den Turbinen, Generatoren und Motoren rotieren Massen – darin ist Rotationsenergie gespeichert.
-Steigt nur der Wirkleistungsverbrauch über die Menge an produzierter Wirkleistung, so wird die Energiedifferenz aus der Rotationsenergie der Maschinen entnommen.
+Steigt nur der Wirkleistungsverbrauch über die Menge an produzierter Wirkleistung, so wird die Energiedifferenz aus der Rotationsenergie der Maschinen entnommen.\cite{Harrison}
 Dadurch wird deren Rotation jedoch langsamer – was zu einer Verringerung der Netzfrequenz führt.
 Ist der Wirkleistungsverbrauch geringer als die Produktion, so geht die überschüssige Energie in Rotationsenergie der Maschinen über und die Netzfrequenz steigt.
 In den Kraftwerken erkennt nun ein Sensor die Änderung der Frequenz und regulieren die Dampfventile entsprechend:
@@ -300,9 +300,29 @@ ist die Frequenz zu niedrig, wird mehr Dampf in die Turbinen gelassen, ist die F
 Man hält dadurch die Frequenz immer ungefähr konstant: in Großbritannien beträgt die Frequenz im Allgemeinen $50 \mathrm{Hz} \pm 0,05 \mathrm{Hz}$.\cite{Harrison} %Wert für Deutschland
 %Details; auch in DE; alternativen?
 
+\subsection{Blindleistungs-Spannungsregelung}
+In einem elektrischen Netz muss nicht nur die bereitgestellte Wirkleistung gleich der produzierten sein, selbiges gilt auch für die Blindleistung.
+Betrachtet man eine Last, die von einem Generator über eine Leitung mit ohmschen Widerstand und Blindwiderstand mit Leistung versorgt wird. Da auch an der Leistung eine Spannung abfällt, existiert eine Differenz zwischen der Generatorspannung und der an der Last anliegenden Spannung. Diese Differenz ist auch von der Blindleistung abhängig. Steigt also der Blindleistungsbedarf plötzlich, so steigt auch die Spannungsdifferenz und die Spannung an der Last sinkt. Dadurch sinkt wiederum der Blindleistungsbedarf – aber auch der Wirkleistungsbedarf.
+Als Zahlenbeispiel sei genannt, dass eine Reduktion der Spannung um 1\% im gesamten Britischen Netz die Nachfrage nach Blindleistung um 5\% und die Nachfrage nach Wirkleistung um 1,4\% senken würde.
+%Spannungsänderung duch stufensteller - was hat das damit zu tun?
+%Bevor wir uns überlegen, wie dies gewährleistet wird,
+Nun wollen wir ein paar Worte zur Erzeugung und "Vernichtung" von Blindleistung zum Ausgleich der von Verbrauchern und Leistungen erzeugten Blindleistung verlieren. Die wichtigste Rolle spielen dabei Synchrongeneratoren und Synchron-Phasenschieber.
+Ist der Generator überangeregt, % erklären was das ist.
+so erzeugt er Blindleistung, ist er unterangeregt, so nimmt der Blindleistung auf. Größe Synchrongeneratoren können bis zu 50\% ihrer Bemessungsleistung in Form von Blindstrom bereitstellen. %formulierung
+Jedoch darf die aufgenommene Blindleistung nur bis zu 15\% detragen, wenn gleichzeitig die volle Wirkleistung erzeugt werden soll.\cite{Harrison}	%formulierung, so korrekt?, warum
+Bei Synchron-Phasenschieber handelt es sich um im Leerlauf betriebene Synchronmotoren, deren Erregung automatisch durch die Spannung geregelt werden. Sie nehmen nur geringe Wirkleistung auf um ihre Verluste aus zu gleichen. Ein Gasturbinen-Generator kann – wenn keine Wirkleistung erzeugt werden soll – bei geeigneter Bauart von seiner Turbine abgekoppelt werden und dann als Synchron-Phasenschieber betrieben werden.\cite{Harrison}
+
+Blindleistung kann auch durch parallelgeschaltete Kapazitäten erzeugt werden, diese haben jedoch den Nachteil das ihre Blindleistung proportional zu $U^2$ ist – sie also genau dann wenn man sie am dringendsten braucht weniger Blindleistung bereitstellen.\cite{Harrison}
+
+\subsection{Gleichstrom-Netzregelung}
+fehlt noch… %### fehlt
+
 \section{Vor- und Nachteile der HGÜ gegenüber DHÜ}
+Wir haben nun die physikalischen Grundlagen der elektrischen Energieübertragung kennengelernt, wir wollen nun die Vor und Nachteile beider Ansätze vergleichen und dabei auch technische und wirtschaftliche Aspekte berücksichtigen.
 
 
+% eifügen, wenn noch nicht klar:
+%% Blindleistung in den Netzen niedrig halten, da Netztbelastung(Scheinleistung) => weniger Wirkleistung mögl.
 
 \section*{bla}
 \begin{circuit}{2}
