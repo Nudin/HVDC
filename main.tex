@@ -111,7 +111,9 @@ Bei höheren Spannungen verwendet man statt einer dicken mehrere dünnere Leiter
 Seit einigen Jahren stattet man vor allem die Erdseile, aber auch die Leiterseile mit Lichtwellenleitern zur Datenübertragung aus. Diese dienten zunächst der innerbetrieblichen Fernüberwachung- und -steuerung, wird heute jedoch vor allem auch für privat genutzte Telefonnetze verwendet.\cite{Flosdorff}
 % Durchhang, entfernung, Last, Wetter, etc. ?
 
-In Abbildung \ref{fehlt} ist ein Ersatzschaltbild für eine Einphasige Leitung mit den Leitungsbelägen gezeichnet. Dabei ist R der serielle Widerstand, L die serielle Induktivität, C die Parallele Kapazität und $R_0$ der Ableitungswiederstand. Für die genaue Betrachtung muss man sich dieses infinitesimal Klein, unendlich oft hintereinander geschaltet vorstellen, für kurze Leitungen (unter 100 km Länge), kann man es jedoch näherungsweise auf eine derartige Schaltung reduzieren. Außerdem sind im allgemeinen die Induktivitäten nicht notwendigerweise zeitlich konstant.\cite{Flosdorff}
+In Abbildung \ref{fehlt} ist ein Ersatzschaltbild für eine Einphasige Leitung mit den Leitungsbelägen gezeichnet.
+% Alternativ: π-Glied
+Dabei ist R der serielle Widerstand, L die serielle Induktivität, C die Parallele Kapazität und $R_0$ der Ableitungswiederstand. Für die genaue Betrachtung muss man sich dieses infinitesimal Klein, unendlich oft hintereinander geschaltet vorstellen, für kurze Leitungen (unter 100 km Länge), kann man es jedoch näherungsweise auf eine derartige Schaltung reduzieren. Außerdem sind im allgemeinen die Induktivitäten nicht notwendigerweise zeitlich konstant.\cite{Flosdorff}
 Typische Werte für den Widerstand, die Induktivität und Kapazität findet man in Tabelle \ref{fehlt}. Der Wert für die Ableitungsbelag hängt stark von äußeren Faktoren, wie den Umgebungsbedingungen und dem Verschmutzungsgrad der Isolatoren ab. Ein typische Wert ist $200\,M\Omega m^{-1}$.\cite{Harrison} Die Ableitungsverluste sind also meist deutlich geringer als die seriellen ohmschen Verluste, weshalb man sie in den meisten Betrachtungen ignorieren kann. Wie wir sehen ist eine Freileitung weitgehend induktiv.
 
 %%% Induktivität %%%
@@ -320,29 +322,80 @@ fehlt noch… %### fehlt
 \section{Vor- und Nachteile der HGÜ gegenüber DHÜ}
 Wir haben nun die physikalischen Grundlagen der elektrischen Energieübertragung kennengelernt, wir wollen nun die Vor und Nachteile beider Ansätze vergleichen und dabei auch technische und wirtschaftliche Aspekte berücksichtigen.
 
+Gleichstrom hat den Nachteil, dass es im Gegensatz zum Wechselstrom keine einfache Möglichkeit der Lastflusssteuerung gibt.
+Außerdem gibt es keine leistungsfähigen Gleichstrom-Schalter:
+Es mag zwar auf den ersten Blick trivial erscheinen, einen Schalter zu bauen, doch sind die Spannungen in Energienetzen so hoch, dass beim trennen eines Kontaktschalters eine Entladung über einen Lichtbogen auftritt, welcher gelöscht werden muss. Neben zahlreichen technischen Tricks, wie Löschgase oder Öl, behilft man sich bei Wechselstrom-Schaltern dadurch, dass man die Kontakte genau in dem Moment trennt in welchem die Spannungskurve einen Nulldurchlauf hat. Da man bei HGÜ keine Nulldurchgänge hat, ist das Bauen von leistungsfähigen Gleichstrom-Schaltern nicht möglich. %Quelle, mehr?, eigenes Kapitel?
+Das Betreiben von vermaschten Leitungen ist jedoch ohne leistungsfähige Schalter kaum möglich.\cite{Schymroch} % und ohne ordentliche Regelung auch nicht
+Und während bei DHÜ an jeder Stelle einer Leitung das Entnehmen von Leistung mit einem simplen Transformator möglich ist braucht man bei HGÜ dafür komplexe Stromrichterstationen.
+Daher ist und bleibt der Einsatz von HGÜ bis aus weiteres auf Punkt-zu-Punkt-Verbindungen beschränkt. Es gib nur wenige Ausnahmen, in welchen eine Verbindung von 3 Punkten mit Gleichstrom erfolgt ist. %wo, Quelle
+Da es für unsere Bedürfnisse wichtig ist ein stark vernetztes Energienetz zu haben, muss die Grundstruktur %Wort
+unserer Energienetze weiterhin auf Drehstrom basieren.
+
+An den Enden einer solchen HGÜ-Leitung findet man jeweils eine Stromrichterstation. In diesen wird auf der einen Seite der Wechselstrom in Gleichstrom umgewandelt, auf der anderen Seite dieser wieder in Wechselstrom zurück gewandelt.
+% mehr zu funktionsweiße
+Diese Stromrichterstation sind äußerst komplex und dadurch teuer und anfällig für Störungen. Auch haben sie vergleichsweiße hohe Verluste und benötigen Blindleistung, die von den angebundenen Netzen aufgebracht werden muss.
+
+Die Leitung selbst haben jedoch geringere Verluste, was zum einen am nicht vorhandenen Skineffekt liegt, vor allem aber daran, dass nur Wirkleistung übertragen wird, in Gleichung \ref{Verlust} das $\varphi=0$ ist. Ab einer gewissen Länge sind HGÜ-Leitungen also effektiver als DHÜ-Leitungen.
+Auch die Kosten für die Leitungen sind wesentlich geringer, dies liegt zum einen daran, dass man bei Drehstrom drei Leiter braucht, bei Gleichspannung jedoch mit zwei und bei Rückleitung über die Erde sogar nur mit einem Leiter auskommt. Dies spart Material und Bodenverbrauch. % Quelle, effizienz dadurch besser?
+Zum anderen sind die benötigen Leiter wesentlich einfacher. Dies hat einen ganze Reihe von Gründen:
+Zunächst ist bei Gleichstrom die Effiktivspannung gleich der Maximalspannung, während bei Drehstrom die Maximalspannung um einen Faktor $\sqrt{2}$ höher ist und dss weiteren wird nur Wirk- und keine Blindleistung übertragen -- beide Effekte führen dazu, dass die Leitung nur auf eine niedrigere Spannungsfestigkeit ausgelegt werden muss. % Quelle
+Bei Freileitungen mit Gleichstrom ist wie wir gesehen haben die Koronaentladung geringer, was nicht nur zu geringeren Verlusten führt, sondern vor allem dazu, dass man keine aufwendigen Bündelleiter benötigt.
+
+Gleichstromanlagen haben also sowohl was die Effizienz angeht also auch bezüglich der Wirtschaftlichkeit schlechte  Stromrichterstation, während die Leitung selbst effizienter und billiger ist als mit Drehstrom. Deshalb ist für kurze Leitungen Gleichstrom -- von Ausnahmen auf die wir unten zu sprechen kommen -- uninteressant, während für lange Leitungen die Vorteile überwiegen. Die Distanz ab der eine Gleichstromleitung wirtschaftlicher ist als eine Wechselstromleitung nennt man Break-Even-Distance, sie hängt von unterschiedlichen Parametern, insbesondere den Bodenpreisen und der Geländebeschaffenheit ab. %welche
+\cite{Schymroch} beziffert die Break-Even-Distance auf 300 km bis 700 km. %andere Quellen
+
+
+% Gliederung für diese Kapitel:
+% nicht vermascht ✔
+% schlechte Schalter, weil kein Nullpunkt ✔
+% Konverterstationen ✔
+%% Konverterstationen: teuer, anfällige, aufwendig… ✔
+%% hohe Verluste ✔
+% geringere Verluste ✔
+% weniger Leitungen ✔
+% einfachere Leitungen ✔
+%% geringere Leitungs-Belastung ✔
+%% nidrigere Spannung, das Ueff=Umax ✔
+%% kein Skineffekt
+%% keine Dielektr. Verluste ; Vorentladung
+%% weniger Koronaentladung ✔
+%%% -> keine Bündelleiter ✔
+% Breack-Even-Point ✔
+% keine maximale Leiterlänge
+%% Unterseekabel
+% Verschmutzungsbla -> WP
+% Blinleistungsbereitstellung
+% nicht frequenz-Syncron
+%% keine Phasenverscheibung durch differenz
+%% koppelung versch. Netze
+
+
 
 % eifügen, wenn noch nicht klar:
 %% Blindleistung in den Netzen niedrig halten, da Netztbelastung(Scheinleistung) => weniger Wirkleistung mögl.
+% Leitungen: 6° Phasenverschiebung/100km
+% Konverterstat. bruachen Blindleistung
 
-\section*{bla}
-\begin{circuit}{2}
-\R1 {$1 \Omega$} h
-\- 8 r
-\C1 C d
-\- 4 v
-\nl\R1 {L} d 
-\nl\- 10 v
-\end{circuit}
 
-\begin{circuit}{0}
-\npn1 {?} B l
-\frompin npn1C
-\- 1 u
-\nl\A1 {$I_C$} u
-\atpin npn1B
-\- 1 l
-\R1 {510 kohm} l
-\end{circuit}
+%\section*{bla}
+%\begin{circuit}{2}
+%\R1 {$1 \Omega$} h
+%\- 8 r
+%\C1 C d
+%\- 4 v
+%\nl\R1 {L} d 
+%\nl\- 10 v
+%\end{circuit}
+%
+%\begin{circuit}{0}
+%\npn1 {?} B l
+%\frompin npn1C
+%\- 1 u
+%\nl\A1 {$I_C$} u
+%\atpin npn1B
+%\- 1 l
+%\R1 {510 kohm} l
+%\end{circuit}
 
 
 \bibliography{lit}{}
