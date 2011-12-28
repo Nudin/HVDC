@@ -16,10 +16,10 @@
     pdfmenubar=true,
     pdffitwindow=false,
     pdfstartview={FitH},
-    pdftitle={HVDC},		% XXX: fix
+    pdftitle={Physikalische Grundlagen der Energieübertragung mit Gleich- und Wechselstrom hoher Spannung},
     pdfauthor={Michael F. Sch\"onitzer},
-    pdfsubject={HVDC},	% XXX: fix
-    pdfkeywords={HVDC} {Strom} {Physik},	% XXX: fix
+    pdfsubject={HVDC},
+    pdfkeywords={HVDC} {HGÜ} {Gleichspannung} {Energieübertragung} {Strom} {Physik},
     pdfnewwindow=true,
     colorlinks=true,
     linkcolor=black,
@@ -43,8 +43,6 @@
 \begin{document}
 \maketitle
 
-\section{Geschichtliches}
-
 \section{Gleichstrom}
 Die Energieübertragung mittels Gleichstrom ist im Grunde relativ einfach und bereits aus der Schule bekannt, wir wollen sie daher hier nur kurz zusammenfassen.
 Eine Gleichspannungsquelle liefert einen zeitlich konstanten Potentialunterschied, elektrische Spannung $U$ genannt. Legt man an diese einen ohmschen Widerstand $R$ an, so fließt durch ihn eine zeitlich konstanter Strom
@@ -60,7 +58,7 @@ P = U \cdot I
 \input{Wechselstrom}
 
 \section{Drehstrom}
-Beim Dreiphasen-Wechselstrom, auch Drehstrom genannt, hat man drei stromführende Leitungen, an welchen je eine Kosinusförmige Spannung mit gleiche Frequenz, aber jeweils 120\degree Phasenverschiebung anliegt.
+Beim Dreiphasen-Wechselstrom, auch Drehstrom genannt, hat man drei stromführende Leitungen, an welchen je eine Kosinusförmige Spannung mit gleiche Frequenz, aber jeweils 120\degree\  Phasenverschiebung anliegt.
 Die notwendigkeit eines zusätzlichen Nullleiters entfällt, das die drei Spannungen addiert sich aufheben.
 Die Spannung zwischen einer beliebigen Leitung und einen Nullleiter wird als Sternspannung bezeichnet,
 die Spannung zwischen zwei beliebigen Spannungen als verkettete Spannung. Es gilt:
@@ -76,326 +74,18 @@ Während Privathaushalte nahezu ausnahmslos einphasigen Strom verwenden, verwend
 \item Bei gleichem Aufwand kann eine dreiphasiges Stromnetz mehr Leistung übertragen.
 \end{itemize}
 
-\section{Elektrische Netze}
-\subsection{Leitungen}
+\input{netze.tex}
 
-\subsubsection{Leitungsbeläge}
-Bisher haben wir die Grundlagen der Gleich- beziehungsweise Wechselstromtechnik im allgemeinen kennen gelernt.
-Insbesondere bei der Betrachtung von Blindleistungen geht man dabei meist davon aus,
-dass ein Verbraucher durch den Einsatz von Spulen oder Kondensatoren Blindleistung erzeugt.
-Wir interessieren uns jedoch für die Energienetze und hier kommt ein wichtiger Punkt hinzu:
-Auch die Leitungen selbst haben einen Widerstand, eine Kapazität, eine Induktivität, sowie die noch einzuführende Ableitung.
-Diese bezeichnet man auf die Länge bezogen als Widerstand-, Kapazitäts-, Induktivitäts- und Ableitungsbeläge und fasst sie unter dem Begriff der Leitungsbeläge zusammen.
+\input{vergleich.tex}
 
-Zunächst sei noch die Ableitung eingeführt: Die Ableitungsbeläge beschreiben die Verluste durch unvollständige Isolation des Kabels. Die Ableitung wird in Siemens\footnote{Eine alternative, ältere Bezeichnung für das Siemens ist das Mho (Ohm Rückwerts gelesen) $\mho$ } gemessen, was den Kehrwert der Einheit Ohm darstellt:
-\begin{equation}
-\mathrm{[S]} = \frac{1}{\Omega} = \frac{A}{V}
-\end{equation}
-Die Ableitungsbeläge folglich in Siemens pro Meter.
-Die Ableitung ist dank moderner Isolationstechnik deutlich geringer als die Ohmschen Verluste.
+\input{geschichte.tex}
 
-Bei der Betrachtung der Leitungsbeläge und der daraus folgenden Anforderungen an die Leitungen muss man zwischen drei unterschiedlichen Leitungstypen unterscheiden: Freileitungen, Erdkabel und Unterseekabel %  Begriff richtig?
-
-\subsubsection{Freileitungen}
-Der überwiegende Teil der Hochspannungs-Energieverteilung geschieht mit Freileitungen.
-Dabei werden nicht isolierte Leiterseile an Isolatoren an etwa 50 Meter hohen und etwa 400 Meter voneinander entfernten Hochspannungsmasten aufgehängt. % Werte für GB
-In Deutschland gibt es Freileitungen mit bis zu 380 kV in anderen Ländern auch bis 1000 kV und Anlagen mit bis zu 2 MV sin geplant\cite{Flosdorff}.
-Es gibt unterschiedliche Arten und Bauweisen von Freileitungsmasten, auf die wir hier nicht näher eingehen wollen. Wichtig sind für uns lediglich die sich dadurch ergebende Anzahl und Anordnung der Leiterseile, deren Bodenhöhe und Abstand zu einander.
-
-Die Spitze der Masten tragen ein Erdseil, welches die Leiterseile vor Blitzschlag schützen, indem Sie ein Schutzraum bilden. Er wird näherungsweise durch den Zwischenraum zwischen zwei den Boden und das Erdseil tangierenden Kreisen mit doppelter Masthöhe als Radius beschreiben. Die Masten sind derartig gebaut, dass die die Leiterseile sich in diesem Schutzraum befinden. Um bei – bei besonders hohen Spannungen nötige – weiten Travernen den Mast nicht zu hoch bauen zu müssen, kann man durch Verwendung von zwei statt nur einem Erdseil den Schutzraum vergrößern.
-
-Bei den Leiterseilen handelt es sich meist um Verbundseile mit einem Kern aus Stahl, der die mechanische Stabilität gewährleistet, umgeben von Aluminiumleitern. Aluminium hat zwar im Bezug auf das Volumen einen höheren Widerstand als Kupfer, im Bezug auf das Gewicht leitet Aluminium hingegen besser. Ein typisches 650-A-Leiterseil besteht aus 7 Stahl- und 54 Aluminiumadern, die jeweils einen Durchmesser von 3 mm haben.\cite{Harrison}.
-Moderne Leiterseile bestehen oft ganz aus einer Aluminiumlegierung und haben dadurch einen höheren Stromtragefähigkeit, einen geringen ohmschen Widerstand und müssen weniger gewartet werden\cite{Harrison}.
-%% Skineffekt
-Bei höheren Spannungen verwendet man statt einer dicken mehrere dünnere Leiter pro Phase seil in geringem Abstand. Dadurch sind die Randfeldstärken\footnote{Die Randfeldstärke darf zur Vermeidung von Koronaentladung nicht größer als 17 kV/cm werden.\cite{Flosdorff}} und die Induktivität geringer und durch die bessere Kühlung aufgrund der größeren Oberfläche kann ein größerer Strom geführt werden. Man spricht hier von Bündelleitern.
-Seit einigen Jahren stattet man vor allem die Erdseile, aber auch die Leiterseile mit Lichtwellenleitern zur Datenübertragung aus. Diese dienten zunächst der innerbetrieblichen Fernüberwachung- und -steuerung, wird heute jedoch vor allem auch für privat genutzte Telefonnetze verwendet.\cite{Flosdorff}
-% Durchhang, entfernung, Last, Wetter, etc. ?
-
-In Abbildung \ref{fehlt} ist ein Ersatzschaltbild für eine Einphasige Leitung mit den Leitungsbelägen gezeichnet.
-% Alternativ: π-Glied
-Dabei ist R der serielle Widerstand, L die serielle Induktivität, C die Parallele Kapazität und $R_0$ der Ableitungswiederstand. Für die genaue Betrachtung muss man sich dieses infinitesimal Klein, unendlich oft hintereinander geschaltet vorstellen, für kurze Leitungen (unter 100 km Länge), kann man es jedoch näherungsweise auf eine derartige Schaltung reduzieren. Außerdem sind im allgemeinen die Induktivitäten nicht notwendigerweise zeitlich konstant.\cite{Flosdorff}
-Typische Werte für den Widerstand, die Induktivität und Kapazität findet man in Tabelle \ref{fehlt}. Der Wert für die Ableitungsbelag hängt stark von äußeren Faktoren, wie den Umgebungsbedingungen und dem Verschmutzungsgrad der Isolatoren ab. Ein typische Wert ist $200\,M\Omega m^{-1}$.\cite{Harrison} Die Ableitungsverluste sind also meist deutlich geringer als die seriellen ohmschen Verluste, weshalb man sie in den meisten Betrachtungen ignorieren kann. Wie wir sehen ist eine Freileitung weitgehend induktiv.
-
-%%% Induktivität %%%
-\paragraph{Induktivitätsbelag}
-Fließen Wechselströme durch mehrere nebeneinander liegende Leiter so wird durch Selbstinduktion und Gegeninduktion eine Wechselspannung induziert.
-%bla, von wegen kan als selbstinduktion gesehen werden
-Die Induktivität eines Leiters $v$ hängt wie folgt mit dm magnetischem Fluss an dessen Position zusammen:
-\begin{equation}
-L_v = N_v \frac{\Phi_v}{i_v}
-\end{equation}
-Laut \cite{Flosdorff} % besser [42] dort
-ist $N_v = 1$, somit müssen wir um die Induktivität zu berechnen den magnetischen Fluss berechnen, welchen sich aus den Flüssen aller Leiter zusammensetzt. Es gilt also das Gleichungssystem:
-\begin{equation}\label{SummePhi}
-\Phi_v = \sum_k \Phi_{vk}
-\end{equation}
-%Da Feldlinien stets von einer Quelle ausgehen und in einer Senke enden, benötigen wir noch eine äußere Feldbegrenzung. %realy?
-Zur Berechnung der Flüsse führen wir einen Zylinder mit sehr großem, aber endlichem Radius $r_a$ und den Leiter $v$ als Mittelpunkt als Feldbegrenzung ein. Die Rechtfertigung dafür werden wir später sehen.
-Der Fluss den der Leiter selbst erzeugt ist nach \ref{42}
-\begin{equation}
-\Phi_{vv} = \frac{\mu_0l}{2\pi} \left( \ln\frac{r_a}{r_v} + 0,25 \right) i_v
-\end{equation}
-Der Fluss im Leiter $v$ der von einem Leiter $k$ erzeugt wird ist das Integral des Magnetfelds über die Fläche zwischen Leiter und Begrenzungszylinder:
-\begin{equation}
-\Phi_{vk} = \int_A B_k dA = \int\limits_{x=d_{vk}}^{x=r_a} \frac{\mu_0i_k l}{2\pi x}dx =
-\frac{\mu_0l}{2\pi}\ln\left(\frac{r_a}{d_{vk}}\right) i_k
-\end{equation}
-Setzt man dies in Gleichung \ref{SummePhi} ein, so erhält man:
-\begin{equation}
-\Phi_v = \frac{\mu_0l}{2\pi} \left[ \left( \ln\frac{r_a}{r_v} +0,25\right) i_v + \sum_{k\neq1}\ln\frac{r_a}{d_{vk}} i_k \right]
-\end{equation}
-Wir beziehen den Fluss auf die Länge der Leitung und zeihen $r_a$ raus:
-\begin{equation}
-\Phi'_v = \frac{\mu_0}{2\pi}
- \left[
-   \ln r_a \sum i_k +
-   \sum_k \left( \ln\frac{1}{d_{vk}} i_k +
-   0,25 \: \delta_{ik} \right)
- \right]
-\quad mit \: d_{v1}:=r_v
-\end{equation}
-Die Summe aller Leiterströme muss immer null sein $\sum i_k=0$ und somit verschwindet der erste Term und die Gleichung ist unabhängig von $r_a$. Das Gleichungssystem für die Flüsse wird somit zu:
-\begin{equation}
-\Phi'_v = \sum_k a_{vk}i_k
-\end{equation}
-mit den Koeffizienten:
-\begin{equation}
-a_vv = \frac{\mu_0}{2\pi} \left( \ln\frac{1}{r_v} + 0,25 \right) \qquad und \qquad a_{vk} = a_{kv} = \frac{\mu_0}{2\pi} \ln\frac{1}{d_{ik}}
-\end{equation}
-Betrachten wir zunächst ein \textbf{Zweileitersystem}. Das obige Gleichungssystem reduziert sich auf:
-\begin{align}
-\Phi'_1 &= a_{11}i_1 + a_{12}i_2 \\
-\Phi'_2 &= a_{21}i_i + a_{22}i_2
-\end{align}
-Dabei ist $i_2 = -i_1$ und $d_{12} = d_{21} = d$. Die Induktivität errechnet sich nun einfach zu:
-\begin{equation}
-L'_1 = a_{11} - a{12} = \frac{\mu_0}{2\pi}\left(\ln\frac{1}{r_1}+025\right)-\frac{\mu_0}{2\pi}\ln\frac{1}{d} = 
-\frac{\mu_0}{2\pi}\left(\ln\frac{d}{r_1}+025\right)
-\end{equation}
-und gleichfalls für Leiter 2. In der Regel sind die beiden Leiterradien gleich, wodurch beide Leiter die selbe Induktivität haben – was aus Symmetriegründen selbst verständlich war. Will man die Induktivität nicht auf die Leiterlänge sonder auf die Leitungslänge beziehen, so muss man die Induktivität verdoppeln, da man zwei Leiter hat – man erhält also schließlich:
-\begin{equation}
-L' = \frac{\mu_0}{\pi}\left(\ln\frac{d}{r_1}+025\right)
-\end{equation}
-
-Ein weiterer wichtiger Sonderfall ist die symmetrische Dreileiteranordnung, bei welcher alle drei Leiterabstände sowie Leiterradien jeweils gleichgroß sind: $d_1=d_2=d_3:=d$ und $r_1=r_2=r_3:=r$ und somit $a_{12}=a–{23}=a_{13}$. Auch hier sind die Induktivitäten der Leiter gleich groß. Wir errechnen für den ersten Leiter:
-\begin{equation}
-\Phi'_1 = a_{11}i_1+a_{12}i_2+a_{13}i_3 = a_{11}i_1+a_{12}\left(i_2+i_3\right) = \left(a_{11}-a_{12}\right)i_1
-\end{equation}
-und daraus:
-\begin{equation}
-L'_1 = \frac{\Phi'_1}{i_1} = a_{11}-a_{12} = \frac{\mu_0}{2\pi}\left(\ln\frac{1}{r}+0,25-\ln\frac{1}{d} \right) =
-\frac{\mu_0}{2\pi}\left(\ln\frac{d}{r}+0,25 \right)
-\end{equation}
-Ist das Drehstromnetz gleichphasig belastet, so addieren sich die Spannungen und Ströme zu null und es genügt einphasig zu rechnen, da keine Rückführung mehr nötig ist. Die auf die Leitungslänge gerechnete Induktivität ist also:
-\begin{equation}\label{Induktivitaet3}
-L' = L'_1 = \frac{\mu_0}{2\pi}\left(\ln\frac{d}{r}+0,25 \right)
-\end{equation}
-Laut \cite{Harrison} gilt diese Gleichung nur für $h\gg d$ – ist dies nicht gegeben, muss man Einflüsse des Bodens berücksichtigen.
-
-Sind die Leiter nicht symmetrisch mit gleichen Leiterabständen angeordnet, so ergeben sich für die unterschiedlichen Leiter unterschiedliche Induktivitäten. Da dies im Allgemeinen unerwünscht ist, verdrillt man die Leiter: man wechselt die Positionen periodisch, so das jedes Kabel einmal jede der drei Positionen eingenommen hat. Dadurch gleichen sich die unterschiedlichen Induktivitäten in der Leiter aus und es gilt Gleichung (\ref{Induktivitaet3}) mit dem geometrischem Mittelwert der Leiterabstände
-\begin{equation}
-\bar{d} = \sqrt[3]{d_{12}d_{23}d_{31}}
-\end{equation}
-anstatt $d$.
-%% Vereinfachung
-%% Formel für Last
-
-%%% Berechnung Kapazität %%%
-\paragraph{Kapazitätsbelag}
- Die Kapazität einer Freileitung entsteht durch die die unterschiedlichen Potentiale der Leiterseil gegeneinander und gegenüber dem Erdpotential. Die Potentialunterschiede führen zu einem Elektrischem Feld, bestehend aus den elektrischen Flüssen $\Psi_{ij}$ zwischen zwei Leiterseilen, sowie den Flüssen $\Psi_{i0}$ zwischen je einem Leiter und dem Erdpotential. Zu jedem dieser Elektrischen Flüsse gehört eine Kapazität (Teilkapazität), welche zusammen die Kapazität der Freileitung ergeben.
-Wir betrachten zunächst nur einen Leiter. Zur Berechnung der Kapazität verwenden wir Spiegelladungen: Wir ersetzen den Grund durch eine an der Erdoberfläche gespiegelte Ladung mit entgegengesetzter Ladung $Q'_1 = - Q_1$, ohne das sich das Feld ändert. Nun können wir das Potential in einem beliebigen Punkt P Als Summe der Potentiale schreiben:
-\begin{equation}
-\varphi = \frac{Q_1}{2\pi\varepsilon_0} \int^{x_1}_{r_1} \frac{dx_1}{x_1} + \varphi_1 + \frac{Q'_1}{2\pi\varepsilon_0} \int^{x_1}_{r_1} \frac{dx'_1}{x'_1} + \varphi'_1
-\end{equation}
-Wobei $r_1$ der Radius der Leiter ist, welche wir im folgenden als klein im Vergleich zu den Leiterabständen betrachten. Mit $Q'_1 = - Q_1$ und $\varphi'_1 = - \varphi_1$ ergibt sich:
-\begin{equation}\label{einleitungsfeld}
-\varphi = \frac{Q_1}{2\pi l\varepsilon_0} \ln \frac{x'_1}{x_1}
-\end{equation}
-An der Oberfläche des Leiters ist das Potential somit näherungsweise:
-\begin{equation}
-\varphi^* = \frac{Q_1}{2\pi l\varepsilon_0} \ln \frac{2h_1}{r_1}
-\end{equation}
-Dies entspricht aus auf Grund der Stetigkeit des Potentials % echt?
-dem Potential des Leiters $\varphi_1 = \varphi^*$.
-Betrachten wir nun ein System mit mehreren Leitern. Das Potential an einem wieder frei gewähltem Punkt P berechnet sich als die Summe der nach (\ref{einleitungsfeld}) berechneten Potentiale:
-\begin{equation}
-\varphi = \sum \frac{Q_i}{2\pi l\varepsilon_0} \ln \frac{x'i}{x_i}
-\end{equation}
-Wie zuvor setzen wir die Ortskoordinaten der Leiteoberflächen ein um die Potentiale der Leiter zu bestimmen, dadurch erhalten wir:
-\begin{align}
-\varphi_1 &= a_{11} Q_1 + a_{12} Q_{2} + ... + a_{1n} Q_n \\
-\varphi_2 &= a_{21} Q_1 + a_{22} Q_{2} + ... + a_{2n} Q_n \\
-\vdots \\
-\varphi_n &= a_{n1} Q_1 + a_{n2} Q_{2} + ... + a_{nn} Q_n
-\end{align}
-mit den Koeffizienten
-\begin{equation}
-a_{ii} = \frac{\ln 2h_i/r_i}{2\pi l \varepsilon_0} \quad \textrm{und} \quad a_{ik} = \frac{\ln D_{ik}/d_{ik}}{2\pi l \varepsilon_0}
-\end{equation}
-Das obige Gleichungssystem muss nun nach den $Q_i$ aufgelöst werden. Das Gleichungssystem lässt sich auch in Matrizenschreibweiße $\boldsymbol{\varphi} = \uuline{A} \cdot \mathbf{Q}$ darstellen, dann entspricht das Auflösen der Invertierung der Matrix $\uuline{A}$: $\uuline{D}=\uuline{A}^{-1}$. Man erhält also allgemein:
-\begin{equation}
-Q_i = \sum_k d_{ik}\varphi_k
-\end{equation}
-Wir ziehen das Element mit $k=i$ aus der Summe hinaus und ergänzen:
-\begin{equation}
-Q_i = \sum_{k\neq i} d_{ik}\varphi_k + d_{ii}\varphi_i + \textcolor{blue}{\sum_k d_{ik}\varphi_i} - \textcolor{blue}
-{\sum_k d_{ik}\varphi_i}
-\end{equation}
-Durch umsortieren und ausklammern erhalten wir schließlich eine Form in welcher wir die Teilkapazitäten identifizieren können.
-\begin{equation}
-Q_i = \underbrace{\left(d_{ii}+\sum_{k\neq i}d_{ik}\right)}_{:=C_{i0}}\varphi_i + \sum_{k\neq i} \underbrace{d_{ik}}_{:=C_{ik}} \left( \varphi_k - \varphi_i \right)
-\end{equation}
-Mithilfe der Regeln zur Parallel- und Reihenschaltung von Kondensatoren lässt sich daraus der Gesamtkapazitätsbelag berechnen.
-Für eine Wechselstromleitung mit zwei Leiterseilen erhält man gemäß dieser Vorgehensweise\footnote{Dabei schrumpft das Gleichungssystem jedoch auf zwei Gleichungen zusammen, weshalb die Auflösung sehr einfach wird.}
-\begin{equation}
-C' = \frac{C}{l} = \frac{\varepsilon_0\pi}{\ln{\frac{2hd}{r\sqrt{\left(2h\right)^2+d^2}}}}
-\end{equation}
-Für eine Dreiphasenleitung ohne Erdleiter kann man man die Herleitung vereinfachen indem man ausnützt, dass die Ladungen der drei Leitungen zusammen immer Null ergeben. Möchte man jedoch, z. Bsp. für  Erdschlussstromberechnungen nicht nur die Gesamtkapazität sondern auch die einzelnen Teilkapazitäten berechnen, geht man nach dem beschriebenen Ansatz vor.
-Da die Koeffizienten $a_{ii}$ und somit auch die Koeffizienten $d_{ik}$ von der Höhe der Leitungen über dem Erdboden abhängen, ergibt sich -- im Gegensatz zur Induktivität -- bei einer symmetrischen Dreiecksanordnung wie oben %verwais
-unterschiedliche Kapazitäten für die Leitungen. Daher verdrillt man auch derartige symmetrische Leiter. Für einen derartigen Leiter erhält man den Kapazitätsbelag
-\begin{equation}\label{verdrillteindukt}
-C' = \frac{2\pi\varepsilon_0}{\ln\left(2 \bar{h}\bar{d}/(r\bar{D})\right) } \approx
-\frac{2\pi\varepsilon_0}{\ln\left(\bar{d}/r\right)}
-\end{equation}
-Wobei $\bar{h}$, $\bar{d}$ und $\bar{D}$ die geometrischen Mittelwerte der Leiterhöhen, -Abstände und der Abstände zwischen einer Leitung und einer anderen \q Spiegelleitung\q : % Anführungszeichen fixen
-\begin{equation}
-\bar{h} := \sqrt[3]{h_1h_2h_3}, \quad \bar{d} := \sqrt[3]{d_{12}d_{23}d_{31}} \quad \bar{D} := \sqrt[3]{d_{12'}d_{23'}d_{31'}} \approx 2\bar{h}
-\end{equation}
-Man kann zeigen, dass ein zusätzliches Erdseil die Erdkapazität erhöht und die die Leiterkapazität verringert, so dass die Gesammtkapaziät unverändert bleibt und Gleichung (\ref{verdrillteindukt}) bleibt gültig.\cite{Flosdorff}
-
-
-\subsubsection{Kabel}
-In urbanen Gegenden sowie in Gegenden mit besonders erhaltenswerten Landschaften, setzt man statt Freileitungen auf unter der Erde verlegt Kabel. Die Leiter sind in der Regel aus Kupfer oder Aluminium und mit Ölimpregniertem Ölband oder neuer mit speziellen Kunststoffen isoliert. % flüssigkeitsimprägniertem Polypropylen/Papier-Laminat isoliert.
-Neben Kosten und Gewichtseinsparungen haben moderne Kunststoffisolierungen auch elektrische Vorteile, so haben Kabel mit flüssigkeitsimprägniertem Polypropylen/Papier-Laminat eine um 67\% niedrigere dielektrische Verluste und eine 20\% niedrigere Permittivität und somit Kapazität.\cite{Harrison} Dadurch lässt sich mehr Leistung übertragen und es muss weniger Blindleistung bereitgestellt werden.
-%Gaskablenm Druckgaskabel, (Druck-)Ölkabel
-PVC-Kabel werden in Niederspannungs- und Mittelspannungsnetzen bis 10 kV eingesetzt. Für Hochspannungsnetze ist es wegen der hohen dielektischen Verluste ungeeignet, hier kommen neben Ölkabeln und Druckgaskabeln neuerdings Kabel mit vernetztem Polyäthylen (VPE) zum Einsatz. VPE hat hervorragende dielektrische und thermische Eigenschaften, weshalb es immer mehr in den Mittel und Niederspannungsbereich vordringt.\cite{Flosdorff}
-
-% höhere Kosten, nidrigere Zuverlässigkeit
-Das Ersatzschaltbild sieht wie das der Freileitung aus, nur das man zwei Parallel geschaltete Ableitungswiederstände betrachtet.
-$R_0$ ist der Isolationswiederstand, während $R_d$ die dielektrischen Verluste beschreibt. Das sind Verluste die durch Polarisationseffekte im Dielektrikum der Kapazität entstehen.
-Die Induktivitäten von Kabeln lassen sich nach den selben Gleichungen berechnen, wie die von Freileitungen, da hier Herleitung dieser ohne die Bedingung $d\gg r$ auskommt.\footnote{Dabei ist $\mu_0$ natürlich durch $\mu_r\mu_0$ – mit $\mu_r$ als der relativen Permeabilität des Materials – zu ersetzen} %was ist mit h>>d ?
-Da bei Kabel die Leiterabstände deutlich kleiner sind sind auch die Induktivitäten kleiner: sie betragen nur etwas 25\% bis 30\% derWerte von Freileitungen\cite{Flosdorff}.
-Die Berechnung der Kapazität von Kabeln, insbesondere Gürtelkabeln, ist ungleich schwieriger als bei Freileitern, da wir vorausgesetzt haben, dass $d\gg r$ ist auserdem sind die Dielektriken und der kreisförmige Metallmantel rechnerisch nur näherungsweise bestimmbar. Daher werden die Kapazitäten experimentell vom Hersteller bestimmt.\cite{Flosdorff}
-Typische Werte für ein einphasiges Kupferkabel findet man in Tabelle \ref{fehlt}.
-Wie wir mit den Werten feststellen können, ist bei Kabeln die Kapazität überwiegend,
-besonders stark ist dies bei Unterseekabeln ausgeprägt. % überprüfen, warum?, Werte
-Dazu kommt, dass bei Unterseekabeln die Blindleistungskompensation nur schwer möglich ist.
-Die hohen Kapazitäten erfordern hohe Ströme zum Laden der Kapazität (Ladeströme), welche durch den gesamten zur Verfügung gestellten Strom aufgebracht werden müssen. Dies reduziert die übertragbare Leistung und führt ab einer gewissen Länge dazu, dass der maximal übertragbare Strom als Ladekapazität benötigt wird. % versteh ich selbst nur halb...
-Für ein 400-kV-Kabel wie in Tabelle \ref{fehlt} liegt diese Länge bei 43,6 km.
-Daher werden bei längeren Kabeln alle paar Kilometer % wieviel genau, besser formulieren…
-Induktivitäten angeschlossen um die Blindleistung zu kompensieren.
-
-\section{Netzregelung}
-Elektrische Netze leiten elektrische Energie, können aber weder Energie erzeugen noch speichern.
-Aufgrund der Energieerhaltung muss zu jedem Zeitpunkt exakt die gleiche Menge an Wirk- und Blindleistung in das Netz eingespeist werden, wie – einschließlich aller Verluste – verbraucht wird.
-Es stellt sich daher die Frage, wie dies gewährleistet werden kann und was geschieht wenn dies für kurze Zeit nicht der Fall ist – den schließlich kann man aus unerwartete Veränderungen des Verbrauchs nicht beliebig schnell reagieren.
-
-\subsection{Leistungs-Frequenz-Regelung}
-Zunächst betrachten wir die Wirkleistung in einem Drehstromnetz, dass von Kraftwerken mit dampfgetriebenen Turbinen gespeist wird. Das Kraftwerk kann dabei ein Kohle-, Öl- oder Kernkraftwerk sein. \footnote{Statt diesen dampfgetriebenen Turbinen lassen sich auch Wasser- oder Windkraftwerke annehmen, lediglich Turbinenlose Kraftwerke wie Photovoltaikanlagen sind hierfür ungeeignet} % Gaskraftwerke?
-Neben den Kraftwerken gibt es auch zahlreiche Drehstrommotoren auf der \q Verbraucherseite\q. % Anführungszeichen
-In den Turbinen, Generatoren und Motoren rotieren Massen – darin ist Rotationsenergie gespeichert.
-Steigt nur der Wirkleistungsverbrauch über die Menge an produzierter Wirkleistung, so wird die Energiedifferenz aus der Rotationsenergie der Maschinen entnommen.\cite{Harrison}
-Dadurch wird deren Rotation jedoch langsamer – was zu einer Verringerung der Netzfrequenz führt.
-Ist der Wirkleistungsverbrauch geringer als die Produktion, so geht die überschüssige Energie in Rotationsenergie der Maschinen über und die Netzfrequenz steigt.
-In den Kraftwerken erkennt nun ein Sensor die Änderung der Frequenz und regulieren die Dampfventile entsprechend:
-ist die Frequenz zu niedrig, wird mehr Dampf in die Turbinen gelassen, ist die Frequenz zu hoch, wird die Dampfzufuhr reduziert.
-Man hält dadurch die Frequenz immer ungefähr konstant: in Großbritannien beträgt die Frequenz im Allgemeinen $50 \mathrm{Hz} \pm 0,05 \mathrm{Hz}$.\cite{Harrison} %Wert für Deutschland
-%Details; auch in DE; alternativen?
-
-\subsection{Blindleistungs-Spannungsregelung}
-In einem elektrischen Netz muss nicht nur die bereitgestellte Wirkleistung gleich der produzierten sein, selbiges gilt auch für die Blindleistung.
-Betrachtet man eine Last, die von einem Generator über eine Leitung mit ohmschen Widerstand und Blindwiderstand mit Leistung versorgt wird. Da auch an der Leistung eine Spannung abfällt, existiert eine Differenz zwischen der Generatorspannung und der an der Last anliegenden Spannung. Diese Differenz ist auch von der Blindleistung abhängig. Steigt also der Blindleistungsbedarf plötzlich, so steigt auch die Spannungsdifferenz und die Spannung an der Last sinkt. Dadurch sinkt wiederum der Blindleistungsbedarf – aber auch der Wirkleistungsbedarf.
-Als Zahlenbeispiel sei genannt, dass eine Reduktion der Spannung um 1\% im gesamten Britischen Netz die Nachfrage nach Blindleistung um 5\% und die Nachfrage nach Wirkleistung um 1,4\% senken würde.
-%Spannungsänderung duch stufensteller - was hat das damit zu tun?
-%Bevor wir uns überlegen, wie dies gewährleistet wird,
-Nun wollen wir ein paar Worte zur Erzeugung und "Vernichtung" von Blindleistung zum Ausgleich der von Verbrauchern und Leistungen erzeugten Blindleistung verlieren. Die wichtigste Rolle spielen dabei Synchrongeneratoren und Synchron-Phasenschieber.
-Ist der Generator überangeregt, % erklären was das ist.
-so erzeugt er Blindleistung, ist er unterangeregt, so nimmt der Blindleistung auf. Größe Synchrongeneratoren können bis zu 50\% ihrer Bemessungsleistung in Form von Blindstrom bereitstellen. %formulierung
-Jedoch darf die aufgenommene Blindleistung nur bis zu 15\% detragen, wenn gleichzeitig die volle Wirkleistung erzeugt werden soll.\cite{Harrison}	%formulierung, so korrekt?, warum
-Bei Synchron-Phasenschieber handelt es sich um im Leerlauf betriebene Synchronmotoren, deren Erregung automatisch durch die Spannung geregelt werden. Sie nehmen nur geringe Wirkleistung auf um ihre Verluste aus zu gleichen. Ein Gasturbinen-Generator kann – wenn keine Wirkleistung erzeugt werden soll – bei geeigneter Bauart von seiner Turbine abgekoppelt werden und dann als Synchron-Phasenschieber betrieben werden.\cite{Harrison}
-
-Blindleistung kann auch durch parallelgeschaltete Kapazitäten erzeugt werden, diese haben jedoch den Nachteil das ihre Blindleistung proportional zu $U^2$ ist – sie also genau dann wenn man sie am dringendsten braucht weniger Blindleistung bereitstellen.\cite{Harrison}
-
-\subsection{Gleichstrom-Netzregelung}
-fehlt noch… %### fehlt
-
-\section{Vor- und Nachteile der HGÜ gegenüber DHÜ}
-Wir haben nun die physikalischen Grundlagen der elektrischen Energieübertragung kennengelernt, wir wollen nun die Vor und Nachteile beider Ansätze vergleichen und dabei auch technische und wirtschaftliche Aspekte berücksichtigen.
-
-Gleichstrom hat den Nachteil, dass es im Gegensatz zum Wechselstrom keine einfache Möglichkeit der Lastflusssteuerung gibt.
-Außerdem gibt es keine leistungsfähigen Gleichstrom-Schalter:
-Es mag zwar auf den ersten Blick trivial erscheinen, einen Schalter zu bauen, doch sind die Spannungen in Energienetzen so hoch, dass beim trennen eines Kontaktschalters eine Entladung über einen Lichtbogen auftritt, welcher gelöscht werden muss. Neben zahlreichen technischen Tricks, wie Löschgase oder Öl, behilft man sich bei Wechselstrom-Schaltern dadurch, dass man die Kontakte genau in dem Moment trennt in welchem die Spannungskurve einen Nulldurchlauf hat. Da man bei HGÜ keine Nulldurchgänge hat, ist das Bauen von leistungsfähigen Gleichstrom-Schaltern nicht möglich. %Quelle, mehr?, eigenes Kapitel?
-Das Betreiben von vermaschten Leitungen ist jedoch ohne leistungsfähige Schalter kaum möglich.\cite{Schymroch} % und ohne ordentliche Regelung auch nicht
-Und während bei DHÜ an jeder Stelle einer Leitung das Entnehmen von Leistung mit einem simplen Transformator möglich ist braucht man bei HGÜ dafür komplexe Stromrichterstationen.\cite{Schymroch}
-Daher ist und bleibt der Einsatz von HGÜ bis aus weiteres auf Punkt-zu-Punkt-Verbindungen beschränkt. Es gib nur wenige Ausnahmen, in welchen eine Verbindung von 3 Punkten mit Gleichstrom erfolgt ist. %wo, Quelle
-Da es für unsere Bedürfnisse wichtig ist ein stark vernetztes Energienetz zu haben, muss die Grundstruktur %Wort
-unserer Energienetze weiterhin auf Drehstrom basieren.
-
-An den Enden einer solchen HGÜ-Leitung findet man jeweils eine Stromrichterstation, welche Transformatoren, Stromrichter, Filter und Regelungstechnik enthalten.\cite{Schymroch} In diesen Stationen wird auf der einen Seite der Wechselstrom in Gleichstrom umgewandelt, auf der anderen Seite dieser wieder in Wechselstrom zurück gewandelt.
-% mehr zu funktionsweiße
-Diese Stromrichterstation sind äußerst komplex und dadurch teuer und anfällig für Störungen. Auch haben sie vergleichsweiße hohe Verluste und benötigen Blindleistung, die von den angebundenen Netzen aufgebracht werden muss.
-
-Die Leitung selbst haben jedoch geringere Verluste, was zum einen am nicht vorhandenen Skineffekt liegt, vor allem aber daran, dass nur Wirkleistung übertragen wird, in Gleichung \ref{Verlust} das $\varphi=0$ ist. Ab einer gewissen Länge sind HGÜ-Leitungen also effektiver als DHÜ-Leitungen.
-Auch die Kosten für die Leitungen sind wesentlich geringer, dies liegt zum einen daran, dass man bei Drehstrom drei Leiter braucht, bei Gleichspannung jedoch mit zwei und bei Rückleitung über die Erde sogar nur mit einem Leiter auskommt. Dies spart Material und Bodenverbrauch. % Quelle, effizienz dadurch besser?
-Dazu kommt, dass bei einer Drehstromleitung der Ausfall von nur einem Leiter zum Totalausfall der ganzen Leitung kommt, während eine Zweileiter-Gleichstrom-Leitung bei Ausfall eines Leiters noch mit halber Übertragungsleistung betrieben werden kann.\cite{Schymroch}\footnote{Allerdings wird die Rückleitung über die Erden nicht überall von den Behörden genehmigt.}%Quelle
-Zum anderen sind die benötigen Leiter wesentlich einfacher. Dies hat einen ganze Reihe von Gründen:
-Zunächst ist bei Gleichstrom die Effiktivspannung gleich der Maximalspannung, während bei Drehstrom die Maximalspannung um einen Faktor $\sqrt{2}$ höher ist und dss weiteren wird nur Wirk- und keine Blindleistung übertragen -- beide Effekte führen dazu, dass die Leitung nur auf eine niedrigere Spannungsfestigkeit ausgelegt werden muss. % Quelle
-Bei Freileitungen mit Gleichstrom ist wie wir gesehen haben die Koronaentladung geringer, was nicht nur zu geringeren Verlusten führt, sondern vor allem dazu, dass man keine aufwendigen Bündelleiter benötigt.
-Bei Kabeln, auf der anderen Seite, entfallen die Dielektrischen Verluste in der Isolierung und die Vorentladung ist wesentlich geringer, da es keine inhomogene Feldverläufe in den Isolierungen gibt. %genauer, Quelle
-
-Gleichstromanlagen haben also sowohl was die Effizienz angeht also auch bezüglich der Wirtschaftlichkeit schlechte  Stromrichterstation, während die Leitung selbst effizienter und billiger ist als mit Drehstrom. Deshalb ist für kurze Leitungen Gleichstrom -- von Ausnahmen auf die wir unten zu sprechen kommen -- uninteressant, während für lange Leitungen die Vorteile überwiegen. Die Distanz ab der eine Gleichstromleitung wirtschaftlicher ist als eine Wechselstromleitung nennt man Break-Even-Distance, sie hängt von unterschiedlichen Parametern, insbesondere den Bodenpreisen und der Geländebeschaffenheit ab. %welche
-\cite{Schymroch} beziffert die Break-Even-Distance für Freileitungen auf 300 km bis 700 km. %andere Quellen
-Neben den teureren Leitungen und dem höheren Verlusten haben lange Drehstromleitungen noch ein weiteres Problem: ab einer gewissen Länge ist es nicht nur wegen den Verlusten, sondern auch aus Stabilitätsgründen, nötig die Blindleistung schon an Zwischenstationen zu kompensieren -- wir erinnern uns zum Beispiel daran, dass wir gesehen haben, dass ab einer gewissen Länge die Ladeströme die Leitungsströme übersteigen. Da die Kapazitiver Blindleistung eines Kabels wesentlich höher als die Induktivität einer Freileitung ist, ist die Länge, ab welche eine Blindleistungskompensation unterwegs erforderlich ist, bei Kabeln wesentlich geringer als bei Freileitungen %Wort.
-Dies ist bei Unterseekabeln noch stärker, welche aufgrund der hohen Permittivität und Leitfähigkeit des Meereswassers eine noch höhere Kapazität haben. Bei Unterseekabeln ist die Blindleistungskompensation nicht nur teuer sonder sogar technisch kaum möglich. Daher sind auch kürzere Unterseekabel zwangsläufig Gleichstromleitungen. %Zahlen!
-Die Länge einer Gleichspannungsleitung ist jedoch nur durch die ohmschen Verluste begrenzt.\cite{Schymroch}
-
-Soll nun jedoch ein sogenanntes Drehstrom-Inselnetz -- also ein abgeschlossenes kleines Netz -- über eine HGÜ gespeist werden, wie es beispielsweise bei der schwedischen Insel Gotland geschieht, muss bedacht werden, dass die HGÜ-Leitung nur Wirkleistung transportiert. Die Blindleistung für das Inselnetz, wie auch für die Stromrichterstation muss Vor-Ort kompensiert werden.
-
-Ein weitere Vorteil der sich aus dem Gleichstrom ergibt ist, dass die durch die Leitung verbunden Netzpunkte nicht Syncron sein müssen, sie können also einen Phasenunterschied zu einander oder sogar unterschiedliche Frequenzen haben. Damit könnten Netze mit unterschiedlichen Frequenzen (50 Hz oder 60 Hz) mit einander verbunden werden. So wurde in Sakuma, Japan das 50-Hz-Netz des Norden mit dem 60-Hz-Netz des Südens durch die HGÜ-Anlage Higashi-Shimizu mit einer Leitungslänge von nur wenigen Metern verbunden.\cite{Schymroch} %andere Quelle
-
-%% kein Skineffekt
-% Verschmutzungsbla -> WP
-%% keine Phasenverscheibung durch abstand ? 
-% hohe Geschw. der Regelung => kurzschluß-Strom gleich Nenstrom.
-
-\section{kurzer geschichtlicher Abriss}
-Wir wollen auch einen kurzen Abriss der durchaus interessanten Geschichte der Energieübertragung mit Gleich- und Wechselspannung geben.
-
-Die Geschichte der elektrischen Energie begann 1882 auf der Internationalen Ausstellung in München – mit einer Gleichstrom-Anlage. Der französische Physiker Marcel Deprez übertrug einer elektrische Leistung von 1,4 kW von Miesbach nach München – also über 57 km – mit zwei einfachen Telegrafendrähten mit einer Spannung zwischen 1,5 kV und 2,0 kV. Die Demonstationsanlage betrieb in München die Pumpen eines Springbrunnens. Die Verluste der Anlage betrugen 78\%. Eine weitere Steigerung der Spannung auf 6 kV scheiterte an Isolationsschwierigkeiten beim Gleichstrom-Generator. Diese Problem wurde 1884 von Lafontaine gelöst, indem mehrere von einander isoliert montierte Generatoren parallelgeschalten wurden und auch auf der Verbraucher Seite wurden parallelgeschaltene Motoren verwendet. Dadurch konnte der Wirkungsgrad eine 50 km langen Leitung auch 50\% erhöht und 70 kW übertragen werden.\cite{Schymroch}
-
-Auch nach Entdeckung des Transformators im Jahr darauf, wurde Wechselspannung -- obwohl sie sich Verlustarm hochspannen ließ -- weiterhin nicht verwendet.
-Dies ist auf den zur damaligen Zeit sehr renommierten italenischen Physiker Galileo Ferraris zurückführen,
-der einen falschen, aber sehr überzeugenden Beweis erbrachte, dass Wechselspannungsübertragungen maximal einen Wirkungsgrad von nur 50\% erreichen können.
-Da dem Beweis des berühmten Physikers glauben geschenkt wurde, wurde vorübergehend nicht an dem Thema weitergearbeitet.
-Auch die Demonstration einer Drehstrom-Übertragung von Laufen nach Frankfurt auf der dortigen Weltausstellung im Jahr 1891 konnten die favorisierung der Gleichstromübertragung nicht stoppen.
-Der Schweizer Ingenieur René Thury -- auch bekannt als der König des Gleichstroms -- hatte ein wirksames und zuverlässiges Regelungssystem für die in Reihe geschalteten Gneratoren und Motoren entwickelt, so dass Gleichstrom mit Spannungen von bis zu 180 kV übertragen werden konnte. In den nächsten zwanzig Jahren wurden 15 Übertragungen nach dem Prinzip von Thury gebaut. Das letzte dieser Anlagen und gleichzeitig auch das letzte Gleichspannungssystem mit mechanischen Wandlern war die Anlagen zwischen Moutiers und Lyon, sowie später Rosiers und Vignotanne, Übertrug zunächst 4,5 MW und nach einem Ausbau 14 MW Leistung. Es bestand aus drei Kraftwerken und zwei Verbraucherstationen (eine eigene für die Straßenbahnen), war also vergleichsweise komplex. Die Anlage wurde 1937 zugunsten einer, der ab 1930 als überlegen ausgestiegenen, DHÜ-Systeme demontiert. Die Idee der HGÜ gerit jedoch nicht in Vergessenheit, da zu jener Zeit mit den Stromrichtern die Grundlage für moderne Stromrichterstation erfunden wurde.
-
-
+%%% ---------------------------
 % eifügen, wenn noch nicht klar:
 %% Blindleistung in den Netzen niedrig halten, da Netztbelastung(Scheinleistung) => weniger Wirkleistung mögl.
 % Leitungen: 6° Phasenverschiebung/100km
 % Konverterstat. bruachen Blindleistung
-
-
-%\section*{bla}
-%\begin{circuit}{2}
-%\R1 {$1 \Omega$} h
-%\- 8 r
-%\C1 C d
-%\- 4 v
-%\nl\R1 {L} d 
-%\nl\- 10 v
-%\end{circuit}
-%
-%\begin{circuit}{0}
-%\npn1 {?} B l
-%\frompin npn1C
-%\- 1 u
-%\nl\A1 {$I_C$} u
-%\atpin npn1B
-%\- 1 l
-%\R1 {510 kohm} l
-%\end{circuit}
+% In England wird bei Laststößen die Spannung konstant gehalten und die Frequenz gibt nach, in festland-Europa andersherum
 
 
 \bibliography{lit}{}

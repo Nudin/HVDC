@@ -1,0 +1,38 @@
+\section{Vor- und Nachteile der HGÜ gegenüber DHÜ}
+Wir haben nun die physikalischen Grundlagen der elektrischen Energieübertragung kennengelernt, wir wollen nun die Vor und Nachteile beider Ansätze vergleichen und dabei auch technische und wirtschaftliche Aspekte berücksichtigen.
+
+Gleichstrom hat den Nachteil, dass es im Gegensatz zum Wechselstrom keine einfache Möglichkeit der Lastflusssteuerung gibt.
+Außerdem gibt es keine leistungsfähigen Gleichstrom-Schalter:
+Es mag zwar auf den ersten Blick trivial erscheinen, einen Schalter zu bauen, doch sind die Spannungen in Energienetzen so hoch, dass beim trennen eines Kontaktschalters eine Entladung über einen Lichtbogen auftritt, welcher gelöscht werden muss. Neben zahlreichen technischen Tricks, wie Löschgase oder Öl, behilft man sich bei Wechselstrom-Schaltern dadurch, dass man die Kontakte genau in dem Moment trennt in welchem die Spannungskurve einen Nulldurchlauf hat. Da man bei HGÜ keine Nulldurchgänge hat, ist das Bauen von leistungsfähigen Gleichstrom-Schaltern nicht möglich. %Quelle, mehr?, eigenes Kapitel?
+Das Betreiben von vermaschten Leitungen ist jedoch ohne leistungsfähige Schalter kaum möglich.\cite{Schymroch} % und ohne ordentliche Regelung auch nicht
+Und während bei DHÜ an jeder Stelle einer Leitung das Entnehmen von Leistung mit einem simplen Transformator möglich ist braucht man bei HGÜ dafür komplexe Stromrichterstationen.\cite{Schymroch}
+Daher ist und bleibt der Einsatz von HGÜ bis aus weiteres auf Punkt-zu-Punkt-Verbindungen beschränkt. Es gib nur wenige Ausnahmen, in welchen eine Verbindung von 3 Punkten mit Gleichstrom erfolgt ist. %wo, Quelle
+Da es für unsere Bedürfnisse wichtig ist ein stark vernetztes Energienetz zu haben, muss die Grundstruktur %Wort
+unserer Energienetze weiterhin auf Drehstrom basieren.
+
+An den Enden einer solchen HGÜ-Leitung findet man jeweils eine Stromrichterstation, welche Transformatoren, Stromrichter, Filter und Regelungstechnik enthalten.\cite{Schymroch} In diesen Stationen wird auf der einen Seite der Wechselstrom in Gleichstrom umgewandelt, auf der anderen Seite dieser wieder in Wechselstrom zurück gewandelt.
+% mehr zu funktionsweiße
+Diese Stromrichterstation sind äußerst komplex und dadurch teuer und anfällig für Störungen. Auch haben sie vergleichsweiße hohe Verluste und benötigen Blindleistung, die von den angebundenen Netzen aufgebracht werden muss.
+
+Die Leitung selbst haben jedoch geringere Verluste, was zum einen am nicht vorhandenen Skineffekt liegt, vor allem aber daran, dass nur Wirkleistung übertragen wird, in Gleichung \ref{Verlust} das $\varphi=0$ ist. Ab einer gewissen Länge sind HGÜ-Leitungen also effektiver als DHÜ-Leitungen.
+Auch die Kosten für die Leitungen sind wesentlich geringer, dies liegt zum einen daran, dass man bei Drehstrom drei Leiter braucht, bei Gleichspannung jedoch mit zwei und bei Rückleitung über die Erde sogar nur mit einem Leiter auskommt. Dies spart Material und Bodenverbrauch. % Quelle, effizienz dadurch besser?
+Dazu kommt, dass bei einer Drehstromleitung der Ausfall von nur einem Leiter zum Totalausfall der ganzen Leitung kommt, während eine Zweileiter-Gleichstrom-Leitung bei Ausfall eines Leiters noch mit halber Übertragungsleistung betrieben werden kann.\cite{Schymroch}\footnote{Allerdings wird die Rückleitung über die Erden nicht überall von den Behörden genehmigt.}%Quelle
+Zum anderen sind die benötigen Leiter wesentlich einfacher. Dies hat einen ganze Reihe von Gründen:
+Zunächst ist bei Gleichstrom die Effiktivspannung gleich der Maximalspannung, während bei Drehstrom die Maximalspannung um einen Faktor $\sqrt{2}$ höher ist und dss weiteren wird nur Wirk- und keine Blindleistung übertragen -- beide Effekte führen dazu, dass die Leitung nur auf eine niedrigere Spannungsfestigkeit ausgelegt werden muss. % Quelle
+Bei Freileitungen mit Gleichstrom ist wie wir gesehen haben die Koronaentladung geringer, was nicht nur zu geringeren Verlusten führt, sondern vor allem dazu, dass man keine aufwendigen Bündelleiter benötigt.
+Bei Kabeln, auf der anderen Seite, entfallen die Dielektrischen Verluste in der Isolierung und die Vorentladung ist wesentlich geringer, da es keine inhomogene Feldverläufe in den Isolierungen gibt. %genauer, Quelle
+
+Gleichstromanlagen haben also sowohl was die Effizienz angeht also auch bezüglich der Wirtschaftlichkeit schlechte  Stromrichterstation, während die Leitung selbst effizienter und billiger ist als mit Drehstrom. Deshalb ist für kurze Leitungen Gleichstrom -- von Ausnahmen auf die wir unten zu sprechen kommen -- uninteressant, während für lange Leitungen die Vorteile überwiegen. Die Distanz ab der eine Gleichstromleitung wirtschaftlicher ist als eine Wechselstromleitung nennt man Break-Even-Distance, sie hängt von unterschiedlichen Parametern, insbesondere den Bodenpreisen und der Geländebeschaffenheit ab. %welche
+\cite{Schymroch} beziffert die Break-Even-Distance für Freileitungen auf 300 km bis 700 km. %andere Quellen
+Neben den teureren Leitungen und dem höheren Verlusten haben lange Drehstromleitungen noch ein weiteres Problem: ab einer gewissen Länge ist es nicht nur wegen den Verlusten, sondern auch aus Stabilitätsgründen, nötig die Blindleistung schon an Zwischenstationen zu kompensieren -- wir erinnern uns zum Beispiel daran, dass wir gesehen haben, dass ab einer gewissen Länge die Ladeströme die Leitungsströme übersteigen. Da die Kapazitiver Blindleistung eines Kabels wesentlich höher als die Induktivität einer Freileitung ist, ist die Länge, ab welche eine Blindleistungskompensation unterwegs erforderlich ist, bei Kabeln wesentlich geringer als bei Freileitungen %Wort.
+Dies ist bei Unterseekabeln noch stärker, welche aufgrund der hohen Permittivität und Leitfähigkeit des Meereswassers eine noch höhere Kapazität haben. Bei Unterseekabeln ist die Blindleistungskompensation nicht nur teuer sonder sogar technisch kaum möglich. Daher sind auch kürzere Unterseekabel zwangsläufig Gleichstromleitungen. %Zahlen!
+Die Länge einer Gleichspannungsleitung ist jedoch nur durch die ohmschen Verluste begrenzt.\cite{Schymroch}
+
+Soll nun jedoch ein sogenanntes Drehstrom-Inselnetz -- also ein abgeschlossenes kleines Netz -- über eine HGÜ gespeist werden, wie es beispielsweise bei der schwedischen Insel Gotland geschieht, muss bedacht werden, dass die HGÜ-Leitung nur Wirkleistung transportiert. Die Blindleistung für das Inselnetz, wie auch für die Stromrichterstation muss Vor-Ort kompensiert werden.
+
+Ein weitere Vorteil der sich aus dem Gleichstrom ergibt ist, dass die durch die Leitung verbunden Netzpunkte nicht Syncron sein müssen, sie können also einen Phasenunterschied zu einander oder sogar unterschiedliche Frequenzen haben. Damit könnten Netze mit unterschiedlichen Frequenzen (50 Hz oder 60 Hz) mit einander verbunden werden. So wurde in Sakuma, Japan das 50-Hz-Netz des Norden mit dem 60-Hz-Netz des Südens durch die HGÜ-Anlage Higashi-Shimizu mit einer Leitungslänge von nur wenigen Metern verbunden.\cite{Schymroch} %andere Quelle
+
+%% kein Skineffekt
+% Verschmutzungsbla -> WP
+%% keine Phasenverscheibung durch abstand ? 
+% hohe Geschw. der Regelung => kurzschluß-Strom gleich Nenstrom.
