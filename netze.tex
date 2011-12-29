@@ -45,7 +45,7 @@ Seit einigen Jahren stattet man vor allem die Erdseile, aber auch die Leiterseil
 In Abbildung \ref{Ersatzschaltbildfreileitung} ist ein Ersatzschaltbild für eine Einphasige Leitung mit den Leitungsbelägen gezeichnet.
 % Alternativ: π-Glied
 Dabei ist R der serielle Widerstand, L die serielle Induktivität, C die Parallele Kapazität und $R_0$ der Ableitungswiederstand. Für die genaue Betrachtung muss man sich dieses infinitesimal Klein, unendlich oft hintereinander geschaltet vorstellen, für kurze Leitungen (unter 100 km Länge), kann man es jedoch näherungsweise auf eine derartige Schaltung reduzieren. Außerdem sind im allgemeinen die Induktivitäten nicht notwendigerweise zeitlich konstant.\cite{Flosdorff}
-Typische Werte für den Widerstand, die Induktivität und Kapazität findet man in Tabelle \ref{fehlt}. Der Wert für die Ableitungsbelag hängt stark von äußeren Faktoren, wie den Umgebungsbedingungen und dem Verschmutzungsgrad der Isolatoren ab. Ein typische Wert ist $200\,M\Omega m^{-1}$.\cite{Harrison} Die Ableitungsverluste sind also meist deutlich geringer als die seriellen ohmschen Verluste, weshalb man sie in den meisten Betrachtungen ignorieren kann. Wie wir sehen ist eine Freileitung weitgehend induktiv. % sieht man garnicht
+Typische Werte für den Widerstand, die Induktivität und Kapazität findet man in Tabelle \ref{Tabfreileitung}. Der Wert für die Ableitungsbelag hängt stark von äußeren Faktoren, wie den Umgebungsbedingungen und dem Verschmutzungsgrad der Isolatoren ab. Ein typische Wert ist $200\,M\Omega m^{-1}$.\cite{Harrison} Die Ableitungsverluste sind also meist deutlich geringer als die seriellen ohmschen Verluste, weshalb man sie in den meisten Betrachtungen ignorieren kann. Wie wir sehen ist eine Freileitung weitgehend induktiv. % sieht man garnicht
 
 \setlength{\tabcolsep}{10pt}
 \renewcommand{\arraystretch}{1.5}
@@ -65,6 +65,7 @@ $X_C$ & 350 k$\Omega$ & 275 k$\Omega$ & 245 k$\Omega$ \\
 \end{tabular} 
 \end{center}
 \caption{bla} %fehlt
+\label{Tabfreileitung}
 \end{table}
 
 %%% Induktivität %%%
@@ -73,7 +74,7 @@ $X_C$ & 350 k$\Omega$ & 275 k$\Omega$ & 245 k$\Omega$ \\
 \begin{figure}[tbhn]
 \begin{center}
 \noindent
-\label{bla} 
+\label{leitungsreaktanz} 
 \includegraphics[scale=0.5]{leitungsreaktanz.png}
 \end{center}
 \caption{bla} %fehlt
@@ -85,14 +86,14 @@ Die Induktivität eines Leiters $v$ hängt wie folgt mit dm magnetischem Fluss a
 \begin{equation}
 L_v = N_v \frac{\Phi_v}{i_v}
 \end{equation}
-Laut \cite{Flosdorff} % besser [42] dort
+Laut \cite{Flosdorff}\cite{Moeller} % besser [42] dort
 ist $N_v = 1$, somit müssen wir um die Induktivität zu berechnen den magnetischen Fluss berechnen, welchen sich aus den Flüssen aller Leiter zusammensetzt. Es gilt also das Gleichungssystem:
 \begin{equation}\label{SummePhi}
 \Phi_v = \sum_k \Phi_{vk}
 \end{equation}
 %Da Feldlinien stets von einer Quelle ausgehen und in einer Senke enden, benötigen wir noch eine äußere Feldbegrenzung. %realy?
 Zur Berechnung der Flüsse führen wir einen Zylinder mit sehr großem, aber endlichem Radius $r_a$ und den Leiter $v$ als Mittelpunkt als Feldbegrenzung ein. Die Rechtfertigung dafür werden wir später sehen.
-Der Fluss den der Leiter selbst erzeugt ist nach \ref{42}
+Der Fluss den der Leiter selbst erzeugt ist laut \cite{Moeller}\cite{Flosdorff} % beide zitieren?
 \begin{equation}
 \Phi_{vv} = \frac{\mu_0l}{2\pi} \left( \ln\frac{r_a}{r_v} + 0,25 \right) i_v
 \end{equation}
@@ -138,7 +139,7 @@ und gleichfalls für Leiter 2. In der Regel sind die beiden Leiterradien gleich,
 L' = \frac{\mu_0}{\pi}\left(\ln\frac{d}{r_1}+025\right)
 \end{equation}
 
-Ein weiterer wichtiger Sonderfall ist die symmetrische Dreileiteranordnung, bei welcher alle drei Leiterabstände sowie Leiterradien jeweils gleichgroß sind: $d_1=d_2=d_3:=d$ und $r_1=r_2=r_3:=r$ und somit $a_{12}=a–{23}=a_{13}$. Auch hier sind die Induktivitäten der Leiter gleich groß. Wir errechnen für den ersten Leiter:
+Ein weiterer wichtiger Sonderfall ist die symmetrische Dreileiteranordnung, bei welcher alle drei Leiterabstände sowie Leiterradien jeweils gleichgroß sind: $d_1=d_2=d_3:=d$ und $r_1=r_2=r_3:=r$ und somit $a_{12}=a_{23}=a_{13}$. Auch hier sind die Induktivitäten der Leiter gleich groß. Wir errechnen für den ersten Leiter:
 \begin{equation}
 \Phi'_1 = a_{11}i_1+a_{12}i_2+a_{13}i_3 = a_{11}i_1+a_{12}\left(i_2+i_3\right) = \left(a_{11}-a_{12}\right)i_1
 \end{equation}
@@ -166,7 +167,7 @@ anstatt $d$.
 \begin{figure}[tbhn]
 \begin{center}
 \noindent
-\label{bla} 
+\label{gespiegelterdrehstrom} 
 \includegraphics[scale=1]{gespiegelterdrehstrom.png}
 \end{center}
 \caption{bla} %fehlt
