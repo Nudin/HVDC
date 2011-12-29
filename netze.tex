@@ -34,18 +34,51 @@ Seit einigen Jahren stattet man vor allem die Erdseile, aber auch die Leiterseil
 % Durchhang, entfernung, Last, Wetter, etc. ?
 
 \begin{figure}[tbhn]
+\begin{center}
+\noindent
 \label{Ersatzschaltbildfreileitung}
 \includegraphics[scale=0.5]{freileitung.png}
+\end{center}
 \caption{Ersatzschaltbild einer Freileitung} %mehr
 \end{figure}
 
 In Abbildung \ref{Ersatzschaltbildfreileitung} ist ein Ersatzschaltbild für eine Einphasige Leitung mit den Leitungsbelägen gezeichnet.
 % Alternativ: π-Glied
 Dabei ist R der serielle Widerstand, L die serielle Induktivität, C die Parallele Kapazität und $R_0$ der Ableitungswiederstand. Für die genaue Betrachtung muss man sich dieses infinitesimal Klein, unendlich oft hintereinander geschaltet vorstellen, für kurze Leitungen (unter 100 km Länge), kann man es jedoch näherungsweise auf eine derartige Schaltung reduzieren. Außerdem sind im allgemeinen die Induktivitäten nicht notwendigerweise zeitlich konstant.\cite{Flosdorff}
-Typische Werte für den Widerstand, die Induktivität und Kapazität findet man in Tabelle \ref{fehlt}. Der Wert für die Ableitungsbelag hängt stark von äußeren Faktoren, wie den Umgebungsbedingungen und dem Verschmutzungsgrad der Isolatoren ab. Ein typische Wert ist $200\,M\Omega m^{-1}$.\cite{Harrison} Die Ableitungsverluste sind also meist deutlich geringer als die seriellen ohmschen Verluste, weshalb man sie in den meisten Betrachtungen ignorieren kann. Wie wir sehen ist eine Freileitung weitgehend induktiv.
+Typische Werte für den Widerstand, die Induktivität und Kapazität findet man in Tabelle \ref{fehlt}. Der Wert für die Ableitungsbelag hängt stark von äußeren Faktoren, wie den Umgebungsbedingungen und dem Verschmutzungsgrad der Isolatoren ab. Ein typische Wert ist $200\,M\Omega m^{-1}$.\cite{Harrison} Die Ableitungsverluste sind also meist deutlich geringer als die seriellen ohmschen Verluste, weshalb man sie in den meisten Betrachtungen ignorieren kann. Wie wir sehen ist eine Freileitung weitgehend induktiv. % sieht man garnicht
+
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[tbhn]
+\begin{center}
+\noindent
+\begin{tabular}{|c|ccc|}
+\hline 
+Leitung & 132 kV ($1\cdot 175\ mm^2$) & 275 kV ($2\cdot 400\ mm^2$) & 400 kV ($4\cdot 400\ mm^2$) \\ 
+\hline 
+R & 0,178 $\Omega$ & 0,039 $\Omega$ & $0,02 \Omega$ \\ 
+
+$X_L$ & 0,40 $\Omega$ & 0,32 $\Omega$ & 0,278 $\Omega$ \\ 
+
+$X_C$ & 350 k$\Omega$ & 275 k$\Omega$ & 245 k$\Omega$ \\ 
+\hline 
+\end{tabular} 
+\end{center}
+\caption{bla} %fehlt
+\end{table}
 
 %%% Induktivität %%%
 \paragraph{Induktivitätsbelag}
+
+\begin{figure}[tbhn]
+\begin{center}
+\noindent
+\label{bla} 
+\includegraphics[scale=0.5]{leitungsreaktanz.png}
+\end{center}
+\caption{bla} %fehlt
+\end{figure}
+
 Fließen Wechselströme durch mehrere nebeneinander liegende Leiter so wird durch Selbstinduktion und Gegeninduktion eine Wechselspannung induziert.
 %bla, von wegen kan als selbstinduktion gesehen werden
 Die Induktivität eines Leiters $v$ hängt wie folgt mit dm magnetischem Fluss an dessen Position zusammen:
@@ -130,6 +163,15 @@ anstatt $d$.
 
 %%% Berechnung Kapazität %%%
 \paragraph{Kapazitätsbelag}
+\begin{figure}[tbhn]
+\begin{center}
+\noindent
+\label{bla} 
+\includegraphics[scale=1]{gespiegelterdrehstrom.png}
+\end{center}
+\caption{bla} %fehlt
+\end{figure}
+
  Die Kapazität einer Freileitung entsteht durch die die unterschiedlichen Potentiale der Leiterseil gegeneinander und gegenüber dem Erdpotential. Die Potentialunterschiede führen zu einem Elektrischem Feld, bestehend aus den elektrischen Flüssen $\Psi_{ij}$ zwischen zwei Leiterseilen, sowie den Flüssen $\Psi_{i0}$ zwischen je einem Leiter und dem Erdpotential. Zu jedem dieser Elektrischen Flüsse gehört eine Kapazität (Teilkapazität), welche zusammen die Kapazität der Freileitung ergeben.
 Wir betrachten zunächst nur einen Leiter. Zur Berechnung der Kapazität verwenden wir Spiegelladungen: Wir ersetzen den Grund durch eine an der Erdoberfläche gespiegelte Ladung mit entgegengesetzter Ladung $Q'_1 = - Q_1$, ohne das sich das Feld ändert. Nun können wir das Potential in einem beliebigen Punkt P Als Summe der Potentiale schreiben:
 \begin{equation}
@@ -197,6 +239,15 @@ In urbanen Gegenden sowie in Gegenden mit besonders erhaltenswerten Landschaften
 Neben Kosten und Gewichtseinsparungen haben moderne Kunststoffisolierungen auch elektrische Vorteile, so haben Kabel mit flüssigkeitsimprägniertem Polypropylen/Papier-Laminat eine um 67\% niedrigere dielektrische Verluste und eine 20\% niedrigere Permittivität und somit Kapazität.\cite{Harrison} Dadurch lässt sich mehr Leistung übertragen und es muss weniger Blindleistung bereitgestellt werden.
 %Gaskablenm Druckgaskabel, (Druck-)Ölkabel
 PVC-Kabel werden in Niederspannungs- und Mittelspannungsnetzen bis 10 kV eingesetzt. Für Hochspannungsnetze ist es wegen der hohen dielektischen Verluste ungeeignet, hier kommen neben Ölkabeln und Druckgaskabeln neuerdings Kabel mit vernetztem Polyäthylen (VPE) zum Einsatz. VPE hat hervorragende dielektrische und thermische Eigenschaften, weshalb es immer mehr in den Mittel und Niederspannungsbereich vordringt.\cite{Flosdorff}
+
+\begin{figure}[tbhn]
+\begin{center}
+\noindent
+\label{Ersatzschaltbildkabel}
+\includegraphics[scale=0.5]{kabel.png}
+\end{center}
+\caption{Ersatzschaltbild eines Kabels} %mehr
+\end{figure}
 
 % höhere Kosten, nidrigere Zuverlässigkeit
 Das Ersatzschaltbild sieht wie das der Freileitung aus, nur das man zwei Parallel geschaltete Ableitungswiederstände betrachtet.
