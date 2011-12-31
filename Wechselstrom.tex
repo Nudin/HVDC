@@ -1,21 +1,21 @@
 
 \section{Einphasen-Wechselstrom}\label{wechsel}
-Beim Einphasen-Wechselstrom hat man einen Nullleiter und einen Leiter auf der eine sinusförmige Wechselspannung mit der Amplitude $U_0$ anliegt:
+Beim Einphasen-Wechselstrom hat man einen Nullleiter und einen Leiter, auf dem eine sinusförmige Wechselspannung mit der Amplitude $U_0$ anliegt:
 \begin{equation}
 U(t)=U_0 \cdot \cos(\omega t + \varphi)
 \end{equation}
-Dieser Leiter wird in der Elektrotechnik oft umgangssprachlich als Phase bezeichnet, wir wollen davon hier jedoch nicht Gebrauch machen, da wir physikalisch korrekter den Faktor $\varphi$ als Phasenverschiebung oder kurz Phase bezeichnen werden.
+Dieser Leiter wird in der Elektrotechnik oft umgangssprachlich als Phase bezeichnet; wir wollen davon hier jedoch nicht Gebrauch machen, da wir physikalisch korrekter den Faktor $\varphi$ als Phasenverschiebung oder kurz Phase bezeichnen werden.
 
-Legt man obige Spannung an einem ohmschen Widerstand R an, so fließt durch ihn der Strom $I(t)= \frac{U(t)}{R} = I_0 \cdot \cos(\omega t + \varphi)$ mit $I_0 = U_0/R$.
-Die elektrische Leistung $P$ die an dem Widerstand geleistet wird, wird analog zur Gleichspannungstechnik als Produkt Produkt aus Spannung und Strom definiert, dabei beziehen sich jedoch alle drei Größen auf die momentanen Werte:
+Legt man obige Spannung an einen ohmschen Widerstand R an, so fließt durch ihn der Strom $I(t)= \frac{U(t)}{R} = I_0 \cdot \cos(\omega t + \varphi)$ mit $I_0 = U_0/R$.
+Die elektrische Leistung $P$, die an dem Widerstand erbracht wird, wird analog zur Gleichspannungstechnik als Produkt aus Spannung und Strom definiert, dabei beziehen sich jedoch alle drei Größen auf die momentanen Werte:
 \begin{equation}
 P(t) = U(t) \cdot I(t) \stackrel{\mathrm{\varphi=0}}= U_0 I_0 \cdot \cos^2(\omega t)
 \end{equation}
-Berechnen wir nun den Zeitlichen Mittelwert der Leistung
+Berechnen wir nun den zeitlichen Mittelwert der Leistung
 \begin{equation}\label{Wirkleistung_ohne_phi}
 \bar{P}=\frac1T \int\limits_0^T dt\: U_0 I_0 \cos^2 \omega t = \frac12 U_0 I_0 \qquad\mathrm{mit}\; T=2\pi/\omega
 \end{equation}
-Vergleicht man dies mit der Leistung eines Gleichstroms $P=U\cdot I$, so sieht man, dass eine Gleichspannung mit $U=U_0 / \sqrt2$ und der daraus folgend Strom $I=I_0 / \sqrt2$ dieselbe Leistung erbringt.
+Vergleicht man dies mit der Leistung eines Gleichstroms $P=U\cdot I$, so sieht man, dass eine Gleichspannung mit $U=U_0 / \sqrt2$ und dem daraus folgendem Strom $I=I_0 / \sqrt2$ dieselbe Leistung erbringt.
 Deshalb definiert man die Effektivspannung und den Effektivstrom eines Wechselstroms als:
 \begin{equation*}
 U_{\mathrm{eff}} = \frac{U_0}{\sqrt2} \qquad I_{\mathrm{eff}} = \frac{I_0}{\sqrt2} \qquad \bar{P}=U_{\mathrm{eff}}I_{\mathrm{eff}}
@@ -108,3 +108,5 @@ R_\vartheta = R_{20} \cdot \left[ 1 + \alpha_{20} \cdot \left( \vartheta - 20^\c
 % wo anders hin verschieben, da auch bei Gleichspannung!?
 \subsection{Koronaentladung}
 Liegt an einem vergleichsweise dünnem Kabel eine hohe Spannung an, so herrschen in seiner unmittelbaren Nähe sehr hohe elektrische Felder. Sind diese Feldstärken größenordnungsmäßig vergleichbar groß wie die Durchschlagfestigkeit von Luft, so wird die Luft ionisiert, was zu Verlusten führt. Bei Wechselspannung ist dieses Problem besonders groß, da die Scheitelspannung $U_0$ um den Faktor $sqrt{2}$ größer als die Effektivpannung ist, es kommt also im Moment wenn der Scheitelwert erreicht wird auch bei geringeren Effektivspannungen bereits zur Koronaentladung. Dies betrifft insbesondere die 400-kV-Schiene (Scheitelspannung von 566 kV) und macht Übertragungen von mehr als 500 kV per Freileitung fast unmöglich.
+
+Die ist die Koronaentladung ist bei negativ geladen Leitern wesentlich höher als bei positiv geladenen\cite{Padiyar}, diese große Asymmetrie kann durch den Massenunterschied zwischen den Elektronen und den positiv geladenen Ionen. %Quelle

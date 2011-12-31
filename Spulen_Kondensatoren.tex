@@ -2,14 +2,14 @@
 \subsection{Spulen und Kondensatoren im Wechselstromkreis}
 
 \subsubsection{Spulen in Wechselstromkreisen}
-Wir betrachten nun einen Wechselstromkreis mit vernachlässigbaren Widerständen, in welcher sich eine Spule befindet. Ein Stromfluss in der Spule führt zu einem Magnetfeld. Da der Stromfluss in der Spule jedoch ständig sein Vorzeichen ändert, wird abwechselnd ein Magnetfeld in die eine Richtung aufgebaut und nach dem Zusammenbrechen dieses dann ein Magnetfeld mit umgekehrter Ausrichtung Richtung aufgebaut.
+Wir betrachten nun einen Wechselstromkreis mit vernachlässigbaren Widerständen, in welchem sich eine Spule befindet. Ein Stromfluss in der Spule führt zu einem Magnetfeld. Da der Stromfluss in der Spule jedoch ständig sein Vorzeichen ändert, wird abwechselnd ein Magnetfeld in die eine Richtung aufgebaut und nach seinem Zusammenbrechen dann ein Magnetfeld mit umgekehrter Ausrichtung aufgebaut.
 Die Summe aller Spannungen muss in einem Stromkreis immer Null sein:
-$ U_Q + U_\mathrm{ind} = 0 $.
-Wobei $U_Q$ die von der Quelle angelegte Spannung ist und $U_\mathrm{ind}$ die durch das Magnetfeld induzierte Spannung in der Spule ist. Letztere berechnet sich durch
+$ U_Q + U_\mathrm{ind} = 0 $,
+wobei $U_Q$ die von der Quelle angelegte Spannung ist und $U_\mathrm{ind}$ die durch das Magnetfeld induzierte Spannung in der Spule ist. Letztere berechnet sich durch
 \begin{equation}
 U_\mathrm{ind} = - L \cdot \frac{\mathrm dI(t)}{\mathrm dt}
 \end{equation}
-Daraus folgt durch einsetzen und integrieren
+Daraus folgt durch Einsetzen und Integrieren
 \begin{align}
 %U_Q + U_{ind} =& 0 \nonumber \\
 %\Rightarrow\;
@@ -19,7 +19,7 @@ U_0 \cos \omega t =& L \cdot \frac{\mathrm dI(t)}{\mathrm dt} \nonumber \\
 =& I_0 \sin \omega t \qquad mit\qquad I_0 = \frac{U_0}{\omega L}  \nonumber\\
 =& I_0 \cos(\omega t - 90^\circ)
 \end{align}
-Der Strom hinkt der Spannung also um \unit{90}{\degree} hinterher und wir definieren analog zum ohmschen Widerstand den Betrag des induktiven Widerstand als den Quotient zwischen $U_0$ und $I_0$:
+Es gibt also eine relative Phasenverschiebung zwischen dem Strom- und Spannungsverlauf: der Strom hinkt der Spannung also um \unit{90}{\degree} hinterher und wir definieren analog zum ohmschen Widerstand den Betrag des induktiven Widerstand als den Quotient zwischen $U_0$ und $I_0$:
 \begin{equation}
 \left|Z_L\right| = \frac{U_0}{I_0} = \omega \cdot L
 \end{equation}
