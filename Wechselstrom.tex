@@ -30,26 +30,26 @@ Im folgenden werden wir mit $U$ beziehungsweise $I$ die Effektivwerte, mit $U(t)
 \subsection{Wirk-, Schein- und Blindleistung und der Leistungsfaktor}
 Die Größen Spannung, Leistung und die Phasenverschiebung beschreiben das System vollständig, die Arbeit mit diesen Größen ist jedoch oft kompliziert und aufwändig. Daher zieht man häufig die Beschreibung mit den Größen Wirk-, Schein- und Blindleistung vor, weshalb wir diese hier definieren und näher betrachten wollen.
 
-Die Wirkleistung ist diejenige Leitung welche real genutzt werden kann, sie wird manchmal auch als aktive Leistung oder Nutzleistung bezeichnet. Sie ist das arithmetische Mittel über die Augenblicksleistung:
+Die Wirkleistung ist diejenige Leistung, welche real genutzt werden kann, sie wird manchmal auch als aktive Leistung oder Nutzleistung bezeichnet. Sie ist das arithmetische Mittel über die Augenblicksleistung:
 \begin{equation}
-P = \overline{p} = \overline{(t) \cdot I(t)}
+P = \overline{p} = \overline{U(t) \cdot I(t)}
 \end{equation}
 Für kosinusförmige Spannungs- und Stromverläufe wird daraus:
 \begin{equation}
 P = U_0 I_0 \cdot \frac{1}{2\pi} \int\limits_0^{2\pi} \cos\left( \omega t\right) \cos \left(\omega t - \varphi\right)
 = \frac{1}{2} U_0 I_0 \cos \varphi
 \end{equation}
-Dies entspricht natürlich dem unter \ref{Wirkleistung_ohne_phi} berechneten, jedoch nun mit Phasenverschiebung. Mit den Effektivwerten wird daraus also:
+Dies entspricht natürlich dem unter \eqref{Wirkleistung_ohne_phi} Berechneten, jedoch nun mit Phasenverschiebung. Mit den Effektivwerten wird daraus also:
 \begin{equation}
 P =  U_{\mathrm{eff}} I_{\mathrm{eff}} \cdot \cos \varphi
 \end{equation}
 Die Wirkleistung wird in Watt (1 W = 1 V$\cdot$A) gemessen.
 
-Die Scheinleistung, ist hingegen das Produkt aus Spannung und Strom ohne Phasenfaktor. Die Verluste und die Beanspruchung der Komponenten verhält sich als würde eine scheinbare Wirkleistung dieser Größe übertragen werden. Sie stellt die bei einer gewissen Beanspruchung der Leitungskomponenten, die maximal übertragbare Wirkleistung dar. Sie ist deshalb immer größer oder gleich der Wirkleistung, wobei die Gleichheit für die Fall eintritt das die Phasenverschiebung null ist.
+Die Scheinleistung ist hingegen das Produkt aus Spannung und Strom ohne Phasenfaktor. Die Verluste und die Beanspruchung der Komponenten verhalten sich, als würde eine Leistung dieser Größe übertragen. Sie stellt die bei einer gewissen Beanspruchung der Leitungskomponenten maximal übertragbare Wirkleistung dar. Sie ist deshalb immer größer oder gleich der Wirkleistung, wobei die Gleichheit für die Fall eintritt, dass die Phasenverschiebung null ist.
 \begin{equation}
 S = U_{\mathrm{eff}} I_{\mathrm{eff}} \geq P
 \end{equation}
-Die Scheinleistung ist zwar das Produkt aus Spannung (gemessen in Volt) und Strom (gemessen in Ampere), sie ist jedoch keine Leistung im physikalischen Sinn, deshalb wird sie nicht in Watt, sondern in Voltampere (VA) gemessen wird.
+Die Scheinleistung ist zwar das Produkt aus Spannung (gemessen in Volt) und Strom (gemessen in Ampere), sie ist jedoch keine Leistung im physikalischen Sinn, deshalb wird sie nicht in Watt, sondern in Voltampere (VA) gemessen.
 
 Als nächstes wollen wir den Leistungsfaktor einführen, er ist das Verhältnis von Wirk- und Scheinleistung:
 \begin{equation}
@@ -59,18 +59,21 @@ In unserem Fall betrachten wir kosinusförmige Spannungen und erhalten somit:
 \begin{equation}
 \lambda = \cos \varphi
 \end{equation}
-Wie im folgenden leicht zu erkennen, beeinflusst der Leistungsfaktor den Wirkungsgrad der Komponenten:
+Wie im Folgenden leicht zu erkennen, beeinflusst der Leistungsfaktor den Wirkungsgrad der Komponenten:
 \begin{equation}
-\eta = \frac{P}{P+P_V} = \frac{\frac{P}{S}}{\frac{P}{S}+\frac{P_V}{S}} = \frac{\lambda}{\lambda + p_V}
+\eta = \frac{P}{P+P_V} = \frac{\frac{P}{S}}{\frac{P}{S}+\frac{P_V}{S}} = \frac{\lambda}{\lambda + p_V} \qquad \mathrm{(mit}\;P_V\;\mathrm{als\: Verlustleistung)}
 \end{equation}
-Sinkt also der Leistungsfaktor, so reduziert sich dadurch auch der Wirkungsgrad einer Komponente. Sofern nicht anders angegeben, bezieht sich der angegebene Wirkungsgrad einer Komponente immer auf einen Leistungsfaktor von 1, also der Situation, dass Strom und Spannung phasengleich verlaufen. Hat man einen Phasenfaktor ungleich null (oder vielfache von $2\pi$), so ist der Wirkungsgrad teils bedeutend geringer. Für einen Phasenfaktor von Null wird das System zwar von der Scheinleistung S beansprucht und es entstehen Verluste, es findet aber keinerlei Energieübertragung statt und der Wirkungsgrad ist null.
-Der Leistungsfaktor kann auch als die Wurzel des Verhältnissen von minimal notwendigen zu tatsächlichen Verlusten ausgedrückt werden:
+Sinkt also der Leistungsfaktor, so reduziert sich dadurch auch der Wirkungsgrad einer Komponente.
+Sofern nicht anders angegeben, bezieht sich der angegebene Wirkungsgrad einer Komponente immer auf einen Leistungsfaktor von 1, also der Situation, dass Strom und Spannung phasengleich verlaufen.
+Hat man einen Phasenverschiebung ungleich null, so ist der Wirkungsgrad teils bedeutend geringer.
+Für einen Leistungsfaktor von Null -- also eine Phasenverschiebung von 90\degree -- wird das System zwar von der Scheinleistung S beansprucht und es entstehen Verluste, es findet aber keinerlei Energieübertragung statt und der Wirkungsgrad ist null.
+Der Leistungsfaktor kann auch als die Wurzel des Verhältnisses der minimal notwendigen und den tatsächlichen Verlusten ausgedrückt werden:
 \begin{equation}
 \lambda = \sqrt{\frac{P_{V\:min}}{P_V}}	% Herleitung?
 \end{equation}
-ein Leistungsfaktor von 0.8 wurde also beispielsweise bedeuten, dass die Verluste 56\% größer sind als nötig.
+ein Leistungsfaktor von 0.8 würde also beispielsweise bedeuten, dass die Verluste 56\% größer sind als nötig.
 
-Als dritte Leistungs-Größe wollen wir noch die Blindleistung einführen. Diese Größe steht auf der Wirkleistung im Zeigediagramm orthogonal. %Zeugerdiagramme hab ich noch nicht
+Als dritte Leistungs-Größe wollen wir noch die Blindleistung einführen. Diese Größe steht auf der Wirkleistung im Zeigerdiagramm orthogonal. %XXX Zeigerdiagramme hab ich noch nicht; Grafik?
 Sie lässt sich mit Pythagoras berechnen:
 \begin{equation}
 Q = \sqrt{S^2-P^2} = S \sqrt{1-\lambda^2} = P \frac{\sqrt{1-\lambda^2}}{\lambda}
@@ -79,23 +82,23 @@ Für kosinusförmige Ströme wird sie zu:
 \begin{equation}
 Q = S \sqrt{1-\cos^2 \varphi} = S sin \varphi = U_{\mathrm{eff}} I_{\mathrm{eff}} sin \varphi
 \end{equation}
-Die Blindleistung trägt nicht zu Energieübertragung bei, sonder belastet nur die Komponenten. Sie ist ebenfalls keine Physikalische Leistung, man misst Sie in Voltampere reaktiv (Var oder älter VAr\footnote{Var wird als Wort ausgesprochen.}).
-Die Blindleistung kann positiv oder negativ sein, per Konvention nimmt man sie als positiv an der Last an, wenn die Last induktiv ist. Dies ist vorteilhaft, das die meisten Lasten induktiv sind und man sie somit als Verbraucher von Wirk- und Blindleistung ansehen kann. Kondensatoren kann man als Quellen von Blindleistung ansehen.\cite{Harrison}
+Die Blindleistung trägt nicht zu Energieübertragung bei, sondern belastet nur die Komponenten. Sie ist ebenfalls keine physikalische Leistung, man misst sie in Voltampere reaktiv (Var\footnote{Var wird als Wort ausgesprochen.} oder älter VAr).
+Die Blindleistung kann positiv oder negativ sein, per Konvention nimmt man sie als positiv an der Last an, wenn die Last induktiv ist. Dies ist vorteilhaft, da die meisten Lasten induktiv sind und man sie somit als Verbraucher von Wirk- und Blindleistung ansehen kann. Kondensatoren kann man als Quellen von Blindleistung ansehen.\cite{Harrison}
 
-Zum Abschluss wollen wir noch die komplexe Leistung, auch Leistungsvektor genannt einzuführen: $P+i Q$.
+Zum Abschluss wollen wir noch die komplexe Leistung, auch Leistungsvektor genannt, einführen: $P+i Q$.
 
 % wo anders hin verschieben, da auch bei Gleichspannung!?
 \subsection{Ohmscher Verlust}
 Fließt ein Strom $I$ mit der Spannung $U$ durch einen ohmschen Widerstand, so wird dabei die elektrische Leistung
 $P_V = U' \cdot I = R \cdot I^2$
-in Wärme umgesetzt -- wobei $U'$ die an dem Widerstand abfallende Spannung ist.
+in Wärme umgesetzt, wobei $U'$ die an dem Widerstand abfallende Spannung ist.
 Da die übertragene Leistung $P=U \cdot I \cdot \cos(\varphi)$ ist, folgt für die Verlustleistung
 \begin{equation}\label{Verlust}
 P_V = \left(\frac{P}{U \cdot \cos\varphi}\right)^2\cdot R
 \end{equation}
 Bei der Übertragung von Energie stellt das Kabel einen Widerstand dar und die Verlustleistung soll möglichst minimiert werden. Da der Widerstand nur bedingt verringert werden kann, erhöht man die Spannung und verringert somit den Stromfluss. Eine Leitung mit einer Spannung von 110\,kV hat einen Verlust von etwa 6\% je 100\,km, eine Leitung mit 800\,kV verliert auf der selben Distanz nur etwa 0.5\%.
 
-Andererseits sehen wir, dass der Ohmsche Verlust mit steigender Phasenverschiebung ins Unendliche steigt. Daher ist man bemüht diese möglichst gering zu halten. Wie wir gesehen haben ist dies durch Kompensation mit Spulen beziehungsweise Kondensatoren möglich.
+Andererseits sehen wir, dass der Ohmsche Verlust mit steigender Phasenverschiebung ins Unendliche steigt. Daher ist man bemüht diese möglichst gering zu halten. Wie wir gesehen haben, ist dies durch Kompensation mit Spulen beziehungsweise Kondensatoren möglich.
 
 Der Gleichstromwiederstand eines Materials hängt auch von der Temperatur $\vartheta$ des Leiters ab, Mann rechnet deshalb meist mit dem Widerstand $R_{20}$ bei einer Temperatur von $20^\circ C$ und einem Temperaturbeiwert $\alpha_{20}$:
 \begin{equation}
