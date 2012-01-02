@@ -45,7 +45,7 @@ P =  U_{\mathrm{eff}} I_{\mathrm{eff}} \cdot \cos \varphi
 \end{equation}
 Die Wirkleistung wird in Watt (1 W = 1 V$\cdot$A) gemessen.
 
-Die Scheinleistung ist hingegen das Produkt aus Spannung und Strom ohne Phasenfaktor. Die Verluste und die Beanspruchung der Komponenten verhalten sich, als würde eine Leistung dieser Größe übertragen. Sie stellt die bei einer gewissen Beanspruchung der Leitungskomponenten maximal übertragbare Wirkleistung dar. Sie ist deshalb immer größer oder gleich der Wirkleistung, wobei die Gleichheit für die Fall eintritt, dass die Phasenverschiebung null ist.
+Die Scheinleistung ist hingegen das Produkt aus Spannung und Strom ohne Phasenfaktor. Die Verluste und die Beanspruchung der Komponenten verhalten sich, als würde eine Leistung dieser Größe übertragen. Sie stellt die bei einer gewissen Beanspruchung der Leitungskomponenten maximal übertragbare Wirkleistung dar. Sie ist deshalb immer größer oder gleich der Wirkleistung, wobei die Gleichheit für den Fall eintritt, dass die Phasenverschiebung null ist.
 \begin{equation}
 S = U_{\mathrm{eff}} I_{\mathrm{eff}} \geq P
 \end{equation}
@@ -73,8 +73,10 @@ Der Leistungsfaktor kann auch als die Wurzel des Verhältnisses der minimal notw
 \end{equation}
 ein Leistungsfaktor von 0.8 würde also beispielsweise bedeuten, dass die Verluste 56\% größer sind als nötig.
 
-Als dritte Leistungs-Größe wollen wir noch die Blindleistung einführen. Diese Größe steht auf der Wirkleistung im Zeigerdiagramm orthogonal. %XXX Zeigerdiagramme hab ich noch nicht; Grafik?
-Sie lässt sich mit Pythagoras berechnen:
+Als dritte Leistungs-Größe wollen wir noch die Blindleistung $Q$ einführen.
+%Diese Größe steht auf der Wirkleistung im Zeigerdiagramm orthogonal. %XXX Zeigerdiagramme hab ich noch nicht; Grafik?
+%Sie lässt sich mit Pythagoras berechnen:
+Die Blindleistung ist die Komponente der Scheinleistung, welche keine Arbeit verrichtet – also das gegenteil zur Wirkleistung. Sie ergibt sich im allgemeinen Fall aus $S^2=P^2+Q^2$ zu:
 \begin{equation}
 Q = \sqrt{S^2-P^2} = S \sqrt{1-\lambda^2} = P \frac{\sqrt{1-\lambda^2}}{\lambda}
 \end{equation}
@@ -85,7 +87,7 @@ Q = S \sqrt{1-\cos^2 \varphi} = S sin \varphi = U_{\mathrm{eff}} I_{\mathrm{eff}
 Die Blindleistung trägt nicht zu Energieübertragung bei, sondern belastet nur die Komponenten. Sie ist ebenfalls keine physikalische Leistung, man misst sie in Voltampere reaktiv (Var\footnote{Var wird als Wort ausgesprochen.} oder älter VAr).
 Die Blindleistung kann positiv oder negativ sein, per Konvention nimmt man sie als positiv an der Last an, wenn die Last induktiv ist. Dies ist vorteilhaft, da die meisten Lasten induktiv sind und man sie somit als Verbraucher von Wirk- und Blindleistung ansehen kann. Kondensatoren kann man als Quellen von Blindleistung ansehen.\cite{Harrison}
 
-Zum Abschluss wollen wir noch die komplexe Leistung, auch Leistungsvektor genannt, einführen: $P+i Q$.
+Zum Abschluss wollen wir noch die komplexe Leistung, auch Leistungsvektor oder komplexe Scheinleistung genannt, einführen: $\underline{S} = P+i Q$. Die oben eingeführte Scheinleistung $S$ ist dabei der Betrag der komplexen Scheinleistung $\underline{S}$.
 
 % wo anders hin verschieben, da auch bei Gleichspannung!?
 \subsection{Ohmscher Verlust}
@@ -100,10 +102,11 @@ Bei der Übertragung von Energie stellt das Kabel einen Widerstand dar und die V
 
 Andererseits sehen wir, dass der Ohmsche Verlust mit steigender Phasenverschiebung ins Unendliche steigt. Daher ist man bemüht diese möglichst gering zu halten. Wie wir gesehen haben, ist dies durch Kompensation mit Spulen beziehungsweise Kondensatoren möglich.
 
-Der Gleichstromwiederstand eines Materials hängt auch von der Temperatur $\vartheta$ des Leiters ab, Mann rechnet deshalb meist mit dem Widerstand $R_{20}$ bei einer Temperatur von $20^\circ C$ und einem Temperaturbeiwert $\alpha_{20}$:
+Der Gleichstromwiederstand eines Materials hängt auch von der Temperatur $\vartheta$ des Leiters ab. Mann rechnet deshalb meist mit dem Widerstand $R_{20}$, den das Material bei einer Temperatur von $20^\circ C$ hat, und einem Temperaturbeiwert $\alpha_{20}$, der angibt wie stark der Widerstand mit der Temperatur steigt:
 \begin{equation}
 R_\vartheta = R_{20} \cdot \left[ 1 + \alpha_{20} \cdot \left( \vartheta - 20^\circ C \right) \right]
 \end{equation}
+Beide Werte sind empirisch bestimmte Materialkonstanten.
 
 %%% INCLUDE-FILE: Skineffekt.tex %%%
 \input{Skineffekt}
