@@ -39,13 +39,13 @@ Seit einigen Jahren stattet man vor allem die Erdseile, aber auch die Leiterseil
 \includegraphics[scale=0.5]{freileitung.png}
 \end{center}
 \caption{Ersatzschaltbild einer Freileitung} %mehr
-\label{Ersatzschaltbildfreileitung}
+\label{pic:Ersatzschaltbildfreileitung}
 \end{figure}
 
-In Abbildung \ref{Ersatzschaltbildfreileitung} ist ein Ersatzschaltbild für eine Einphasige Leitung mit den Leitungsbelägen gezeichnet.
+In Abbildung \ref{pic:Ersatzschaltbildfreileitung} ist ein Ersatzschaltbild für eine Einphasige Leitung mit den Leitungsbelägen gezeichnet.
 % Alternativ: π-Glied
 Dabei ist R der serielle Widerstand, L die serielle Induktivität, C die Parallele Kapazität und $R_0$ der Ableitungswiederstand. Für die genaue Betrachtung muss man sich dieses infinitesimal Klein, unendlich oft hintereinander geschaltet vorstellen, für kurze Leitungen (unter 100 km Länge), kann man es jedoch näherungsweise auf eine derartige Schaltung reduzieren. Außerdem sind im allgemeinen die Induktivitäten nicht notwendigerweise zeitlich konstant.\cite{Flosdorff}
-Typische Werte für den Widerstand, die Induktivität und Kapazität findet man in Tabelle \ref{Tabfreileitung}. Der Wert für die Ableitungsbelag hängt stark von äußeren Faktoren, wie den Umgebungsbedingungen und dem Verschmutzungsgrad der Isolatoren ab. Ein typische Wert ist $200\,M\Omega m^{-1}$.\cite{Harrison} Die Ableitungsverluste sind also meist deutlich geringer als die seriellen ohmschen Verluste, weshalb man sie in den meisten Betrachtungen ignorieren kann. Wie wir sehen ist eine Freileitung weitgehend induktiv. % sieht man garnicht
+Typische Werte für den Widerstand, die Induktivität und Kapazität findet man in Tabelle \ref{Tab:freileitung}. Der Wert für die Ableitungsbelag hängt stark von äußeren Faktoren, wie den Umgebungsbedingungen und dem Verschmutzungsgrad der Isolatoren ab. Ein typische Wert ist $200\,M\Omega m^{-1}$.\cite{Harrison} Die Ableitungsverluste sind also meist deutlich geringer als die seriellen ohmschen Verluste, weshalb man sie in den meisten Betrachtungen ignorieren kann. Wie wir sehen ist eine Freileitung weitgehend induktiv. % sieht man garnicht
 
 \setlength{\tabcolsep}{10pt}
 \renewcommand{\arraystretch}{1.5}
@@ -65,7 +65,7 @@ $X_C$ & 350 k$\Omega$ & 275 k$\Omega$ & 245 k$\Omega$ \\
 \end{tabular} 
 \end{center}
 \caption{bla} %fehlt
-\label{Tabfreileitung}
+\label{Tab:freileitung}
 \end{table}
 
 %%% Induktivität %%%
@@ -77,7 +77,7 @@ $X_C$ & 350 k$\Omega$ & 275 k$\Omega$ & 245 k$\Omega$ \\
 \includegraphics[scale=0.5]{leitungsreaktanz.png}
 \end{center}
 \caption{bla} %fehlt
-\label{leitungsreaktanz} 
+\label{pic:leitungsreaktanz} 
 \end{figure}
 
 Fließen Wechselströme durch mehrere nebeneinander liegende Leiter so wird durch Selbstinduktion und Gegeninduktion eine Wechselspannung induziert.
@@ -89,7 +89,7 @@ L_v = N_v \frac{\Phi_v}{i_v}
 \end{equation}
 Laut \cite{Flosdorff}\cite{Moeller} % besser [42] dort
 ist $N_v = 1$, somit müssen wir um die Induktivität zu berechnen den magnetischen Fluss berechnen, welchen sich aus den Flüssen aller Leiter zusammensetzt. Es gilt also das Gleichungssystem:
-\begin{equation}\label{SummePhi}
+\begin{equation}\label{eq:SummePhi}
 \Phi_v = \sum_k \Phi_{vk}
 \end{equation}
 %Da Feldlinien stets von einer Quelle ausgehen und in einer Senke enden, benötigen wir noch eine äußere Feldbegrenzung. %realy?
@@ -103,7 +103,7 @@ Der Fluss im Leiter $v$ der von einem Leiter $k$ erzeugt wird ist das Integral d
 \Phi_{vk} = \int_A B_k dA = \int\limits_{x=d_{vk}}^{x=r_a} \frac{\mu_0i_k l}{2\pi x}dx =
 \frac{\mu_0l}{2\pi}\ln\left(\frac{r_a}{d_{vk}}\right) i_k
 \end{equation}
-Setzt man dies in Gleichung \ref{SummePhi} ein, so erhält man:
+Setzt man dies in Gleichung \ref{eq:SummePhi} ein, so erhält man:
 \begin{equation}
 \Phi_v = \frac{\mu_0l}{2\pi} \left[ \left( \ln\frac{r_a}{r_v} +0,25\right) i_v + \sum_{k\neq1}\ln\frac{r_a}{d_{vk}} i_k \right]
 \end{equation}
@@ -150,12 +150,12 @@ L'_1 = \frac{\Phi'_1}{i_1} = a_{11}-a_{12} = \frac{\mu_0}{2\pi}\left(\ln\frac{1}
 \frac{\mu_0}{2\pi}\left(\ln\frac{d}{r}+0,25 \right)
 \end{equation}
 Ist das Drehstromnetz gleichphasig belastet, so addieren sich die Spannungen und Ströme zu null und es genügt einphasig zu rechnen, da keine Rückführung mehr nötig ist. Die auf die Leitungslänge gerechnete Induktivität ist also:
-\begin{equation}\label{Induktivitaet3}
+\begin{equation}\label{eq:Induktivitaet3}
 L' = L'_1 = \frac{\mu_0}{2\pi}\left(\ln\frac{d}{r}+0,25 \right)
 \end{equation}
 Laut \cite{Harrison} gilt diese Gleichung nur für $h\gg d$ – ist dies nicht gegeben, muss man Einflüsse des Bodens berücksichtigen.
 
-Sind die Leiter nicht symmetrisch mit gleichen Leiterabständen angeordnet, so ergeben sich für die unterschiedlichen Leiter unterschiedliche Induktivitäten. Da dies im Allgemeinen unerwünscht ist, verdrillt man die Leiter: man wechselt die Positionen periodisch, so das jedes Kabel einmal jede der drei Positionen eingenommen hat. Dadurch gleichen sich die unterschiedlichen Induktivitäten in der Leiter aus und es gilt Gleichung (\ref{Induktivitaet3}) mit dem geometrischem Mittelwert der Leiterabstände
+Sind die Leiter nicht symmetrisch mit gleichen Leiterabständen angeordnet, so ergeben sich für die unterschiedlichen Leiter unterschiedliche Induktivitäten. Da dies im Allgemeinen unerwünscht ist, verdrillt man die Leiter: man wechselt die Positionen periodisch, so das jedes Kabel einmal jede der drei Positionen eingenommen hat. Dadurch gleichen sich die unterschiedlichen Induktivitäten in der Leiter aus und es gilt Gleichung \eqref{eq:Induktivitaet3} mit dem geometrischem Mittelwert der Leiterabstände
 \begin{equation}
 \bar{d} = \sqrt[3]{d_{12}d_{23}d_{31}}
 \end{equation}
@@ -171,7 +171,7 @@ anstatt $d$.
 \includegraphics[scale=1]{gespiegelterdrehstrom.png}
 \end{center}
 \caption{bla} %fehlt
-\label{gespiegelterdrehstrom} 
+\label{pic:gespiegelterdrehstrom} 
 \end{figure}
 
  Die Kapazität einer Freileitung entsteht durch die die unterschiedlichen Potentiale der Leiterseil gegeneinander und gegenüber dem Erdpotential. Die Potentialunterschiede führen zu einem Elektrischem Feld, bestehend aus den elektrischen Flüssen $\Psi_{ij}$ zwischen zwei Leiterseilen, sowie den Flüssen $\Psi_{i0}$ zwischen je einem Leiter und dem Erdpotential. Zu jedem dieser Elektrischen Flüsse gehört eine Kapazität (Teilkapazität), welche zusammen die Kapazität der Freileitung ergeben.
@@ -180,7 +180,7 @@ Wir betrachten zunächst nur einen Leiter. Zur Berechnung der Kapazität verwend
 \varphi = \frac{Q_1}{2\pi\varepsilon_0} \int^{x_1}_{r_1} \frac{dx_1}{x_1} + \varphi_1 + \frac{Q'_1}{2\pi\varepsilon_0} \int^{x_1}_{r_1} \frac{dx'_1}{x'_1} + \varphi'_1
 \end{equation}
 Wobei $r_1$ der Radius der Leiter ist, welche wir im folgenden als klein im Vergleich zu den Leiterabständen betrachten. Mit $Q'_1 = - Q_1$ und $\varphi'_1 = - \varphi_1$ ergibt sich:
-\begin{equation}\label{einleitungsfeld}
+\begin{equation}\label{eq:einleitungsfeld}
 \varphi = \frac{Q_1}{2\pi l\varepsilon_0} \ln \frac{x'_1}{x_1}
 \end{equation}
 An der Oberfläche des Leiters ist das Potential somit näherungsweise:
@@ -189,7 +189,7 @@ An der Oberfläche des Leiters ist das Potential somit näherungsweise:
 \end{equation}
 Dies entspricht aus auf Grund der Stetigkeit des Potentials % echt?
 dem Potential des Leiters $\varphi_1 = \varphi^*$.
-Betrachten wir nun ein System mit mehreren Leitern. Das Potential an einem wieder frei gewähltem Punkt P berechnet sich als die Summe der nach (\ref{einleitungsfeld}) berechneten Potentiale:
+Betrachten wir nun ein System mit mehreren Leitern. Das Potential an einem wieder frei gewähltem Punkt P berechnet sich als die Summe der nach \eqref{eq:einleitungsfeld} berechneten Potentiale:
 \begin{equation}
 \varphi = \sum \frac{Q_i}{2\pi l\varepsilon_0} \ln \frac{x'i}{x_i}
 \end{equation}
@@ -225,7 +225,7 @@ C' = \frac{C}{l} = \frac{\varepsilon_0\pi}{\ln{\frac{2hd}{r\sqrt{\left(2h\right)
 Für eine Dreiphasenleitung ohne Erdleiter kann man man die Herleitung vereinfachen indem man ausnützt, dass die Ladungen der drei Leitungen zusammen immer Null ergeben. Möchte man jedoch, z. Bsp. für  Erdschlussstromberechnungen nicht nur die Gesamtkapazität sondern auch die einzelnen Teilkapazitäten berechnen, geht man nach dem beschriebenen Ansatz vor.
 Da die Koeffizienten $a_{ii}$ und somit auch die Koeffizienten $d_{ik}$ von der Höhe der Leitungen über dem Erdboden abhängen, ergibt sich -- im Gegensatz zur Induktivität -- bei einer symmetrischen Dreiecksanordnung wie oben %verwais
 unterschiedliche Kapazitäten für die Leitungen. Daher verdrillt man auch derartige symmetrische Leiter. Für einen derartigen Leiter erhält man den Kapazitätsbelag
-\begin{equation}\label{verdrillteindukt}
+\begin{equation}\label{eq:verdrillteindukt}
 C' = \frac{2\pi\varepsilon_0}{\ln\left(2 \bar{h}\bar{d}/(r\bar{D})\right) } \approx
 \frac{2\pi\varepsilon_0}{\ln\left(\bar{d}/r\right)}
 \end{equation}
@@ -233,7 +233,7 @@ Wobei $\bar{h}$, $\bar{d}$ und $\bar{D}$ die geometrischen Mittelwerte der Leite
 \begin{equation}
 \bar{h} := \sqrt[3]{h_1h_2h_3}, \quad \bar{d} := \sqrt[3]{d_{12}d_{23}d_{31}} \quad \bar{D} := \sqrt[3]{d_{12'}d_{23'}d_{31'}} \approx 2\bar{h}
 \end{equation}
-Man kann zeigen, dass ein zusätzliches Erdseil die Erdkapazität erhöht und die die Leiterkapazität verringert, so dass die Gesammtkapaziät unverändert bleibt und Gleichung (\ref{verdrillteindukt}) bleibt gültig.\cite{Flosdorff}
+Man kann zeigen, dass ein zusätzliches Erdseil die Erdkapazität erhöht und die die Leiterkapazität verringert, so dass die Gesammtkapaziät unverändert bleibt und Gleichung \eqref{eq:verdrillteindukt} bleibt gültig.\cite{Flosdorff}
 
 
 \subsubsection{Kabel}
@@ -248,7 +248,7 @@ PVC-Kabel werden in Niederspannungs- und Mittelspannungsnetzen bis 10 kV eingese
 \includegraphics[scale=0.5]{kabel.png}
 \end{center}
 \caption{Ersatzschaltbild eines Kabels} %mehr
-\label{Ersatzschaltbildkabel}
+\label{pic:Ersatzschaltbildkabel}
 \end{figure}
 
 % höhere Kosten, nidrigere Zuverlässigkeit

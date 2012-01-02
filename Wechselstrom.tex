@@ -12,7 +12,7 @@ Die elektrische Leistung $P$, die an dem Widerstand erbracht wird, wird analog z
 P(t) = U(t) \cdot I(t) \stackrel{\mathrm{\varphi=0}}= U_0 I_0 \cdot \cos^2(\omega t)
 \end{equation}
 Berechnen wir nun den zeitlichen Mittelwert der Leistung
-\begin{equation}\label{Wirkleistung_ohne_phi}
+\begin{equation}\label{eq:Wirkleistung_ohne_phi}
 \bar{P}=\frac1T \int\limits_0^T dt\: U_0 I_0 \cos^2 \omega t = \frac12 U_0 I_0 \qquad\mathrm{mit}\; T=2\pi/\omega
 \end{equation}
 Vergleicht man dies mit der Leistung eines Gleichstroms $P=U\cdot I$, so sieht man, dass eine Gleichspannung mit $U=U_0 / \sqrt2$ und dem daraus folgendem Strom $I=I_0 / \sqrt2$ dieselbe Leistung erbringt.
@@ -39,7 +39,7 @@ Für kosinusförmige Spannungs- und Stromverläufe wird daraus:
 P = U_0 I_0 \cdot \frac{1}{2\pi} \int\limits_0^{2\pi} \cos\left( \omega t\right) \cos \left(\omega t - \varphi\right)
 = \frac{1}{2} U_0 I_0 \cos \varphi
 \end{equation}
-Dies entspricht natürlich dem unter \eqref{Wirkleistung_ohne_phi} Berechneten, jedoch nun mit Phasenverschiebung. Mit den Effektivwerten wird daraus also:
+Dies entspricht natürlich dem unter \eqref{eq:Wirkleistung_ohne_phi} Berechneten, jedoch nun mit Phasenverschiebung. Mit den Effektivwerten wird daraus also:
 \begin{equation}
 P =  U_{\mathrm{eff}} I_{\mathrm{eff}} \cdot \cos \varphi
 \end{equation}
@@ -95,7 +95,7 @@ Fließt ein Strom $I$ mit der Spannung $U$ durch einen ohmschen Widerstand, so w
 $P_V = U' \cdot I = R \cdot I^2$
 in Wärme umgesetzt, wobei $U'$ die an dem Widerstand abfallende Spannung ist.
 Da die übertragene Leistung $P=U \cdot I \cdot \cos(\varphi)$ ist, folgt für die Verlustleistung
-\begin{equation}\label{Verlust}
+\begin{equation}\label{eq:Verlust}
 P_V = \left(\frac{P}{U \cdot \cos\varphi}\right)^2\cdot R
 \end{equation}
 Bei der Übertragung von Energie stellt das Kabel einen Widerstand dar und die Verlustleistung soll möglichst minimiert werden. Da der Widerstand nur bedingt verringert werden kann, erhöht man die Spannung und verringert somit den Stromfluss. Eine Leitung mit einer Spannung von 110\,kV hat einen Verlust von etwa 6\% je 100\,km, eine Leitung mit 800\,kV verliert auf der selben Distanz nur etwa 0.5\%.
