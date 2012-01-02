@@ -58,20 +58,21 @@ P = U \cdot I
 \input{Wechselstrom}
 
 \section{Drehstrom}
-Beim Dreiphasen-Wechselstrom, auch Drehstrom genannt, hat man drei stromführende Leitungen, an welchen je eine Kosinusförmige Spannung mit gleiche Frequenz, aber jeweils 120\degree\  Phasenverschiebung anliegt.
-Die notwendigkeit eines zusätzlichen Nullleiters entfällt, das die drei Spannungen addiert sich aufheben.
-Die Spannung zwischen einer beliebigen Leitung und einen Nullleiter wird als Sternspannung bezeichnet,
+Beim Dreiphasen-Wechselstrom, auch Drehstrom genannt, hat man drei stromführende Leiter, an welchen je eine kosinusförmige Spannung mit gleiche Frequenz, aber jeweils 120\degree\  Phasenverschiebung anliegt.
+Die Notwendigkeit eines zusätzlichen Nullleiters entfällt, da die drei Spannungen addiert sich aufheben.
+Die Spannung zwischen einer beliebigen Leitung und einem Nullleiter wird als Sternspannung bezeichnet,
 die Spannung zwischen zwei beliebigen Spannungen als verkettete Spannung. Es gilt:
 \begin{equation}
 U_{\mathrm{eff},\:\mathrm{verkettet}} = \sqrt{3} \cdot U_{\mathrm{eff},\:\mathrm{Stern}}
 \end{equation}
-Die Effekte und Aussagen aus Kapitel \ref{wechsel} gelten ansonsten analog auch für Drehstrom, weshalb wir sie nicht wiederholen wollten.
+Die Effekte und Aussagen aus Kapitel \ref{wechsel} gelten ansonsten analog auch für Drehstrom, weshalb wir sie nicht wiederholen wollen.
 
-Während Privathaushalte nahezu ausnahmslos einphasigen Strom verwenden, verwendet man in der Industrie und vor allem in der Stromerzeugung und beim Stromtransport nahezu ausschließlich Dreiphasen-Wechselstrom. Dies bringt mehrere Vorteile\cite{Harrison}:
+Während Privathaushalte nahezu ausnahmslos einphasigen Strom verwenden, verwendet man in der Industrie und vor allem in der Stromerzeugung und beim Stromtransport nahezu ausschließlich Dreiphasen-Wechselstrom. %Quelle
+Dies bringt mehrere Vorteile:
 \begin{itemize}
-\item Die durch Drehstrom übertragene Leistung ist zeitlich konstant, wodurch insbesondere Motoren ein zeitlich konstantes Drehmoment haben und somit ruhiger laufen.
-\item Bei gegebener Größe hat eine dreiphasige Maschine eine höhere Leistung.
-\item Bei gleichem Aufwand kann eine dreiphasiges Stromnetz mehr Leistung übertragen.
+\item Die durch Einphasen-Wechselstrom übertragene Leistung pulsiert mit der doppelten Netzfrequenz, die von Drehstrom übertragene Leistung ist hingegen zeitlich konstant. Dadruch haben insbesondere Motoren ein zeitlich konstantes Drehmoment und laufen somit ruhiger.\cite{Herold}\cite{Harrison}
+\item Bei gegebenem Materialaufwand hat eine dreiphasige Maschine eine höhere Leistung.\cite{Harrison} %warum?
+\item Bei gleichem Materialaufwand kann ein dreiphasiges Stromnetz mehr Leistung übertragen – der sogenannte Kupferwirkungsgrad ist ein drittel höher.\cite{Herold}
 \end{itemize}
 
 \input{netze.tex}
@@ -86,6 +87,7 @@ Während Privathaushalte nahezu ausnahmslos einphasigen Strom verwenden, verwend
 % Leitungen: 6° Phasenverschiebung/100km
 % Konverterstat. bruachen Blindleistung
 % In England wird bei Laststößen die Spannung konstant gehalten und die Frequenz gibt nach, in festland-Europa andersherum
+% Hohlleitungen auf für reduzierungs von Koronaentladung (Bergmann-Schaefer)
 
 \bibliography{lit}{}
 \bibliographystyle{unsrtdin}

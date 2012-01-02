@@ -1,36 +1,48 @@
 \section{Elektrische Netze}
+%Text
+
 \subsection{Leitungen}
 
 \subsubsection{Leitungsbeläge}
-Bisher haben wir die Grundlagen der Gleich- beziehungsweise Wechselstromtechnik im allgemeinen kennen gelernt.
+Bisher haben wir die Grundlagen der Gleich- beziehungsweise Wechselstromtechnik im Allgemeinen kennen gelernt.
 Insbesondere bei der Betrachtung von Blindleistungen geht man dabei meist davon aus,
 dass ein Verbraucher durch den Einsatz von Spulen oder Kondensatoren Blindleistung erzeugt.
 Wir interessieren uns jedoch für die Energienetze und hier kommt ein wichtiger Punkt hinzu:
 Auch die Leitungen selbst haben einen Widerstand, eine Kapazität, eine Induktivität, sowie die noch einzuführende Ableitung.
 Diese bezeichnet man auf die Länge bezogen als Widerstand-, Kapazitäts-, Induktivitäts- und Ableitungsbeläge und fasst sie unter dem Begriff der Leitungsbeläge zusammen.
 
-Zunächst sei noch die Ableitung eingeführt: Die Ableitungsbeläge beschreiben die Verluste durch unvollständige Isolation des Kabels. Die Ableitung wird in Siemens\footnote{Eine alternative, ältere Bezeichnung für das Siemens ist das Mho (Ohm Rückwerts gelesen) $\mho$ } gemessen, was den Kehrwert der Einheit Ohm darstellt:
+Zunächst sei noch die Ableitung eingeführt: Die Ableitungsbeläge beschreiben die Verluste durch unvollständige Isolation des Leiters. Die Ableitung wird in Siemens gemessen\footnote{Eine alternative, ältere Bezeichnung für das Siemens ist das Mho (Ohm rückwärts gelesen) $\mho$ }, was den Kehrwert der Einheit Ohm darstellt:
 \begin{equation}
 \mathrm{[S]} = \frac{1}{\Omega} = \frac{A}{V}
 \end{equation}
-Die Ableitungsbeläge folglich in Siemens pro Meter.
+und die Ableitungsbeläge folglich in Siemens pro Meter.
 Die Ableitung ist dank moderner Isolationstechnik deutlich geringer als die Ohmschen Verluste.
 
-Bei der Betrachtung der Leitungsbeläge und der daraus folgenden Anforderungen an die Leitungen muss man zwischen drei unterschiedlichen Leitungstypen unterscheiden: Freileitungen, Erdkabel und Unterseekabel %  Begriff richtig?
+Bei der Betrachtung der Leitungsbeläge und der daraus folgenden Anforderungen an die Leitungen muss man zwischen drei unterschiedlichen Leitungstypen unterscheiden: Freileitungen, Erdkabel und Seekabel.
 
 \subsubsection{Freileitungen}
 Der überwiegende Teil der Hochspannungs-Energieverteilung geschieht mit Freileitungen.
 Dabei werden nicht isolierte Leiterseile an Isolatoren an etwa 50 Meter hohen und etwa 400 Meter voneinander entfernten Hochspannungsmasten aufgehängt. % Werte für GB
-In Deutschland gibt es Freileitungen mit bis zu 380 kV in anderen Ländern auch bis 1000 kV und Anlagen mit bis zu 2 MV sin geplant\cite{Flosdorff}.
+In Deutschland gibt es Freileitungen mit Spannungen von bis zu 380 kV, in anderen Ländern auch bis 1000 kV und Anlagen mit bis zu 2 MV sind geplant\cite{Flosdorff}.
 Es gibt unterschiedliche Arten und Bauweisen von Freileitungsmasten, auf die wir hier nicht näher eingehen wollen. Wichtig sind für uns lediglich die sich dadurch ergebende Anzahl und Anordnung der Leiterseile, deren Bodenhöhe und Abstand zu einander.
 
-Die Spitze der Masten tragen ein Erdseil, welches die Leiterseile vor Blitzschlag schützen, indem Sie ein Schutzraum bilden. Er wird näherungsweise durch den Zwischenraum zwischen zwei den Boden und das Erdseil tangierenden Kreisen mit doppelter Masthöhe als Radius beschreiben. Die Masten sind derartig gebaut, dass die die Leiterseile sich in diesem Schutzraum befinden. Um bei – bei besonders hohen Spannungen nötige – weiten Travernen den Mast nicht zu hoch bauen zu müssen, kann man durch Verwendung von zwei statt nur einem Erdseil den Schutzraum vergrößern.
+\begin{figure}[tbhn]
+\begin{center}
+\noindent
+\includegraphics[scale=0.8]{blitzschutzraum.png}
+\end{center}
+\caption{Blitzschutzraum einer Freileitung. Quelle: \cite{Harnischmacher} verwendetin \cite{BfN}} %mehr
+\label{pic:blitzschutzraum}
+\end{figure}
+
+Die Spitzen der Masten tragen ein Erdseil, welches die Leiterseile vor Blitzschlag schützen, indem sie einen Schutzraum bilden. Er wird näherungsweise durch den Zwischenraum zwischen zwei den Boden und das Erdseil tangierenden Kreisen mit doppelter Masthöhe als Radius beschrieben. Die Masten sind derartig gebaut, dass die Leiterseile sich in diesem Schutzraum befinden. Um bei – im Fall von besonders hohen Spannungen nötigen – weiten Traversen den Mast nicht zu hoch bauen zu müssen, kann man auch durch Verwendung von zwei statt nur einem Erdseil den Schutzraum vergrößern.
 
 Bei den Leiterseilen handelt es sich meist um Verbundseile mit einem Kern aus Stahl, der die mechanische Stabilität gewährleistet, umgeben von Aluminiumleitern. Aluminium hat zwar im Bezug auf das Volumen einen höheren Widerstand als Kupfer, im Bezug auf das Gewicht leitet Aluminium hingegen besser. Ein typisches 650-A-Leiterseil besteht aus 7 Stahl- und 54 Aluminiumadern, die jeweils einen Durchmesser von 3 mm haben.\cite{Harrison}.
 Moderne Leiterseile bestehen oft ganz aus einer Aluminiumlegierung und haben dadurch einen höheren Stromtragefähigkeit, einen geringen ohmschen Widerstand und müssen weniger gewartet werden\cite{Harrison}.
 %% Skineffekt
-Bei höheren Spannungen verwendet man statt einer dicken mehrere dünnere Leiter pro Phase seil in geringem Abstand. Dadurch sind die Randfeldstärken\footnote{Die Randfeldstärke darf zur Vermeidung von Koronaentladung nicht größer als 17 kV/cm werden.\cite{Flosdorff}} und die Induktivität geringer und durch die bessere Kühlung aufgrund der größeren Oberfläche kann ein größerer Strom geführt werden. Man spricht hier von Bündelleitern.
-Seit einigen Jahren stattet man vor allem die Erdseile, aber auch die Leiterseile mit Lichtwellenleitern zur Datenübertragung aus. Diese dienten zunächst der innerbetrieblichen Fernüberwachung- und -steuerung, wird heute jedoch vor allem auch für privat genutzte Telefonnetze verwendet.\cite{Flosdorff}
+
+Bei höheren Spannungen verwendet man statt einem dicken mehrere dünnere Leiterseile pro Leiter in geringem Abstand. Dadurch sind die Randfeldstärken\footnote{Die Randfeldstärke darf zur Vermeidung von Koronaentladung nicht größer als 17 kV/cm werden.\cite{Flosdorff}} und die Induktivität geringer und durch die bessere Kühlung aufgrund der größeren Oberfläche kann ein größerer Strom geführt werden. Man spricht hier von Bündelleitern.
+Seit einigen Jahren stattet man vor allem die Erdseile, aber auch die Leiterseile mit Lichtwellenleitern zur Datenübertragung aus. Diese dienten zunächst der innerbetrieblichen Fernüberwachung und -steuerung, wird heute jedoch vor allem auch für privat genutzte Telefonnetze verwendet.\cite{Flosdorff}
 % Durchhang, entfernung, Last, Wetter, etc. ?
 
 \begin{figure}[tbhn]
@@ -42,10 +54,14 @@ Seit einigen Jahren stattet man vor allem die Erdseile, aber auch die Leiterseil
 \label{pic:Ersatzschaltbildfreileitung}
 \end{figure}
 
-In Abbildung \ref{pic:Ersatzschaltbildfreileitung} ist ein Ersatzschaltbild für eine Einphasige Leitung mit den Leitungsbelägen gezeichnet.
+In Abbildung \ref{pic:Ersatzschaltbildfreileitung} ist ein Ersatzschaltbild für eine einphasige Leitung mit den Leitungsbelägen gezeichnet.
 % Alternativ: π-Glied
-Dabei ist R der serielle Widerstand, L die serielle Induktivität, C die Parallele Kapazität und $R_0$ der Ableitungswiederstand. Für die genaue Betrachtung muss man sich dieses infinitesimal Klein, unendlich oft hintereinander geschaltet vorstellen, für kurze Leitungen (unter 100 km Länge), kann man es jedoch näherungsweise auf eine derartige Schaltung reduzieren. Außerdem sind im allgemeinen die Induktivitäten nicht notwendigerweise zeitlich konstant.\cite{Flosdorff}
-Typische Werte für den Widerstand, die Induktivität und Kapazität findet man in Tabelle \ref{Tab:freileitung}. Der Wert für die Ableitungsbelag hängt stark von äußeren Faktoren, wie den Umgebungsbedingungen und dem Verschmutzungsgrad der Isolatoren ab. Ein typische Wert ist $200\,M\Omega m^{-1}$.\cite{Harrison} Die Ableitungsverluste sind also meist deutlich geringer als die seriellen ohmschen Verluste, weshalb man sie in den meisten Betrachtungen ignorieren kann. Wie wir sehen ist eine Freileitung weitgehend induktiv. % sieht man garnicht
+Dabei ist $R$ der serielle Widerstand, $L$ die serielle Induktivität, $C$ die parallele Kapazität und $R_0$ der Ableitungswiderstand. Für die genaue Betrachtung muss man sich dieses infinitesimal klein unendlich oft hintereinander geschaltet vorstellen, für kurze Leitungen (unter 100 km Länge) kann man es jedoch näherungsweise auf eine derartige Schaltung reduzieren\cite{Harrison}.
+Außerdem sind im allgemeinen die Induktivitäten nicht notwendigerweise zeitlich konstant\cite{Flosdorff}.
+Typische Werte für den Widerstand, die Induktivität und Kapazität findet man in Tabelle \ref{Tab:freileitung}.
+Der Ableitungsbelag setzt sich bei Freileitungen zusammen aus den sogenannten Leckströmen, die über die Isolatoroberflächen abfließen, und den Verlusten durch die Koronaentladung zusammen.\cite{Heuck}
+Der Wert für die Ableitungsbelag hängt stark von äußeren Faktoren, wie den Umgebungsbedingungen und dem Verschmutzungsgrad der Isolatoren ab. Ein typische Wert ist $200\,M\Omega m^{-1}$.\cite{Harrison} Die Ableitungsverluste sind also meist deutlich geringer als die seriellen ohmschen Verluste, weshalb man sie in den meisten Betrachtungen ignorieren kann.
+Wie wir sehen ist eine Freileitung weitgehend induktiv. % sieht man garnicht
 
 \setlength{\tabcolsep}{10pt}
 \renewcommand{\arraystretch}{1.5}

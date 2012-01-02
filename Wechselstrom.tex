@@ -4,7 +4,7 @@ Beim Einphasen-Wechselstrom hat man einen Nullleiter und einen Leiter, auf dem e
 \begin{equation}
 U(t)=U_0 \cdot \cos(\omega t + \varphi)
 \end{equation}
-Dieser Leiter wird in der Elektrotechnik oft umgangssprachlich als Phase bezeichnet; wir wollen davon hier jedoch nicht Gebrauch machen, da wir physikalisch korrekter den Faktor $\varphi$ als Phasenverschiebung oder kurz Phase bezeichnen werden.
+Dieser Leiter wird in der Elektrotechnik oft umgangssprachlich als Phase bezeichnet; wir wollen davon hier jedoch im Allgemeinen nicht Gebrauch machen, da wir physikalisch korrekter den Faktor $\varphi$ als Phasenverschiebung oder kurz Phase bezeichnen werden.
 
 Legt man obige Spannung an einen ohmschen Widerstand R an, so fließt durch ihn der Strom $I(t)= \frac{U(t)}{R} = I_0 \cdot \cos(\omega t + \varphi)$ mit $I_0 = U_0/R$.
 Die elektrische Leistung $P$, die an dem Widerstand erbracht wird, wird analog zur Gleichspannungstechnik als Produkt aus Spannung und Strom definiert, dabei beziehen sich jedoch alle drei Größen auf die momentanen Werte:
@@ -113,6 +113,10 @@ Beide Werte sind empirisch bestimmte Materialkonstanten.
 
 % wo anders hin verschieben, da auch bei Gleichspannung!?
 \subsection{Koronaentladung} %QUELLEN
-Liegt an einem vergleichsweise dünnem Kabel eine hohe Spannung an, so herrschen in seiner unmittelbaren Nähe sehr hohe elektrische Felder. Sind diese Feldstärken größenordnungsmäßig vergleichbar mit der Durchschlagfestigkeit von Luft (der Feldstärke ab der es zu einem Spannungsdurchschlag kommt), so wird die Luft ionisiert, was zu Verlusten führt. Bei Wechselspannung ist dieses Problem besonders groß, da die Scheitelspannung $U_0$ um den Faktor $\sqrt{2}$ größer als die Effektivspannung ist, es kommt also im Moment, wenn der Scheitelwert erreicht wird, auch bei geringeren Effektivspannungen bereits zur Koronaentladung. Dies betrifft insbesondere die 400-kV-Schiene (Scheitelspannung von 566 kV) und macht Übertragungen von mehr als 500 kV per Freileitung fast unmöglich.%Quelle, Richtig?
+Liegt an einem vergleichsweise dünnem Leiter eine hohe Spannung an, so herrschen in seiner unmittelbaren Nähe sehr hohe elektrische Felder.
+Sind diese Feldstärken größenordnungsmäßig vergleichbar mit der Durchschlagfestigkeit von Luft (der Feldstärke ab der es zu einem Spannungsdurchschlag kommt), so wird die Luft ionisiert, was zu Verlusten durch Entladung des Leiters führt.\cite{BergmannSchaefer}
+Man spricht von Koronaentladung oder Spitzenentladung.\footnote{Dieses Phänomen kommt auch in der Natur durch elektrisch geladene Wolken an Spitzen von leitenden Gegenständen auf, man spricht dann von Elmsfeuer\cite{BergmannSchaefer}}
+Bei Wechselspannung ist dieses Problem besonders groß, da die Scheitelspannung $U_0$ um den Faktor $\sqrt{2}$ größer als die Effektivspannung ist, es kommt also im Moment, wenn der Scheitelwert erreicht wird, auch bei geringeren Effektivspannungen bereits zur Koronaentladung.
+Dies betrifft insbesondere die 400-kV-Schiene (Scheitelspannung von 566 kV) und macht Übertragungen von mehr als 500 kV per Freileitung fast unmöglich.%Quelle, Richtig?
 
 Die ist die Koronaentladung ist bei negativ geladen Leitern wesentlich höher als bei positiv geladenen\cite{Padiyar}, diese große Asymmetrie kann durch den Massenunterschied zwischen den Elektronen und den positiv geladenen Ionen. %Quelle
