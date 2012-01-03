@@ -10,6 +10,7 @@
 \usepackage{units} % soll ich das verwenden? oder siunitxs oder garnix?
 \usepackage{hyperref}
 \usepackage{ulem}
+\usepackage{placeins}
 \hypersetup{
 %    bookmarks=true,
     pdftoolbar=true,
@@ -33,6 +34,8 @@
 \newcommand{\q}{\glqq }
 \newcommand{\qe}{\grqq }
 \newcommand{\rot}{\mathrm{rot\:}}
+\newcommand{\tmu}{$\mathrm{\mu}$}
+\newcommand{\tOmega}{$\mathrm{\Omega}$}
 
 \usepackage{rotating}
 \usepackage[basic]{circ}
@@ -93,7 +96,7 @@ Dies bringt mehrere Vorteile:
 % Konverterstat. bruachen Blindleistung
 % In England wird bei Laststößen die Spannung konstant gehalten und die Frequenz gibt nach, in festland-Europa andersherum
 % Hohlleitungen auf für reduzierungs von Koronaentladung (Bergmann-Schaefer)
-
+\FloatBarrier
 \bibliography{lit}{}
 \bibliographystyle{unsrtdin}
 

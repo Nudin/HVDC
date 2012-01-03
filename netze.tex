@@ -58,7 +58,7 @@ In Abbildung \ref{pic:Ersatzschaltbildfreileitung} ist ein Ersatzschaltbild für
 % Alternativ: π-Glied
 Dabei ist $R$ der serielle Widerstand, $L$ die serielle Induktivität, $C$ die parallele Kapazität und $R_0$ der Ableitungswiderstand. Für die genaue Betrachtung muss man sich dieses infinitesimal klein unendlich oft hintereinander geschaltet vorstellen, für kurze Leitungen (unter 100 km Länge) kann man es jedoch näherungsweise auf eine derartige Schaltung reduzieren\cite{Harrison}.
 Außerdem sind im allgemeinen die Induktivitäten nicht notwendigerweise zeitlich konstant\cite{Flosdorff}.
-Typische Werte für den Widerstand, die Induktivität und Kapazität findet man in Tabelle \ref{Tab:freileitung}.
+Typische Werte für den Widerstand, die Induktivität und Kapazität findet man in Tabelle \ref{tab:freileitung}.
 Der Ableitungsbelag setzt sich bei Freileitungen zusammen aus den sogenannten Leckströmen, die über die Isolatoroberflächen abfließen, und den Verlusten durch die Koronaentladung zusammen.\cite{Heuck}
 Der Wert für die Ableitungsbelag hängt stark von äußeren Faktoren, wie den Umgebungsbedingungen und dem Verschmutzungsgrad der Isolatoren ab. Ein typische Wert ist $200\,M\Omega m^{-1}$.\cite{Harrison} Die Ableitungsverluste sind also meist deutlich geringer als die seriellen ohmschen Verluste, weshalb man sie in den meisten Betrachtungen ignorieren kann.
 Wie wir sehen ist eine Freileitung weitgehend induktiv. % sieht man garnicht
@@ -81,7 +81,7 @@ $X_C$ & 350 k$\Omega$ & 275 k$\Omega$ & 245 k$\Omega$ \\
 \end{tabular} 
 \end{center}
 \caption{Typische Leitungsbeläge von drei verschiedenen Leitungen. Quelle: \cite{Harrison}} %fehlt
-\label{Tab:freileitung}
+\label{tab:freileitung}
 \end{table}
 
 %%% Induktivität %%%
@@ -267,18 +267,39 @@ PVC-Kabel werden in Niederspannungs- und Mittelspannungsnetzen bis 10 kV eingese
 \label{pic:Ersatzschaltbildkabel}
 \end{figure}
 
+\begin{table}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Leitung & 132 kV ($350 mm^2$) & 275 kV ($1.000 mm^2$) & 400 kV ($2.000 mm^2$) \\ 
+\hline 
+Stromtragfähigkeit & 730 A & 1.090 A & 1.195 A \\ 
+$C$ & 0,391 \tmu F/km & 0,368 \tmu F/km  & 0,377 \tmu F/km \\ 
+Ladestrom & 9,36 A/km & 18,4 A/km & 27,4 A/km \\ 
+\hline 
+$L$ & \multicolumn{2}{|c|}{} & 0,4 mH \\
+$R$ &  \multicolumn{2}{|c|}{} & 9 m\tOmega \\
+$R_d$ & \multicolumn{2}{|c|}{} & 3,5 M\tOmega  \\
+$R_0$ & \multicolumn{2}{|c|}{} & $>30$ G\tOmega  \\
+\hline
+\end{tabular} 
+\end{center}
+\caption{Typische Leitungsbeläge von drei verschiedenen Kabeln, bei üblichen Bedingungen. Quelle: \cite{Harrison}} %fehlt
+\label{tab:kabel}
+\end{table}
+
 % höhere Kosten, nidrigere Zuverlässigkeit
 Das Ersatzschaltbild sieht wie das der Freileitung aus, nur das man zwei Parallel geschaltete Ableitungswiederstände betrachtet.
 $R_0$ ist der Isolationswiederstand, während $R_d$ die dielektrischen Verluste beschreibt. Das sind Verluste die durch Polarisationseffekte im Dielektrikum der Kapazität entstehen.
 Die Induktivitäten von Kabeln lassen sich nach den selben Gleichungen berechnen, wie die von Freileitungen, da hier Herleitung dieser ohne die Bedingung $d\gg r$ auskommt.\footnote{Dabei ist $\mu_0$ natürlich durch $\mu_r\mu_0$ – mit $\mu_r$ als der relativen Permeabilität des Materials – zu ersetzen} %was ist mit h>>d ?
 Da bei Kabel die Leiterabstände deutlich kleiner sind sind auch die Induktivitäten kleiner: sie betragen nur etwas 25\% bis 30\% derWerte von Freileitungen\cite{Flosdorff}.
 Die Berechnung der Kapazität von Kabeln, insbesondere Gürtelkabeln, ist ungleich schwieriger als bei Freileitern, da wir vorausgesetzt haben, dass $d\gg r$ ist auserdem sind die Dielektriken und der kreisförmige Metallmantel rechnerisch nur näherungsweise bestimmbar. Daher werden die Kapazitäten experimentell vom Hersteller bestimmt.\cite{Flosdorff}
-Typische Werte für ein einphasiges Kupferkabel findet man in Tabelle \ref{fehlt}.
+Typische Werte für ein einphasiges Kupferkabel findet man in Tabelle \ref{tab:kabel}.
 Wie wir mit den Werten feststellen können, ist bei Kabeln die Kapazität überwiegend,
 besonders stark ist dies bei Unterseekabeln ausgeprägt. % überprüfen, warum?, Werte
 Dazu kommt, dass bei Unterseekabeln die Blindleistungskompensation nur schwer möglich ist.
 Die hohen Kapazitäten erfordern hohe Ströme zum Laden der Kapazität (Ladeströme), welche durch den gesamten zur Verfügung gestellten Strom aufgebracht werden müssen. Dies reduziert die übertragbare Leistung und führt ab einer gewissen Länge dazu, dass der maximal übertragbare Strom als Ladekapazität benötigt wird. % versteh ich selbst nur halb...
-Für ein 400-kV-Kabel wie in Tabelle \ref{fehlt} liegt diese Länge bei 43,6 km.
+Für ein 400-kV-Kabel wie in Tabelle \ref{tab:kabel} liegt diese Länge bei 43,6 km.
 Daher werden bei längeren Kabeln alle paar Kilometer % wieviel genau, besser formulieren…
 Induktivitäten angeschlossen um die Blindleistung zu kompensieren.
 
