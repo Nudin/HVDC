@@ -1,5 +1,6 @@
 
 \subsection{Spulen und Kondensatoren im Wechselstromkreis}
+Während sich Spulen und Kondensatoren in Gleichstromkreisen keine besondere Rolle spielen, sind ihre Auswirkungen auf den Stromfluss in einem Wechselstromkreis außerordentlich wichtig. Zur besseren Verständlichkeit betrachten wir beide zunächst getrennt und erst dann den allgemeinen Fall mit Spule, Kondensator und ohmschen Widerstand. Diese Kapitel richtet sich weitestgehend nach \cite{Demtroeder}.
 
 \subsubsection{Spulen in Wechselstromkreisen}
 Wir betrachten nun einen Wechselstromkreis mit vernachlässigbaren Widerständen, in welchem sich eine Spule befindet. Ein Stromfluss in der Spule führt zu einem Magnetfeld. Da der Stromfluss in der Spule jedoch ständig sein Vorzeichen ändert, wird abwechselnd ein Magnetfeld in die eine Richtung aufgebaut und nach seinem Zusammenbrechen dann ein Magnetfeld mit umgekehrter Ausrichtung aufgebaut.
@@ -9,7 +10,7 @@ wobei $U_Q$ die von der Quelle angelegte Spannung ist und $U_\mathrm{ind}$ die d
 \begin{equation}
 U_\mathrm{ind}(t) = - L \cdot \frac{\mathrm dI(t)}{\mathrm dt}
 \end{equation}
-Daraus folgt durch Einsetzen und Integrieren\cite{Demtroeder}
+Daraus folgt durch Einsetzen und Integrieren
 \begin{align}
 %U_Q + U_{ind} =& 0 \nonumber \\
 %\Rightarrow\;
@@ -26,7 +27,7 @@ Es gibt also eine relative Phasenverschiebung zwischen dem Strom- und Spannungsv
 Dies wird auch Induktanz $X_L = \left|Z_L\right| = \omega \cdot L$ genannt.
 
 \subsubsection{Kondensatoren im Wechselstromkreis}
-Analog zur Spule können wir auch die Auswirkung eines Kondensators im Stromkreis berechnen.\cite{Demtroeder} %XXX "Analog"?
+Analog zur Spule können wir auch die Auswirkung eines Kondensators im Stromkreis berechnen.
 Wir beginnen dabei mit der Gleichung
 \begin{equation}
 U(t) = \frac{Q(t)}{C}
@@ -55,7 +56,7 @@ Betrachten wir nun einen Wechselstromkreis mit einer Induktivität, einer Kapazi
 \begin{equation}
 U_Q(t) = L \cdot \frac{\mathrm{d}I(t)}{\mathrm{d}t} + \frac{Q(t)}{C} + I(t) \cdot R
 \end{equation}
-Wir differenzieren nach der Zeit um die Ladung los zu werden:
+Wir entledigen uns der unbekannten Ladung, indem wir nach der Zeit differenzieren:
 \begin{equation}
 \frac{\mathrm dU_Q(t)}{\mathrm dt} = L \cdot \frac{\mathrm{d^2}I(t)}{\mathrm{d}t^2} + \frac{I(t)}{C} + \frac{\mathrm dI(t)}{\mathrm dt} \cdot R
 \end{equation}
@@ -68,7 +69,7 @@ Die Wahl von U als komplexe Exponentialfunktion ist deshalb möglich, da der Rea
 \begin{equation}
 Re\left[ U_0 e^{(i\omega t)}\right]  = U_0 \cos{(\omega t)}
 \end{equation}
-Durch einsetzen in den Ansatz erhalten wir:
+Durch Einsetzen in den Ansatz erhalten wir:
 \begin{equation}
 i\omega U_Q(t) = (- L \omega^2 + i \omega R  + \frac{1}{C}) \cdot I(t)
 \end{equation}

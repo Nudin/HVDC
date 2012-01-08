@@ -65,18 +65,17 @@ Wie im Folgenden leicht zu erkennen, beeinflusst der Leistungsfaktor den Wirkung
 \end{equation}
 Sinkt also der Leistungsfaktor, so reduziert sich dadurch auch der Wirkungsgrad einer Komponente.
 Sofern nicht anders angegeben, bezieht sich der angegebene Wirkungsgrad einer Komponente immer auf einen Leistungsfaktor von 1, also der Situation, dass Strom und Spannung phasengleich verlaufen.
-Hat man einen Phasenverschiebung ungleich null, so ist der Wirkungsgrad teils bedeutend geringer.
-Für einen Leistungsfaktor von Null -- also eine Phasenverschiebung von 90\degree -- wird das System zwar von der Scheinleistung S beansprucht und es entstehen Verluste, es findet aber keinerlei Energieübertragung statt und der Wirkungsgrad ist null.
-Der Leistungsfaktor kann auch als die Wurzel des Verhältnisses der minimal notwendigen und den tatsächlichen Verlusten ausgedrückt werden:
+Hat man eine Phasenverschiebung ungleich null, so ist der Wirkungsgrad teils bedeutend geringer.
+Für einen Leistungsfaktor von null -- also eine Phasenverschiebung von 90\degree -- wird das System zwar von der Scheinleistung S beansprucht und es entstehen Verluste, es findet aber keinerlei Energieübertragung statt und der Wirkungsgrad ist null.
+Der Leistungsfaktor kann auch als die Wurzel des Verhältnisses der minimal notwendigen und der tatsächlichen Verluste ausgedrückt werden:
 \begin{equation}
 \lambda = \sqrt{\frac{P_{V\:min}}{P_V}}	% Herleitung?
 \end{equation}
 ein Leistungsfaktor von 0.8 würde also beispielsweise bedeuten, dass die Verluste 56\% größer sind als nötig.
 
 Als dritte Leistungs-Größe wollen wir noch die Blindleistung $Q$ einführen.
-%Diese Größe steht auf der Wirkleistung im Zeigerdiagramm orthogonal. %XXX Zeigerdiagramme hab ich noch nicht; Grafik?
-%Sie lässt sich mit Pythagoras berechnen:
-Die Blindleistung ist die Komponente der Scheinleistung, welche keine Arbeit verrichtet – also das gegenteil zur Wirkleistung. Sie ergibt sich im allgemeinen Fall aus $S^2=P^2+Q^2$ zu:
+%Diese Größe steht auf der Wirkleistung im Zeigerdiagramm orthogonal.
+Die Blindleistung ist die Komponente der Scheinleistung, welche keine Arbeit verrichtet – also das Gegenteil zur Wirkleistung. Sie ergibt sich im allgemeinen Fall aus $S^2=P^2+Q^2$ zu:
 \begin{equation}
 Q = \sqrt{S^2-P^2} = S \sqrt{1-\lambda^2} = P \frac{\sqrt{1-\lambda^2}}{\lambda}
 \end{equation}
@@ -89,7 +88,6 @@ Die Blindleistung kann positiv oder negativ sein, per Konvention nimmt man sie a
 
 Zum Abschluss wollen wir noch die komplexe Leistung, auch Leistungsvektor oder komplexe Scheinleistung genannt, einführen: $\underline{S} = P+i Q$. Die oben eingeführte Scheinleistung $S$ ist dabei der Betrag der komplexen Scheinleistung $\underline{S}$.
 
-% wo anders hin verschieben, da auch bei Gleichspannung!?
 \subsection{Ohmscher Verlust}
 Fließt ein Strom $I$ mit der Spannung $U$ durch einen ohmschen Widerstand, so wird dabei die elektrische Leistung
 $P_V = U' \cdot I = R \cdot I^2$
@@ -100,9 +98,9 @@ P_V = \left(\frac{P}{U \cdot \cos\varphi}\right)^2\cdot R
 \end{equation}
 Bei der Übertragung von Energie stellt das Kabel einen Widerstand dar und die Verlustleistung soll möglichst minimiert werden. Da der Widerstand nur bedingt verringert werden kann, erhöht man die Spannung und verringert somit den Stromfluss. Eine Leitung mit einer Spannung von 110\,kV hat einen Verlust von etwa 6\% je 100\,km, eine Leitung mit 800\,kV verliert auf der selben Distanz nur etwa 0.5\%.
 
-Andererseits sehen wir, dass der Ohmsche Verlust mit steigender Phasenverschiebung ins Unendliche steigt. Daher ist man bemüht diese möglichst gering zu halten. Wie wir gesehen haben, ist dies durch Kompensation mit Spulen beziehungsweise Kondensatoren möglich.
+Andererseits sehen wir, dass der ohmsche Verlust mit steigender Phasenverschiebung ins Unendliche steigt. Daher ist man bemüht diese möglichst gering zu halten. Wie wir gesehen haben, ist dies durch Kompensation mit Spulen beziehungsweise Kondensatoren möglich.
 
-Der Gleichstromwiederstand eines Materials hängt auch von der Temperatur $\vartheta$ des Leiters ab. Mann rechnet deshalb meist mit dem Widerstand $R_{20}$, den das Material bei einer Temperatur von $20^\circ C$ hat, und einem Temperaturbeiwert $\alpha_{20}$, der angibt wie stark der Widerstand mit der Temperatur steigt:
+Der Gleichstromwiderstand eines Materials hängt auch von der Temperatur $\vartheta$ des Leiters ab. Mann rechnet deshalb meist mit dem Widerstand $R_{20}$, den das Material bei einer Temperatur von $20^\circ C$ hat, und einem Temperaturbeiwert $\alpha_{20}$, der angibt wie stark der Widerstand mit der Temperatur steigt:
 \begin{equation}
 R_\vartheta = R_{20} \cdot \left[ 1 + \alpha_{20} \cdot \left( \vartheta - 20^\circ C \right) \right]
 \end{equation}
@@ -112,11 +110,11 @@ Beide Werte sind empirisch bestimmte Materialkonstanten.
 \input{Skineffekt}
 
 % wo anders hin verschieben, da auch bei Gleichspannung!?
-\subsection{Koronaentladung} %QUELLEN
+\subsection{Koronaentladung}
 Liegt an einem vergleichsweise dünnem Leiter eine hohe Spannung an, so herrschen in seiner unmittelbaren Nähe sehr hohe elektrische Felder.
 Sind diese Feldstärken größenordnungsmäßig vergleichbar mit der Durchschlagfestigkeit von Luft (der Feldstärke ab der es zu einem Spannungsdurchschlag kommt), so wird die Luft ionisiert, was zu Verlusten durch Entladung des Leiters führt.\cite{BergmannSchaefer}
 Man spricht von Koronaentladung oder Spitzenentladung.\footnote{Dieses Phänomen kommt auch in der Natur durch elektrisch geladene Wolken an Spitzen von leitenden Gegenständen auf, man spricht dann von Elmsfeuer\cite{BergmannSchaefer}}
 Bei Wechselspannung ist dieses Problem besonders groß, da die Scheitelspannung $U_0$ um den Faktor $\sqrt{2}$ größer als die Effektivspannung ist, es kommt also im Moment, wenn der Scheitelwert erreicht wird, auch bei geringeren Effektivspannungen bereits zur Koronaentladung.
-Dies betrifft insbesondere die 400-kV-Schiene (Scheitelspannung von 566 kV) und macht Übertragungen von mehr als 500 kV per Freileitung fast unmöglich.%Quelle, Richtig?
+Dies betrifft insbesondere die 400-kV-Schiene (Scheitelspannung von 566 kV) und macht Übertragungen von mehr als 500 kV per Freileitung fast unmöglich.%Quelle
 
-Die ist die Koronaentladung ist bei negativ geladen Leitern wesentlich höher als bei positiv geladenen\cite{Padiyar}, diese große Asymmetrie kann durch den Massenunterschied zwischen den Elektronen und den positiv geladenen Ionen. %Quelle
+Die Koronaentladung ist bei negativ geladen Leitern wesentlich höher als bei positiv geladenen\cite{Padiyar}, diese große Asymmetrie kann durch den Massenunterschied zwischen den Elektronen und den positiv geladenen Ionen erklärt werden. %Quelle

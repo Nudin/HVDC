@@ -11,28 +11,28 @@ Die Stromdichte im Leiter nimmt nach innen hin gemäß
 \begin{equation}
 j = j_S e^{-\frac{d}{\rho}}
 \end{equation}
-ab, wobei $j_S$ die Stromdichte am Rand ist und die sogenannte äquivalenten Leitschichtdicke $\rho$ die Tiefe ist, in welcher die Stromdichte auf $1/e$ abgesunken ist. Für Kupfer beträgt der Wert von $\rho$ 9,38 mm (50 Hz) beziehungsweise 8,57 mm (60 Hz). %XXX cite
+ab, wobei $j_S$ die Stromdichte am Rand ist und die sogenannte äquivalenten Leitschichtdicke $\rho$ die Tiefe ist, in welcher die Stromdichte auf $1/e$ abgesunken ist. Für Kupfer beträgt der Wert von $\rho$ 9,38 mm (50 Hz) beziehungsweise 8,57 mm (60 Hz). %cite
 
 Der Skineffekt wurde 1873 von J. C. Maxwell vorhergesagt und 1885 von D. E. Hughe erstmals experimentell nachgewiesen\cite{BergmannSchaefer}.
 
 \begin{figure}[tbhn]
 \begin{center}
 \noindent
-\includegraphics[scale=0.5]{Skineffekt.png}
+\includegraphics[scale=0.35]{Skineffekt.png}
 \end{center}
-\caption{Veranschaulichung des Skineffekts} %mehr
+\caption{Veranschaulichung des Skineffekts: das induzierte elektrische Feld, läuft dem elektrischen Feld der Spannung entgegen.}
 \label{pic:skineffekt}
 \end{figure}
 
-Zum Verständnis des Effekts betrachten wir ein Flächenelement ds dr im Drahtinneren (vergleiche Abbildung \ref{pic:skineffekt}).
+Zum Verständnis des Effekts betrachten wir ein Flächenelement $ds \cdot dr$ im Drahtinneren (vergleiche Abbildung \ref{pic:skineffekt}).
 An dem Draht liegt eine Spannung an, welche also ein elektrisches Feld im Draht erzeugt.
-Andererseits fließt duch den Draht ein Strom, durch welchen ein magnetische Feld aufgebaut wird.
+Andererseits fließt durch den Draht ein Strom, durch welchen ein magnetisches Feld aufgebaut wird.
 Da es sich um Wechselstrom handelt, ändert das Magnetfeld ständig seine Richtung und Stärke, wodurch ein elektrisches Wirbelfeld induziert wird.
 Auf der der Achse zugewandten Seite ist das induzierte elektrische Feld dem äußerem Feld entgegengerichtet, auf der abgewandten Seite gleichgerichtet.
-Das resultierende elektrische Feld und somit auch die Stromdichte muss also von innen nach außen zunehmen.\cite{Gerthsen}
+Das resultierende elektrische Feld und somit auch die Stromdichte, muss also von innen nach außen zunehmen.\cite{Gerthsen}
 
 Die genaue Herleitung des Skineffektes ist relativ kompliziert, sie kann in einem Lehrbuch der Elektrodynamik nachgeschlagen werden. % zum beispiel…
-Wir wollen hier lediglich eine einfache Herleitung der Eindringtiefe nach \cite{Gerthsen} beschreiben.
+Wir wollen hier lediglich eine einfache Herleitung der Eindringtiefe beschreiben. Dabei richten wir uns nach \cite{Gerthsen}, die Herleitung wurde jedoch zur besseren Verständlichkeit ausführlicher als in der Quelle geführt.
 Wir starten dabei mit den Maxwellgleichungen, genauer gesagt mit dem Induktionsgesetz von Faraday und dem erweiterten ampèreschen Gesetz:
 \begin{align}
 \nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \qquad &\mathrm{(Induktionsgesetz\ von\ Faraday)} \\
@@ -42,10 +42,10 @@ Die elektrische Flussdichte $\mathbf{D}$ hängt mit der elektrischen Feldstärke
 \begin{equation}
 \mathbf D = \epsilon_0 \epsilon_r \mathbf{E}
 \end{equation}
-Da die elektrisches Feldstärke von der Spannung abhängt, stellt auch sie eine Trigonometrische Funktion von $\omega t$ dar, die Ableitung wird somit zu:
+Da die elektrische Feldstärke von der Spannung abhängt, stellt auch sie eine trigonometrische Funktion von $\omega t$ dar, die Ableitung wird somit zu\footnote{Warum wir hier das $\epsilon_r$ ignorieren können, habe ich leider nicht herausgefunden.}:
 \begin{equation}
 \mathbf{\dot{D}} = \omega \epsilon_0 \mathbf{E}
-\end{equation}\footnote{Warum wir hier das $\epsilon_r$ ignorieren können, habe ich leider nicht herausgefunden.}
+\end{equation}
 Die Stromdichte $\mathbf{j}$ ergibt sich aus der elektrischen Feldstärke und der elektrischen Leitfähigkeit nach dem ohmschen Gesetz zu $\mathbf{j} = \sigma \mathbf E$. Daraus sehen wir, dass für $\omega \ll \frac{\sigma}{\epsilon} \approx 10^{18} s^{-1}$ $\mathbf{\dot{D}}$ vernachlässigbar klein gegenüber $\mathbf{j}$ ist.
 
 Die magnetische Flussdichte $\mathbf B$ hängt analog mit der magnetischen Feldstärke $\mathbf H$ zusammen:
