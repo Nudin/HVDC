@@ -1,6 +1,6 @@
 
 \section{Einphasen-Wechselstrom}\label{wechsel}
-Beim Einphasen-Wechselstrom hat man einen Nullleiter und einen Leiter, auf dem eine sinusförmige Wechselspannung mit der Amplitude $U_0$ anliegt:
+Beim Einphasen-Wechselstrom hat man einen Nullleiter und einen Leiter, auf dem eine cosinusförmige Wechselspannung mit der Amplitude $U_0$ anliegt:
 \begin{equation}
 U(t)=U_0 \cdot \cos(\omega t + \varphi)
 \end{equation}
@@ -28,7 +28,7 @@ Im folgenden werden wir mit $U$ beziehungsweise $I$ die Effektivwerte, mit $U(t)
 
 
 \subsection{Wirk-, Schein- und Blindleistung und der Leistungsfaktor}
-Die Größen Spannung, Leistung und die Phasenverschiebung beschreiben das System vollständig, die Arbeit mit diesen Größen ist jedoch oft kompliziert und aufwändig. Daher zieht man häufig die Beschreibung mit den Größen Wirk-, Schein- und Blindleistung vor, weshalb wir diese hier definieren und näher betrachten wollen.
+Die Größen Spannung, Leistung und die Phasenverschiebung beschreiben das System vollständig, die Arbeit mit diesen Größen ist jedoch oft kompliziert und aufwändig. Daher zieht man häufig die Beschreibung mit den Größen Wirk-, Schein- und Blindleistung vor, weshalb wir diese hier definieren und näher betrachten wollen.\cite{Harrison}
 
 Die Wirkleistung ist diejenige Leistung, welche real genutzt werden kann, sie wird manchmal auch als aktive Leistung oder Nutzleistung bezeichnet. Sie ist das arithmetische Mittel über die Augenblicksleistung:
 \begin{equation}
@@ -45,11 +45,11 @@ P =  U_{\mathrm{eff}} I_{\mathrm{eff}} \cdot \cos \varphi
 \end{equation}
 Die Wirkleistung wird in Watt (1 W = 1 V$\cdot$A) gemessen.
 
-Die Scheinleistung ist hingegen das Produkt aus Spannung und Strom ohne Phasenfaktor. Die Verluste und die Beanspruchung der Komponenten verhalten sich, als würde eine Leistung dieser Größe übertragen. Sie stellt die bei einer gewissen Beanspruchung der Leitungskomponenten maximal übertragbare Wirkleistung dar. Sie ist deshalb immer größer oder gleich der Wirkleistung, wobei die Gleichheit für den Fall eintritt, dass die Phasenverschiebung null ist.
+Die Scheinleistung ist hingegen das Produkt aus Spannung und Strom ohne Phasenfaktor. Die Verluste und die Beanspruchung der Komponenten verhalten sich, als würde eine Leistung dieser Größe übertragen. Sie stellt die bei einer gewissen Beanspruchung der Leitungskomponenten maximal übertragbare Wirkleistung dar. Sie ist deshalb immer größer oder gleich der Wirkleistung, wobei die Gleichheit für den Fall eintritt, dass die Phasenverschiebung null ist.\cite{Harrison}
 \begin{equation}
 S = U_{\mathrm{eff}} I_{\mathrm{eff}} \geq P
 \end{equation}
-Die Scheinleistung ist zwar das Produkt aus Spannung (gemessen in Volt) und Strom (gemessen in Ampere), sie ist jedoch keine Leistung im physikalischen Sinn, deshalb wird sie nicht in Watt, sondern in Voltampere (VA) gemessen.
+Die Scheinleistung ist zwar das Produkt aus Spannung (gemessen in Volt) und Strom (gemessen in Ampere), sie ist jedoch keine Leistung im physikalischen Sinn, deshalb wird sie nicht in Watt, sondern in Voltampere (VA) gemessen.\cite{Harrison}
 
 Als nächstes wollen wir den Leistungsfaktor einführen, er ist das Verhältnis von Wirk- und Scheinleistung:
 \begin{equation}
@@ -59,7 +59,7 @@ In unserem Fall betrachten wir kosinusförmige Spannungen und erhalten somit:
 \begin{equation}
 \lambda = \cos \varphi
 \end{equation}
-Wie im Folgenden leicht zu erkennen, beeinflusst der Leistungsfaktor den Wirkungsgrad der Komponenten:
+Wie im Folgenden leicht zu erkennen, beeinflusst der Leistungsfaktor den Wirkungsgrad der Komponenten: % cite
 \begin{equation}
 \eta = \frac{P}{P+P_V} = \frac{\frac{P}{S}}{\frac{P}{S}+\frac{P_V}{S}} = \frac{\lambda}{\lambda + p_V} \qquad \mathrm{(mit}\;P_V\;\mathrm{als\: Verlustleistung)}
 \end{equation}

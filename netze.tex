@@ -37,7 +37,8 @@ Es gibt unterschiedliche Arten und Bauweisen von Freileitungsmasten, auf die wir
 
 Die Spitzen der Masten tragen ein Erdseil, welches die Leiterseile vor Blitzschlag schützt, indem es einen Schutzraum bildet. Dieser wird näherungsweise durch den Zwischenraum zwischen zwei den Boden und das Erdseil tangierenden Kreisen mit doppelter Masthöhe als Radius beschrieben (vergl. Abbildung \ref{pic:blitzschutzraum}). Die Masten sind derartig gebaut, dass die Leiterseile sich in diesem Schutzraum befinden. Um bei – im Fall von besonders hohen Spannungen nötigen – weiten Traversen den Mast nicht zu hoch bauen zu müssen, kann man auch durch Verwendung von zwei statt nur einem Erdseil den Schutzraum vergrößern.
 
-Bei den Leiterseilen handelt es sich meist um Verbundseile mit einem Kern aus Stahl, der die mechanische Stabilität gewährleistet, umgeben von Aluminiumleitern. Aluminium hat zwar im Bezug auf das Volumen einen höheren Widerstand als Kupfer, im Bezug auf das Gewicht leitet Aluminium hingegen besser. Ein typisches 650-A-Leiterseil besteht aus 7 Stahl- und 54 Aluminiumadern, die jeweils einen Durchmesser von 3 mm haben\cite{Harrison}.
+Bei den Leiterseilen handelt es sich meist um Verbundseile mit einem Kern aus Stahl, der die mechanische Stabilität gewährleistet, umgeben von Aluminiumleitern. Aluminium hat zwar im Bezug auf das Volumen einen höheren Widerstand als Kupfer, im Bezug auf das Gewicht leitet Aluminium hingegen besser. %cite
+Ein typisches 650-A-Leiterseil besteht aus 7 Stahl- und 54 Aluminiumadern, die jeweils einen Durchmesser von 3 mm haben\cite{Harrison}.
 Moderne Leiterseile bestehen oft ganz aus einer Aluminiumlegierung (AlMgSi) und haben dadurch eine höhere Stromtragefähigkeit, einen geringen ohmschen Widerstand und müssen weniger gewartet werden\cite{Harrison}\cite{Flosdorff}.
 
 Bei höheren Spannungen verwendet man statt einem dicken, mehrere dünnere Leiterseile pro Leiter in geringem Abstand. Dadurch sind die Randfeldstärken\footnote{Die Randfeldstärke darf zur Vermeidung von Koronaentladung nicht größer als 17 kV/cm werden.\cite{Flosdorff}} und die Induktivität geringer und durch die bessere Kühlung aufgrund der größeren Oberfläche kann ein größerer Strom geführt werden. Man spricht hier von Bündelleitern.
@@ -85,7 +86,6 @@ $X_C$ & 350 k$\Omega$ & 275 k$\Omega$ & 245 k$\Omega$ \\
 \paragraph{Induktivitätsbelag}
 
 Fließen Wechselströme durch mehrere nebeneinander liegende Leiter so wird durch Selbstinduktion und Gegeninduktion eine Wechselspannung induziert.
-
 Die Induktivität eines Leiters $v$ hängt wie folgt mit dem magnetischem Fluss an dessen Position zusammen:
 \begin{equation}
 L_v = N_v \frac{\Phi_v}{i_v}
@@ -98,7 +98,7 @@ ist $N_v = 1$, somit müssen wir, um die Induktivität zu berechnen den magnetis
 Zur Berechnung der Flüsse führen wir einen Zylinder mit sehr großem, aber endlichem Radius $r_a$ und dem Leiter $v$ als, Mittelpunkt als Feldbegrenzung ein. Die Rechtfertigung dafür werden wir später sehen.
 Der Fluss, den der Leiter selbst erzeugt, ist laut \cite{Moeller} zitiert in \cite{Flosdorff}:
 \begin{equation}
-\Phi_{vv} = \frac{\mu_0l}{2\pi} \left( \ln\frac{r_a}{r_v} + 0,25 \right) i_v
+\Phi_{vv} = \frac{\mu_0l}{2\pi} \left( \ln\frac{r_a}{r_v} + \frac{1}{4} \right) i_v
 \end{equation}
 Der Fluss im Leiter $v$ der von einem Leiter $k$ erzeugt wird ist das Integral des Magnetfelds über die Fläche zwischen Leiter und Begrenzungszylinder:
 \begin{equation}
@@ -107,15 +107,24 @@ Der Fluss im Leiter $v$ der von einem Leiter $k$ erzeugt wird ist das Integral d
 \end{equation}
 Setzt man dies in Gleichung \ref{eq:SummePhi} ein, so erhält man:
 \begin{equation}
-\Phi_v = \frac{\mu_0l}{2\pi} \left[ \left( \ln\frac{r_a}{r_v} +0,25\right) i_v + \sum_{k\neq v}\ln\frac{r_a}{d_{vk}} i_k \right]
+\Phi_v = \frac{\mu_0l}{2\pi} \left[ \left( \ln\frac{r_a}{r_v} +\frac{1}{4}\right) i_v + \sum_{k\neq v}\ln\left(\frac{r_a}{d_{vk}}\right) i_k \right]
 \end{equation}
-Wir beziehen den Fluss auf die Länge der Leitung und ziehen $r_a$ raus:
+Wir beziehen den Fluss auf die Länge der Leitung und führen eine Alternative Bezeichnung für $r_v$ ein:
+\begin{equation}
+\Phi'_v = \frac{\mu_0}{2\pi}
+ \left[
+   \sum_k \ln\left(\frac{r_a}{d_{vk}}\right) i_k
+   + \frac{1}{4} \: i_v
+ \right]
+\quad mit \: d_{vv}:=r_v
+\end{equation}
+Zuletzt ziehen wir $\ln r_a$ aus der Summe heraus:
 \begin{equation}
 \Phi'_v = \frac{\mu_0}{2\pi}
  \left[
    \ln r_a \sum i_k +
-   \sum_k \left( \ln\frac{1}{d_{vk}} i_k +
-   0,25 \: \delta_{ik} \right)
+   \sum_k \left( \ln\frac{1}{d_{vk}} +
+   \frac{1}{4} \: \delta_{kv} \right) i_k
  \right]
 \quad mit \: d_{vv}:=r_v
 \end{equation}
@@ -125,7 +134,7 @@ Die Summe aller Leiterströme muss immer null sein, $\sum i_k=0$, und somit vers
 \end{equation}
 mit den Koeffizienten:
 \begin{equation}
-a_{vv} = \frac{\mu_0}{2\pi} \left( \ln\frac{1}{r_v} + 0,25 \right) \qquad und \qquad a_{vk} = a_{kv} = \frac{\mu_0}{2\pi} \ln\frac{1}{d_{ik}}
+a_{vv} = \frac{\mu_0}{2\pi} \left( \ln\frac{1}{r_v} + \frac{1}{4} \right) \qquad und \qquad a_{vk} = a_{kv} = \frac{\mu_0}{2\pi} \ln\frac{1}{d_{ik}}
 \end{equation}
 Betrachten wir zunächst ein \textbf{Zweileitersystem}. Das obige Gleichungssystem reduziert sich auf:
 \begin{align}
@@ -134,12 +143,12 @@ Betrachten wir zunächst ein \textbf{Zweileitersystem}. Das obige Gleichungssyst
 \end{align}
 Dabei ist $i_2 = -i_1$ und $d_{12} = d_{21} = d$. Die Induktivität errechnet sich nun einfach zu:
 \begin{equation}
-L'_1 = a_{11} - a_{12} = \frac{\mu_0}{2\pi}\left(\ln\frac{1}{r_1}+025\right)-\frac{\mu_0}{2\pi}\ln\frac{1}{d} = 
-\frac{\mu_0}{2\pi}\left(\ln\frac{d}{r_1}+025\right)
+L'_1 = a_{11} - a_{12} = \frac{\mu_0}{2\pi}\left(\ln\frac{1}{r_1}+\frac{1}{4}\right)-\frac{\mu_0}{2\pi}\ln\frac{1}{d} = 
+\frac{\mu_0}{2\pi}\left(\ln\frac{d}{r_1}+\frac{1}{4}\right)
 \end{equation}
 und gleichfalls für Leiter 2. In der Regel sind die beiden Leiterradien gleich, wodurch beide Leiter die selbe Induktivität haben – was aus Symmetriegründen selbst verständlich war. Will man die Induktivität nicht auf die Leiterlänge sondern auf die Leitungslänge beziehen, so muss man die Induktivität verdoppeln, da man zwei Leiter hat – man erhält also schließlich:
 \begin{equation}
-L' = \frac{\mu_0}{\pi}\left(\ln\frac{d}{r_1}+025\right)
+L' = \frac{\mu_0}{\pi}\left(\ln\frac{d}{r_1}+\frac{1}{4}\right)
 \end{equation}
 
 \begin{figure}[bthn]
@@ -157,12 +166,12 @@ Ein weiterer wichtiger Sonderfall ist die \textbf{symmetrische Dreileiteranordnu
 \end{equation}
 und daraus:
 \begin{equation}
-L'_1 = \frac{\Phi'_1}{i_1} = a_{11}-a_{12} = \frac{\mu_0}{2\pi}\left(\ln\frac{1}{r}+0,25-\ln\frac{1}{d} \right) =
-\frac{\mu_0}{2\pi}\left(\ln\frac{d}{r}+0,25 \right)
+L'_1 = \frac{\Phi'_1}{i_1} = a_{11}-a_{12} = \frac{\mu_0}{2\pi}\left(\ln\frac{1}{r}+\frac{1}{4}-\ln\frac{1}{d} \right) =
+\frac{\mu_0}{2\pi}\left(\ln\frac{d}{r}+\frac{1}{4} \right)
 \end{equation}
 Ist das Drehstromnetz gleichphasig belastet, so addieren sich die Spannungen und Ströme zu null und es genügt einphasig zu rechnen, da keine Rückführung mehr nötig ist. Die auf die Leitungslänge gerechnete Induktivität ist also:
 \begin{equation}\label{eq:Induktivitaet3}
-L' = L'_1 = \frac{\mu_0}{2\pi}\left(\ln\frac{d}{r}+0,25 \right)
+L' = L'_1 = \frac{\mu_0}{2\pi}\left(\ln\frac{d}{r}+\frac{1}{4} \right)
 \end{equation}
 Laut \cite{Harrison} gilt diese Gleichung nur für $h\gg d$ – ist dies nicht gegeben, muss man Einflüsse des Bodens berücksichtigen.
 
@@ -346,7 +355,7 @@ Da man bei HGÜ keine Nulldurchgänge hat, ist das Bauen von leistungsfähigen G
 \noindent
 \includegraphics[scale=0.2]{Hvdc_ALL_schematic.png}
 \end{center}
-\caption{Verschiedene Betriebsmodi einer HGÜ-Anlage. Nach \cite{Padiyar}, auf Basis von \cite{WPfehlt}}
+\caption{Verschiedene Betriebsmodi einer HGÜ-Anlage. Nach \cite{Padiyar}, auf Basis von \cite{schematic}}
 \label{pic:HVDCtypen}
 \end{figure}
 
